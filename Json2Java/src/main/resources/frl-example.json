@@ -1,0 +1,255 @@
+{
+	"@context": "https://frl.publisso.de/context.json",
+	"@id": "frl:6408444",
+	"abstractText": [
+		"We report new localities for Anolis pseudokemptoni Köhler, Ponce, Sunyer & Batista, 2007, along the Serranía de Tabasará in the Comarca Ngöbe-Buglé of western Panama. These records extend the known geographic distribution of this lizard about 6 km eastward and 9 km northwestward, as well as the known vertical distribution approximately 470 m lower and 380 m higher. We also provide photos of specimens from different localities and comment on their morphology. No population of this Panamanian microendemic species, which is classifiable as Critically Endangered, lives inside a protected area. "
+	],
+	"accessScheme": "public",
+	"bibliographicCitation": [
+		"10(1):189-194"
+	],
+	"catalogId": "ED6408444",
+	"collectionOne": [
+		{
+			"@id": "http://d-nb.info/gnd/16018966-4",
+			"abbreviatedNameForTheCorporateBody": "SGN",
+			"biographicalOrHistoricalInformation": "Träger der sechs Senckenberg Forschungsinstitute und der drei Naturkundemuseen.",
+			"dateOfEstablishment": "XX.12.2008",
+			"deprecatedUri": "http://d-nb.info/gnd/4139476-8",
+			"gndIdentifier": "16018966-4",
+			"oldAuthorityNumber": "(DE-588c)4139476-8",
+			"prefLabel": "Senckenberg Gesellschaft für Naturforschung",
+			"preferredNameForTheCorporateBody": "Senckenberg Gesellschaft für Naturforschung",
+			"variantNameForTheCorporateBody": "Senckenberg-Gesellschaft für Naturforschung"
+		}
+	],
+	"containedIn": [
+		{
+			"@id": "http://lobid.org/resources/HT014865238#!",
+			"prefLabel": "Check list"
+		}
+	],
+	"contentType": "article",
+	"contributorOrder": [
+		"https://frl.publisso.de/adhoc/creator/TG90emthdCwgU2ViYXN0aWFu|https://frl.publisso.de/adhoc/creator/QmF0aXN0YSwgQWJlbA==|https://frl.publisso.de/adhoc/creator/UG9uY2UsIE1hcmNvcw==|http://orcid.org/0000-0003-1128-6684"
+	],
+	"creator": [
+		{
+			"@id": "https://frl.publisso.de/adhoc/creator/TG90emthdCwgU2ViYXN0aWFu",
+			"prefLabel": "Lotzkat, Sebastian"
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/creator/QmF0aXN0YSwgQWJlbA==",
+			"prefLabel": "Batista, Abel"
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/creator/UG9uY2UsIE1hcmNvcw==",
+			"prefLabel": "Ponce, Marcos"
+		},
+		{
+			"@id": "http://orcid.org/0000-0003-1128-6684",
+			"prefLabel": "Hertz, Andreas"
+		}
+	],
+	"ddc": [
+		{
+			"@id": "http://dewey.info/class/570/",
+			"prefLabel": "Biowissenschaften; Biologie"
+		}
+	],
+	"fundingId": [
+		{
+			"@id": "https://frl.publisso.de/adhoc/uri/RkFaSVQtU3RpZnR1bmc=",
+			"prefLabel": "FAZIT-Stiftung"
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/uri/U3R1ZGllbnN0aWZ0dW5nIGRlcyBkZXV0c2NoZW4gVm9sa2Vz",
+			"prefLabel": "Studienstiftung des deutschen Volkes"
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/uri/VmVyZWluaWd1bmcgdm9uIEZyZXVuZGVuIHVuZCBGw7ZyZGVyZXJuIGRlciBHb2V0aGUtVW5pdmVyc2l0w6R0",
+			"prefLabel": "Vereinigung von Freunden und Förderern der Goethe-Universität"
+		}
+	],
+	"fundingProgram": [
+		"-",
+		"-",
+		"-"
+	],
+	"hasPart": [
+		{
+			"prefLabel": "Distribution extension for Anolis pseudokemptoni Köhler, Ponce, Sunyer & Batista, 2007 (Reptilia: Squamata: Dactyloidae), a microendemic species in the Serranía de Tabasará of the Comarca Ngöbe-Buglé of western Panama",
+			"@id": "frl:6408445"
+		}
+	],
+	"institution": [
+		{
+			"@id": "http://d-nb.info/gnd/10092711-7",
+			"definition": "Achtung! Lt. telM ist der Name nicht offiziell geändert worden! Der Name Naturmuseum.... gilt weiterhin als offiziell",
+			"deprecatedUri": "http://d-nb.info/gnd/4139484-7",
+			"gndIdentifier": "10092711-7",
+			"oldAuthorityNumber": "(DE-588c)4139484-7",
+			"prefLabel": "Senckenberg Forschungsinstitut und Naturmuseum Frankfurt",
+			"preferredNameForTheCorporateBody": "Senckenberg Forschungsinstitut und Naturmuseum Frankfurt",
+			"variantNameForTheCorporateBody": "Senckenbergische Naturforschende Gesellschaft. Senckenberg, Forschungsinstitut und Naturmuseum"
+		}
+	],
+	"isDescribedBy": {
+		"@id": "frl:6408444.rdf",
+		"created": "2018-06-19T09:13:33.169+0000",
+		"createdBy": "270",
+		"describes": "frl:6408444",
+		"lastModifiedBy": "25",
+		"modified": "2018-06-20T12:46:35.785+0000",
+		"objectTimestamp": "2018-06-20T12:46:26.000+0000"
+	},
+	"isMemberOf": [
+		{
+			"prefLabel": "info:fedora/oai:article",
+			"@id": "info:fedora/oai:article"
+		},
+		{
+			"prefLabel": "info:fedora/oai:open_access",
+			"@id": "info:fedora/oai:open_access"
+		}
+	],
+	"isPrimaryTopicOf": [
+		{
+			"@id": "https://repository.publisso.de/resource/frl:6408444/edit",
+			"prefLabel": "https://repository.publisso.de/resource/frl:6408444/edit",
+			"primaryTopic": "frl:6408444"
+		}
+	],
+	"itemID": [
+		{
+			"prefLabel": "oai:frl.publisso.de:frl:6408444",
+			"@id": "oai:frl.publisso.de:frl:6408444"
+		}
+	],
+	"joinedFunding": [
+		{
+			"fundingJoined": {
+				"@id": "https://frl.publisso.de/adhoc/uri/RkFaSVQtU3RpZnR1bmc=",
+				"prefLabel": "FAZIT-Stiftung"
+			},
+			"fundingProgramJoined": "-",
+			"projectIdJoined": "-"
+		},
+		{
+			"fundingJoined": {
+				"@id": "https://frl.publisso.de/adhoc/uri/U3R1ZGllbnN0aWZ0dW5nIGRlcyBkZXV0c2NoZW4gVm9sa2Vz",
+				"prefLabel": "Studienstiftung des deutschen Volkes"
+			},
+			"fundingProgramJoined": "-",
+			"projectIdJoined": "-"
+		},
+		{
+			"fundingJoined": {
+				"@id": "https://frl.publisso.de/adhoc/uri/VmVyZWluaWd1bmcgdm9uIEZyZXVuZGVuIHVuZCBGw7ZyZGVyZXJuIGRlciBHb2V0aGUtVW5pdmVyc2l0w6R0",
+				"prefLabel": "Vereinigung von Freunden und Förderern der Goethe-Universität"
+			},
+			"fundingProgramJoined": "-",
+			"projectIdJoined": "-"
+		}
+	],
+	"language": [
+		{
+			"@id": "http://id.loc.gov/vocabulary/iso639-2/eng",
+			"prefLabel": "Englisch"
+		}
+	],
+	"license": [
+		{
+			"@id": "http://creativecommons.org/licenses/by/4.0/",
+			"prefLabel": "http://creativecommons.org/licenses/by/4.0/"
+		}
+	],
+	"medium": [
+		{
+			"@id": "http://purl.org/lobid/lv#fulltextOnline",
+			"prefLabel": "Online-Volltext"
+		}
+	],
+	"primaryTopic": "frl:6408444",
+	"professionalGroup": [
+		{
+			"@id": "http://skos.um.es/unescothes/COL270",
+			"prefLabel": "Biologie"
+		}
+	],
+	"projectId": [
+		"-",
+		"-",
+		"-"
+	],
+	"publicationStatus": [
+		{
+			"@id": "http://hbz-nrw.de/regal#original",
+			"prefLabel": "Veröffentlichungsversion"
+		}
+	],
+	"publicationYear": [
+		"2014-02-01"
+	],
+	"publishScheme": "public",
+	"publisherVersion": [
+		{
+			"@id": "https://doi.org/10.15560/10.1.189",
+			"prefLabel": "https://doi.org/10.15560/10.1.189"
+		}
+	],
+	"rdftype": [
+		{
+			"prefLabel": "Artikel",
+			"@id": "http://purl.org/ontology/bibo/Article"
+		}
+	],
+	"reviewStatus": [
+		{
+			"@id": "http://hbz-nrw.de/regal#peerReviewed",
+			"prefLabel": "begutachtet (Peer-reviewed)"
+		}
+	],
+	"subject": [
+		{
+			"prefLabel": "Dactyloidae",
+			"@id": "https://frl.publisso.de/adhoc/uri/RGFjdHlsb2lkYWU="
+		},
+		{
+			"prefLabel": "Panama",
+			"@id": "https://frl.publisso.de/adhoc/uri/UGFuYW1h"
+		},
+		{
+			"prefLabel": "new records",
+			"@id": "https://frl.publisso.de/adhoc/uri/bmV3IHJlY29yZHM="
+		},
+		{
+			"prefLabel": "Squamata",
+			"@id": "https://frl.publisso.de/adhoc/uri/U3F1YW1hdGE="
+		},
+		{
+			"prefLabel": "Reptilia",
+			"@id": "https://frl.publisso.de/adhoc/uri/UmVwdGlsaWE="
+		},
+		{
+			"prefLabel": "distribution",
+			"@id": "https://frl.publisso.de/adhoc/uri/ZGlzdHJpYnV0aW9u"
+		},
+		{
+			"prefLabel": "endemic species",
+			"@id": "https://frl.publisso.de/adhoc/uri/ZW5kZW1pYyBzcGVjaWVz"
+		}
+	],
+	"title": [
+		"Distribution extension for Anolis pseudokemptoni Köhler, Ponce, Sunyer & Batista, 2007 (Reptilia: Squamata: Dactyloidae), a microendemic species in the Serranía de Tabasará of the Comarca Ngöbe-Buglé of western Panama"
+	],
+	"transformer": [
+		"mets",
+		"oaidc",
+		"rdf",
+		"wgl"
+	],
+	"yearOfCopyright": [
+		"2014"
+	]
+}
