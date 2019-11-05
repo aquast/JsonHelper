@@ -6,19 +6,24 @@ package de.nrw.hbz.json.helper.json2java;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.Hashtable;
+import java.util.Iterator;
 import java.util.List;
 import java.util.TreeMap;
+
+import com.fasterxml.jackson.databind.JsonNode;
 
 /**
  * @author aquast
  *
  */
-public class FundingReference {
+public class GenericJsonReader {
 
 	// a representation for Elements with a cardinality of 0-1
 	private TreeMap<String, String> simpleElement = new TreeMap<>();
+	
 	// a representation for Elements with a cardinality of 0-n
 	private TreeMap<String, List<String>> arrayElement = new TreeMap<>();
+	
 	// a representation for repeatable complex elements
 	private ArrayList<TreeMap> elementList = new ArrayList();
 
@@ -39,6 +44,24 @@ public class FundingReference {
 	public TreeMap<String, String> getSimpleElements() {
 		return this.simpleElement;
 	}
+	
+	public ArrayList<String> listFields(JsonNode node) {
+		ArrayList<String> fieldList = new ArrayList();
+
+		Iterator<String> it = node.fieldNames();
+			
+			while (it.hasNext()) {
+				String key = it.next();
+				JsonNode nodePart = node.findPath(key);
+				//System.out.println(nodePart.);
+				if(nodePart.isValueNode()) {
+					System.out.println("Elementkey: " + key);
+				}			
+			}
+
+		return fieldList;
+	}
+	
 
 }
 /**
