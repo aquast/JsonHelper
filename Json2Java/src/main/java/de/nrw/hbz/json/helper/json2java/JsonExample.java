@@ -20,11 +20,11 @@ public class JsonExample {
 	public static void main(String[] args) {
 		JsonNode node = null; 
 		String jsonExample1 = new String();
-		jsonExample1 = "{\"vorname\" : \"Andres\", \"nachname\" : \"Quast\" , \"alter\" : 53, \"wohnorte\" : [\"Bochum\", \"Göttingen\" ], "
-				+ "\"anstellungen\" : [{ \"anstellung\" : {\"ort\" : \"Köln\", \"arbeitgeber\" : \"hbz\", \"von\" : 2008 , \"bis\" : \"laufend\" }"
-				+ ", \"anstellung\" : {\"ort\" : \"Göttingen\", \"arbeitgeber\" : \"SUB\", \"von\" : 2005 , \"bis\" : 2008 }"
-				+ ", \"anstellung\" : {\"ort\" : \"Göttingen\", \"arbeitgeber\" : \"MiniCar\", \"von\" : 2003 , \"bis\" : 2005 } "
-				+ "}]"
+		jsonExample1 = "{\"vorname\" : \"Andres\", \"nachname\" : \"Quast\" , \"alter\" : 53, \"wohnorte\" : [\"Hannover\", \"Kassel\" ], "
+				+ "\"anstellungen\" : [{\"ort\" : \"Köln\", \"arbeitgeber\" : \"hbz\", \"von\" : 2008 , \"bis\" : \"laufend\" }"
+				+ ", {\"ort\" : \"Göttingen\", \"arbeitgeber\" : \"SUB\", \"von\" : 2005 , \"bis\" : 2008 }"
+				+ ", {\"ort\" : \"Göttingen\", \"arbeitgeber\" : \"MiniCar\", \"von\" : 2003 , \"bis\" : 2005 } "
+				+ "]"
 				+ ", \"akademischeTitel\" : [ \"Dipl.-Geol.\", \"Dr.\"]}";
 		ObjectMapper mapper = new ObjectMapper();
 		try {
@@ -33,6 +33,9 @@ public class JsonExample {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		node = JsonFileReader.getJsonNodeFromFile("src/main/resources/frl-example.json");
+
 		
 		StructureFinder sf = new StructureFinder();
 		sf.mapStructure(node);

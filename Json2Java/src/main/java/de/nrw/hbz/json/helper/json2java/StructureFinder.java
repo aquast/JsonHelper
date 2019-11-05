@@ -23,7 +23,7 @@ public class StructureFinder {
 	StringBuffer pathBuffer = new StringBuffer("");
 
 	public void mapStructure(JsonNode node) {
-		mapStructure(node, new StringBuffer("."));
+		mapStructure(node, new StringBuffer("root"));
 		printElements();
 	}
 	
@@ -31,35 +31,42 @@ public class StructureFinder {
 
 		Iterator<String> it = node.fieldNames();
 		while(it.hasNext()) {
+			int l = pBuffer.length(); 
 			
 			String key = it.next();
 			if (node.get(key).isValueNode()){
 				Hashtable<String, String> iE = new Hashtable<>();
-				iE.put(pBuffer + key, node.get(key).asText());
+				iE.put(pBuffer + "." + key, node.get(key).asText());
 				complexElement.add(iE);
 			}
 			
 			if(node.get(key).isObject()){
-				System.out.println(key + " : " + node.get(key).size() );
-				Iterator<Entry<String, JsonNode>> nIt = node.get(key).fields();
-				//while(nIt.hasNext()) {
-				//	System.out.println("key : " + nIt.next().getKey());
-				//}
-				//if (subNode.size() > 1) {
-					//for (int i=0; i < subNode.size(); i++) {
-						//pBuffer.append(key + ".");
-					//	System.out.println(subNode.toString());
-						// JsonNode complexNode = subNode.get(i);
-						//mapStructure(subNode.get(i), pBuffer);
-					//}
-				//}
-				pBuffer.append(key + ".");
+				//System.out.println(key + " : " + node.get(key).size() );
+				pBuffer.append("." + key);
 				JsonNode complexNode = node.get(key);
 				mapStructure(complexNode, pBuffer);
 			}
+			
 			if(node.get(key).isArray()){
-				System.out.println(key + " : " + node.get(key).size() );
+				pBuffer.append("." + key);
+				JsonNode complexNode = node.get(key);
+				Iterator<JsonNode> nIt = complexNode.elements();
+				while(nIt.hasNext()) {
+					JsonNode arrayNode = nIt.next();
+					if(arrayNode.isObject()) {
+						//System.out.println(arrayNode.toString());					
+						mapStructure(arrayNode, pBuffer);
+					}else {
+						Hashtable<String, String> iE = new Hashtable<>();
+						//System.out.println("nur Text " + arrayNode.toString());
+						iE.put(pBuffer.toString(), arrayNode.asText());
+						complexElement.add(iE);
+					}
+					
+				}
 			}
+			pBuffer.setLength(l);
+
 		}
 	}
 	
