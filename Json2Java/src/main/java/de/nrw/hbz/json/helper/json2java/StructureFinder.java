@@ -20,6 +20,10 @@ public class StructureFinder {
 	Hashtable<String,String> simpleElements = new Hashtable<>();
 	// Hashtable<String, Hashtable<String,String>> complexElement = new Hashtable<>(); 
 	ArrayList<Hashtable<String,String>> complexElement = new ArrayList<>();
+	ArrayList<Hashtable<String,String>> simpleElement = new ArrayList<>();
+	ArrayList<Hashtable<String,ArrayList<String>>> arrayElement = new ArrayList<>();
+	ArrayList<JsonElementModel> jemElement = new ArrayList<>();
+
 	StringBuffer pathBuffer = new StringBuffer("");
 
 	public void mapStructure(JsonNode node) {
@@ -38,6 +42,9 @@ public class StructureFinder {
 				Hashtable<String, String> iE = new Hashtable<>();
 				iE.put(pBuffer + "." + key, node.get(key).asText());
 				complexElement.add(iE);
+				JsonElementModel jEM = new JsonElementModel(pBuffer.toString());
+				jEM.setComplexElement(iE);
+				jemElement.add(jEM);
 			}
 			
 			if(node.get(key).isObject()){
@@ -51,6 +58,7 @@ public class StructureFinder {
 				pBuffer.append("." + key);
 				JsonNode complexNode = node.get(key);
 				Iterator<JsonNode> nIt = complexNode.elements();
+				JsonElementModel jEM = new JsonElementModel(pBuffer.toString());
 				while(nIt.hasNext()) {
 					JsonNode arrayNode = nIt.next();
 					if(arrayNode.isObject()) {
@@ -61,9 +69,11 @@ public class StructureFinder {
 						//System.out.println("nur Text " + arrayNode.toString());
 						iE.put(pBuffer.toString(), arrayNode.asText());
 						complexElement.add(iE);
+						jEM.addArrayElement(arrayNode.asText());
 					}
-					
 				}
+				jemElement.add(jEM);
+				
 			}
 			pBuffer.setLength(l);
 
@@ -72,14 +82,23 @@ public class StructureFinder {
 	
 	public void printElements() {
 		Iterator<Hashtable<String,String>> it = complexElement.iterator();
-		while (it.hasNext()) {
+	/*	while (it.hasNext()) {
 			Hashtable<String,String> simpleLiterals = it.next();
 			Enumeration<String> sEnum = simpleLiterals.keys();
 			while (sEnum.hasMoreElements()){
 				String key = sEnum.nextElement();
 				System.out.println(key + " : " + simpleLiterals.get(key));
 			}
-		}
+		} */
+		
+		for (int i=0; i<jemElement.size(); i++) {
+			if(jemElement.get(i).isArray()) {
+				System.out.print(jemElement.get(i).getPath() + ":\t");
+				Iterator jit = jemElement.get(i).getArrayList().iterator();
+				while (jit.hasNext()) {
+					System.out.print(jit.next().toString() + "\t");
+				}
+			}System.out.println("");
+		}; 
 	}
-
 }
