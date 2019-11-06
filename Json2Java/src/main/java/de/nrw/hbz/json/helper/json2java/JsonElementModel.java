@@ -14,7 +14,7 @@ public class JsonElementModel {
 
 	private String path = null;
 	private Hashtable<String, String> elementList = null;
-	private ArrayList<String> valueList = new ArrayList<>();
+	private ArrayList<String> valueList = null;
 
 	public JsonElementModel(String path) {
 		this.path = path;
@@ -71,7 +71,7 @@ public class JsonElementModel {
 	 * @return
 	 */
 	public boolean isArray() {
-		if (valueList != null) {
+		if (this.valueList != null) {
 			return true;
 		}
 		return false;

@@ -23,7 +23,8 @@ public class StructureFinder {
 	ArrayList<Hashtable<String,String>> simpleElement = new ArrayList<>();
 	ArrayList<Hashtable<String,ArrayList<String>>> arrayElement = new ArrayList<>();
 	ArrayList<JsonElementModel> jemElement = new ArrayList<>();
-
+	JsonElementModel jEM = null;
+	
 	StringBuffer pathBuffer = new StringBuffer("");
 
 	public void mapStructure(JsonNode node) {
@@ -40,30 +41,47 @@ public class StructureFinder {
 			String key = it.next();
 			if (node.get(key).isValueNode()){
 				Hashtable<String, String> iE = new Hashtable<>();
-				iE.put(pBuffer + "." + key, node.get(key).asText());
+				//iE.put(pBuffer + "." + key, node.get(key).asText());
+				//iE.put(key, node.get(key).asText());
 				complexElement.add(iE);
-				JsonElementModel jEM = new JsonElementModel(pBuffer.toString());
-				jEM.setComplexElement(iE);
-				jemElement.add(jEM);
+				if(jEM != null && jEM.isObject()) {
+					Hashtable<String,String> ha = jEM.getComplexElementList();
+					ha.put(key, node.get(key).asText());
+					jEM.setComplexElement(ha);
+					} else {
+						iE.put(pBuffer + "." + key, node.get(key).asText());
+						iE.put(key, node.get(key).asText());
+						jEM = new JsonElementModel(pBuffer.toString());
+						jEM.setComplexElement(iE);
+						jemElement.add(jEM);
+					}
 			}
 			
 			if(node.get(key).isObject()){
 				//System.out.println(key + " : " + node.get(key).size() );
 				pBuffer.append("." + key);
 				JsonNode complexNode = node.get(key);
+				jEM = new JsonElementModel(pBuffer.toString());
+				jEM.setComplexElement(new Hashtable<String,String>());
+				Hashtable<String,String> ha = jEM.getComplexElementList();
 				mapStructure(complexNode, pBuffer);
+				jemElement.add(jEM);
 			}
 			
 			if(node.get(key).isArray()){
 				pBuffer.append("." + key);
 				JsonNode complexNode = node.get(key);
 				Iterator<JsonNode> nIt = complexNode.elements();
-				JsonElementModel jEM = new JsonElementModel(pBuffer.toString());
+				jEM = new JsonElementModel(pBuffer.toString());
 				while(nIt.hasNext()) {
 					JsonNode arrayNode = nIt.next();
 					if(arrayNode.isObject()) {
+						jEM = new JsonElementModel(pBuffer.toString());
+						jEM.setComplexElement(new Hashtable<String,String>());
 						//System.out.println(arrayNode.toString());					
 						mapStructure(arrayNode, pBuffer);
+						jemElement.add(jEM);
+
 					}else {
 						Hashtable<String, String> iE = new Hashtable<>();
 						//System.out.println("nur Text " + arrayNode.toString());
@@ -72,8 +90,9 @@ public class StructureFinder {
 						jEM.addArrayElement(arrayNode.asText());
 					}
 				}
-				jemElement.add(jEM);
-				
+				if(jEM.isArray()){
+					jemElement.add(jEM);				
+				}
 			}
 			pBuffer.setLength(l);
 
@@ -98,7 +117,16 @@ public class StructureFinder {
 				while (jit.hasNext()) {
 					System.out.print(jit.next().toString() + "\t");
 				}
-			}System.out.println("");
+			}else if (jemElement.get(i).isObject()) {
+				System.out.println(jemElement.get(i).getPath());
+				Enumeration jEnum = jemElement.get(i).getComplexElementList().keys();
+				while (jEnum.hasMoreElements()) {
+					String key = jEnum.nextElement().toString();
+					System.out.print( "\t" + "\t" + key + "\t");
+					System.out.print(jemElement.get(i).getComplexElementList().get(key) + "\n");
+				}
+				
+			} System.out.println("" + jemElement.size());
 		}; 
 	}
 }

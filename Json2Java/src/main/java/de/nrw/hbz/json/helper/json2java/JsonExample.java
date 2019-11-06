@@ -34,7 +34,7 @@ public class JsonExample {
 			e.printStackTrace();
 		}
 		
-		//node = JsonFileReader.getJsonNodeFromFile("src/main/resources/frl-example.json");
+		node = JsonFileReader.getJsonNodeFromFile("src/main/resources/frl-example.json");
 
 		
 		StructureFinder sf = new StructureFinder();
