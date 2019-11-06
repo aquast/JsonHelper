@@ -1,6 +1,9 @@
 {
 	"@context": "https://frl.publisso.de/context.json",
 	"@id": "frl:6408444",
+	"bibo:doi": [
+		"10.4126/38m-002413440"
+	],
 	"abstractText": [
 		"We report new localities for Anolis pseudokemptoni Köhler, Ponce, Sunyer & Batista, 2007, along the Serranía de Tabasará in the Comarca Ngöbe-Buglé of western Panama. These records extend the known geographic distribution of this lizard about 6 km eastward and 9 km northwestward, as well as the known vertical distribution approximately 470 m lower and 380 m higher. We also provide photos of specimens from different localities and comment on their morphology. No population of this Panamanian microendemic species, which is classifiable as Critically Endangered, lives inside a protected area. "
 	],

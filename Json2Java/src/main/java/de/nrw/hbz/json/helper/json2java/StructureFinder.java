@@ -11,6 +11,7 @@ import java.util.Map.Entry;
 
 import com.fasterxml.jackson.databind.JsonNode;
 
+
 /**
  * @author aquast
  *
@@ -24,12 +25,15 @@ public class StructureFinder {
 	ArrayList<Hashtable<String,ArrayList<String>>> arrayElement = new ArrayList<>();
 	ArrayList<JsonElementModel> jemElement = new ArrayList<>();
 	JsonElementModel jEM = null;
+	Hashtable<String, ArrayList<Integer>> index = new Hashtable<>();
 	
 	StringBuffer pathBuffer = new StringBuffer("");
 
 	public void mapStructure(JsonNode node) {
 		mapStructure(node, new StringBuffer("root"));
-		printElements();
+		createIndex();
+		printElements(jemElement);
+		printElements(getElement("root"));
 	}
 	
 	public void mapStructure(JsonNode node, StringBuffer pBuffer) {
@@ -43,18 +47,18 @@ public class StructureFinder {
 				Hashtable<String, String> iE = new Hashtable<>();
 				//iE.put(pBuffer + "." + key, node.get(key).asText());
 				//iE.put(key, node.get(key).asText());
-				complexElement.add(iE);
+				//complexElement.add(iE);
+				
 				if(jEM != null && jEM.isObject()) {
 					Hashtable<String,String> ha = jEM.getComplexElementList();
 					ha.put(key, node.get(key).asText());
 					jEM.setComplexElement(ha);
-					} else {
-						iE.put(pBuffer + "." + key, node.get(key).asText());
-						iE.put(key, node.get(key).asText());
-						jEM = new JsonElementModel(pBuffer.toString());
-						jEM.setComplexElement(iE);
-						jemElement.add(jEM);
-					}
+				} else {
+					iE.put(key, node.get(key).asText());
+					jEM = new JsonElementModel(pBuffer.toString());
+					jEM.setComplexElement(iE);
+					jemElement.add(jEM);
+				}
 			}
 			
 			if(node.get(key).isObject()){
@@ -99,34 +103,68 @@ public class StructureFinder {
 		}
 	}
 	
-	public void printElements() {
-		Iterator<Hashtable<String,String>> it = complexElement.iterator();
-	/*	while (it.hasNext()) {
-			Hashtable<String,String> simpleLiterals = it.next();
-			Enumeration<String> sEnum = simpleLiterals.keys();
-			while (sEnum.hasMoreElements()){
-				String key = sEnum.nextElement();
-				System.out.println(key + " : " + simpleLiterals.get(key));
-			}
-		} */
-		
-		for (int i=0; i<jemElement.size(); i++) {
-			if(jemElement.get(i).isArray()) {
-				System.out.print(jemElement.get(i).getPath() + ":\t");
-				Iterator jit = jemElement.get(i).getArrayList().iterator();
-				while (jit.hasNext()) {
-					System.out.print(jit.next().toString() + "\t");
-				}
-			}else if (jemElement.get(i).isObject()) {
-				System.out.println(jemElement.get(i).getPath());
-				Enumeration jEnum = jemElement.get(i).getComplexElementList().keys();
-				while (jEnum.hasMoreElements()) {
-					String key = jEnum.nextElement().toString();
-					System.out.print( "\t" + "\t" + key + "\t");
-					System.out.print(jemElement.get(i).getComplexElementList().get(key) + "\n");
-				}
-				
-			} System.out.println("" + jemElement.size());
-		}; 
+	public void printElements(ArrayList<JsonElementModel> jemElement) {
+
+		if(jemElement != null && !jemElement.isEmpty()) {
+			for (int i=0; i<jemElement.size(); i++) {
+				if(jemElement.get(i).isArray()) {
+					System.out.print(jemElement.get(i).getPath() + ":\t");
+					Iterator jit = jemElement.get(i).getArrayList().iterator();
+					while (jit.hasNext()) {
+						System.out.print(jit.next().toString() + "\t");
+					}
+					System.out.println("\n");
+				}else if (jemElement.get(i).isObject()) {
+					System.out.println(jemElement.get(i).getPath());
+					Enumeration jEnum = jemElement.get(i).getComplexElementList().keys();
+					while (jEnum.hasMoreElements()) {
+						String key = jEnum.nextElement().toString();
+						System.out.print( "\t" + "\t" + key + "\t");
+						System.out.print(jemElement.get(i).getComplexElementList().get(key) + "\n");
+					}
+					
+				}  
+				//System.out.println("" + jemElement.size());
+			} 
+			
+		}
 	}
+	
+
+	public void createIndex() {
+
+		Iterator<JsonElementModel> jemIt = jemElement.iterator();
+		ArrayList<Integer> position = new ArrayList<>();
+		int i=0;
+		while (jemIt.hasNext()) {
+			JsonElementModel jEM = jemIt.next();
+			//System.out.println(jEM.getPath());
+			if (index.containsKey(jEM.getPath())) {
+				position = index.get(jEM.getPath());
+			}else {
+				position = new ArrayList<>();
+			}
+			
+			int pos = i;
+			position.add(Integer.valueOf(pos));
+			index.put(jEM.getPath(), position);
+			i++;
+		}
+	}
+	
+	public ArrayList<JsonElementModel> getElement(String path) {
+
+		ArrayList<JsonElementModel> result = new ArrayList<JsonElementModel>();
+		if(index.containsKey(path)) {
+			ArrayList<Integer> fieldIndex = index.get(path);
+			//System.out.println(fieldIndex.size());
+			for (int i = 0; i < fieldIndex.size(); i++) {
+				JsonElementModel sJem = jemElement.get(fieldIndex.get(i));
+				result.add(sJem);
+			}
+			return result;			
+		}
+		return null;
+	}
+
 }
