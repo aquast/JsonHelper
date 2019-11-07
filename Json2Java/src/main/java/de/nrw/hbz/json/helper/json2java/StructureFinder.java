@@ -32,12 +32,10 @@ public class StructureFinder {
 	public void mapStructure(JsonNode node) {
 		mapStructure(node, new StringBuffer("root"));
 		createIndex();
-		//printElements(jemElement);
-		//printElements(getElement("root"));
+		printElements(jemElement);
+		printElements(getElement("root"));
+		boolean testeMich = true;
 		
-		JsonLDMapper mapper = new JsonLDMapper();
-		ArrayList<JsonElementModel> jemList = mapper.getElement("root");
-		printElements(jemList);
 	}
 	
 	public void mapStructure(JsonNode node, StringBuffer pBuffer) {

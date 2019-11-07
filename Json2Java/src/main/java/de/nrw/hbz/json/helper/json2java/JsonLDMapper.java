@@ -10,36 +10,30 @@ import java.util.Iterator;
 
 import com.fasterxml.jackson.databind.JsonNode;
 
-
-
 /**
  * @author aquast
  *
  */
 public class JsonLDMapper {
 
-	Hashtable<String, String> simpleElements = new Hashtable<>();
-	ArrayList<Hashtable<String, String>> complexElement = new ArrayList<>();
-	ArrayList<Hashtable<String, String>> simpleElement = new ArrayList<>();
-	ArrayList<Hashtable<String, ArrayList<String>>> arrayElement =
+	private ArrayList<Hashtable<String, String>> complexElement =
 			new ArrayList<>();
-	ArrayList<JsonElementModel> jemElement = new ArrayList<>();
-	JsonElementModel jEM = null;
-	Hashtable<String, ArrayList<Integer>> index = new Hashtable<>();
+	private ArrayList<JsonElementModel> jemElement = new ArrayList<>();
+	private JsonElementModel jEM = null;
+	private Hashtable<String, ArrayList<Integer>> index = new Hashtable<>();
 
 	StringBuffer pathBuffer = new StringBuffer("");
 
 	/**
+	 * Constructor that integrates the indexing
+	 * 
 	 * @param node
-	 * @return
 	 */
-	public ArrayList<JsonElementModel> mapToJsonElementModel(JsonNode node) {
-		ArrayList<JsonElementModel> jList =
-				mapToJsonElementModel(node, new StringBuffer("root"));
+	public JsonLDMapper(JsonNode node) {
+		jemElement = mapToJsonElementModel(node, new StringBuffer("root"));
 		createIndex();
-		return jList;
 	}
-
+	
 	/**
 	 * @param node
 	 * @param pBuffer
@@ -99,7 +93,6 @@ public class JsonLDMapper {
 					} else {
 						Hashtable<String, String> iE = new Hashtable<>();
 						iE.put(pBuffer.toString(), arrayNode.asText());
-						complexElement.add(iE);
 						jEM.addArrayElement(arrayNode.asText());
 					}
 				}
@@ -122,14 +115,13 @@ public class JsonLDMapper {
 		Iterator<Hashtable<String, String>> it = complexElement.iterator();
 		for (int i = 0; i < jemElement.size(); i++) {
 			if (jemElement.get(i).isArray()) {
-				System.out.print(jemElement.get(i).getPath() + ":\t");
 				Iterator jit = jemElement.get(i).getArrayList().iterator();
 				while (jit.hasNext()) {
 					System.out.print(jit.next().toString() + "\t");
 				}
 			} else if (jemElement.get(i).isObject()) {
 				System.out.println(jemElement.get(i).getPath());
-				Enumeration jEnum = jemElement.get(i).getComplexElementList().keys();
+				Enumeration<String> jEnum = jemElement.get(i).getComplexElementList().keys();
 				while (jEnum.hasMoreElements()) {
 					String key = jEnum.nextElement().toString();
 					System.out.print("\t" + "\t" + key + "\t");
@@ -151,27 +143,22 @@ public class JsonLDMapper {
 			JsonElementModel jEM = jemIt.next();
 			if (index.containsKey(jEM.getPath())) {
 				position = index.get(jEM.getPath());
-				// System.out.println(jEM.getPath());
 			} else {
 				position = new ArrayList<>();
-				System.out.println("da");
 			}
 
 			int pos = i;
 			position.add(Integer.valueOf(pos));
 			index.put(jEM.getPath(), position);
-			System.out.println(position.size());
-			System.out.println(index.get(jEM.getPath()));
 			i++;
 		}
 	}
 
 	public ArrayList<JsonElementModel> getElement(String path) {
 
-		ArrayList<JsonElementModel> result = new ArrayList<JsonElementModel>();
+		ArrayList<JsonElementModel> result = new ArrayList<>();
 		if(index.containsKey(path)) {
 			ArrayList<Integer> fieldIndex = index.get(path);
-			//System.out.println(fieldIndex.size());
 			for (int i = 0; i < fieldIndex.size(); i++) {
 				JsonElementModel sJem = jemElement.get(fieldIndex.get(i));
 				result.add(sJem);

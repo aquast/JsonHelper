@@ -4,6 +4,7 @@
 package de.nrw.hbz.json.helper.json2java;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -38,7 +39,15 @@ public class JsonExample {
 
 		
 		StructureFinder sf = new StructureFinder();
-		sf.mapStructure(node);
+		//sf.mapStructure(node);
+		
+		JsonLDMapper jMapper = new JsonLDMapper(node);
+		ArrayList<JsonElementModel> jemList = jMapper.getElement("root.title");
+		
+		System.out.println(jemList.get(0).getArrayList().get(0));
+		
+		//sf.printElements(jMapper.getElement("root.title"));
+
 	}
 
 }
