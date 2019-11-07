@@ -154,14 +154,23 @@ public class JsonLDMapper {
 		}
 	}
 
-	public ArrayList<JsonElementModel> getElement(String path) {
+	public ArrayList<Hashtable<String,String>> getElement(String path) {
 
-		ArrayList<JsonElementModel> result = new ArrayList<>();
+		ArrayList<Hashtable<String,String>> result = new ArrayList<>();
 		if(index.containsKey(path)) {
 			ArrayList<Integer> fieldIndex = index.get(path);
 			for (int i = 0; i < fieldIndex.size(); i++) {
 				JsonElementModel sJem = jemElement.get(fieldIndex.get(i));
-				result.add(sJem);
+				if(sJem.isObject()) {
+					Hashtable<String,String> element = sJem.getComplexElementList();
+					result.add(element);
+				}else{
+					Hashtable<String,String> element = new Hashtable<>();
+					for (int j = 0; j < sJem.getArrayList().size();j++) {
+						element.put("title", sJem.getArrayList().get(j));
+						result.add(element);
+					}
+				}
 			}
 			return result;			
 		}
