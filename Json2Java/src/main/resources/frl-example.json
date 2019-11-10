@@ -244,7 +244,8 @@
 		}
 	],
 	"title": [
-		"Distribution extension for Anolis pseudokemptoni Köhler, Ponce, Sunyer & Batista, 2007 (Reptilia: Squamata: Dactyloidae), a microendemic species in the Serranía de Tabasará of the Comarca Ngöbe-Buglé of western Panama"
+		"Distribution extension for Anolis pseudokemptoni Köhler, Ponce, Sunyer & Batista, 2007 (Reptilia: Squamata: Dactyloidae), a microendemic species in the Serranía de Tabasará of the Comarca Ngöbe-Buglé of western Panama",
+		"Dies wird ein Untertitel"
 	],
 	"transformer": [
 		"mets",
