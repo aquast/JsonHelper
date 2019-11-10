@@ -40,14 +40,18 @@ public class JsonExample {
 
 		
 		StructureFinder sf = new StructureFinder();
-		//sf.mapStructure(node);
+		sf.mapStructure(node);
 		
 		JsonLDMapper jMapper = new JsonLDMapper(node);
-		System.out.println(jMapper.getElement("root.creator").get(0).get("prefLabel"));
+		OpenAireRecord oar = new OpenAireRecord(jMapper);
+		System.out.println(oar.toString());
+		//System.out.println(jMapper.getElement("root.creator").get(0).get("prefLabel"));
 		
-		System.out.println(jMapper.getElement("root.title").get(0).get("title"));
+		//System.out.println(jMapper.getElement("root.title").get(0).get("title"));
 		
-		//sf.printElements(jMapper.getElement("root.title"));
+		//System.out.println(new MapperTest().getData(node));
+		
+		//sf.printElements(jMapper.getElementModel("root.creator"));
 
 	}
 
