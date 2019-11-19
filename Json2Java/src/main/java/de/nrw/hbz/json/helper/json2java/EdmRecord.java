@@ -41,12 +41,12 @@ import org.w3c.dom.Element;
  * @author Andres Quast
  *
  */
-public class OpenAireRecord implements java.io.Serializable {
+public class EdmRecord implements java.io.Serializable {
 
 	Document doc = null;
 
 	
-	public OpenAireRecord(JsonLDMapper jMapper) {
+	public EdmRecord(JsonLDMapper jMapper) {
 		createRecord(jMapper);
 	}
 	
@@ -87,69 +87,21 @@ public class OpenAireRecord implements java.io.Serializable {
 		ArrayList<Hashtable<String, String>> jemList =
 				jMapper.getElement("root.title");
 		for (int i=0; i < jemList.size(); i++) {
-			Element title = doc.createElement("datacite:title");
+			Element title = doc.createElement("dc:title");
 			title.appendChild(doc.createTextNode(jemList.get(i).get("root.title")));
-			if(i>0) {
-				title.setAttribute("titleType", "Subtitle");
-			}
 			resource.appendChild(title);
 		}
 
 		
 		// generate creators
-		Element creators = doc.createElement("datacite:creators");
 		jemList =
 				jMapper.getElement("root.creator");
 		for (int i=0; i < jemList.size(); i++) {
-			Element sE = doc.createElement("datacite:creator");
-			creators.appendChild(sE);
-			Element cn= doc.createElement("datacite:creatorName");
-			cn.appendChild(doc.createTextNode(jemList.get(i).get("prefLabel")));
-			sE.appendChild(cn);
-			
-			// prevent record from displayinglocal ids
-			if (!jemList.get(i).get("@id").startsWith("https://frl")
-					&& !jemList.get(i).get("@id").startsWith("https://api.ellinet")) {
-				Element ci = doc.createElement("datacite:creatorIdentifier");
-				ci.appendChild(doc.createTextNode(jemList.get(i).get("@id")));
-				sE.appendChild(ci);
-			}
-			
-			creators.appendChild(sE);
-			resource.appendChild(creators);
-
+			Element creator = doc.createElement("datacite:creator");
+			creator.appendChild(doc.createTextNode(jemList.get(i).get("prefLabel")));
+			resource.appendChild(creator);
 		}
 		
-		// generate fundingreference
-		Element funding = doc.createElement("fundingReferences");
-		jemList =
-				jMapper.getElement("root.joinedFunding.fundingJoined");
-		for (int i=0; i < jemList.size(); i++) {
-			Element sE = doc.createElement("fundingReference");
-			funding.appendChild(sE);
-			Element cn= doc.createElement("funderName");
-			cn.appendChild(doc.createTextNode(jemList.get(i).get("prefLabel")));
-			sE.appendChild(cn);
-			
-			if(!jemList.get(i).get("@id").startsWith("https://frl")) {
-				Element ci= doc.createElement("funderIdentifier");
-				ci.appendChild(doc.createTextNode(jemList.get(i).get("@id")));
-				sE.appendChild(ci);
-			}
-			
-			Element cp= doc.createElement("fundingStream");
-			cp.appendChild(doc.createTextNode(jemList.get(i).get("fundingProgramJoined")));
-			sE.appendChild(cp);
-			
-			Element cpi= doc.createElement("awardNumber");
-			cpi.appendChild(doc.createTextNode(jemList.get(i).get("projectIdJoined")));
-			sE.appendChild(cpi);
-			
-			funding.appendChild(sE);
-			resource.appendChild(funding);
-
-		}
-
 		// generate alternateIdentifiers
 		Element alternate = doc.createElement("alternateIdentifiers");
 		jemList =
@@ -173,15 +125,15 @@ public class OpenAireRecord implements java.io.Serializable {
 
 		// generate dateIssued
 		jemList = jMapper.getElement("root.publicationYear");
-		Element issued = doc.createElement("datacite:date");
+		Element issued = doc.createElement("dc:date");
 		issued.appendChild(doc.createTextNode(jemList.get(0).get("root.publicationYear")));
-		issued.setAttribute("dateType", "Issued");	
+		issued.setAttribute("dateType", "issued");	
 		resource.appendChild(issued);
 
 		// generate description
 		jemList = jMapper.getElement("root.abstractText");
 		for (int i=0; i < jemList.size(); i++) {
-			Element description = doc.createElement("datacite:description");
+			Element description = doc.createElement("dc:description");
 			description.appendChild(doc.createTextNode(jemList.get(i).get("root.abstractText")));
 			resource.appendChild(description);
 		}
@@ -190,7 +142,7 @@ public class OpenAireRecord implements java.io.Serializable {
 		jemList = jMapper.getElement("root");
 		for (int i = 0; i < jemList.size(); i++) {
 			if (jemList.get(i).containsKey("@id")) {
-				Element identifier = doc.createElement("datacite:identifier");
+				Element identifier = doc.createElement("dc:identifier");
 				identifier.appendChild(doc.createTextNode("https://frl.publisso.de/" + jemList.get(i).get("@id")));
 				identifier.setAttribute("identifierType", "PURL");	
 				resource.appendChild(identifier);				
@@ -218,7 +170,7 @@ public class OpenAireRecord implements java.io.Serializable {
 		jemList =
 				jMapper.getElement("root.ddc");
 		for (int i=0; i < jemList.size(); i++) {
-			Element sE = doc.createElement("datacite:subject");
+			Element sE = doc.createElement("dc:subject");
 			sE.appendChild(doc.createTextNode(jemList.get(i).get("prefLabel")));
 			sE.setAttribute("subjectScheme", "DDC");
 			sE.setAttribute("schemeURI", "http://dewey.info");
