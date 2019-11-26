@@ -107,7 +107,7 @@ public class OpenAireRecord implements java.io.Serializable {
 			cn.appendChild(doc.createTextNode(jemList.get(i).get("prefLabel")));
 			sE.appendChild(cn);
 			
-			// prevent record from displayinglocal ids
+			// prevent record from displaying local ids
 			if (!jemList.get(i).get("@id").startsWith("https://frl")
 					&& !jemList.get(i).get("@id").startsWith("https://api.ellinet")) {
 				Element ci = doc.createElement("datacite:creatorIdentifier");
