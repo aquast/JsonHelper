@@ -31,6 +31,10 @@
 		{
 			"@id": "http://lobid.org/resources/HT014865238#!",
 			"prefLabel": "Check list"
+		}, 
+		{
+			"@id": "http://lobid.org/resources/HT014865238#!",
+			"prefLabel": "My Check list"
 		}
 	],
 	"contentType": "article",
