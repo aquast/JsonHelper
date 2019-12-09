@@ -1,0 +1,347 @@
+{
+	"@context": "https://frl.publisso.de/context.json",
+	"@id": "frl:6406546",
+	"abstractText": [
+		"Stimulation of renal collecting duct principal cells with antidiuretic hormone (arginine-vasopressin, AVP) results in inhibition of the small GTPase RhoA and the enrichment of the water channel aquaporin-2 (AQP2) in the plasma membrane. The membrane insertion facilitates water reabsorption from primary urine and fine-tuning of body water homeostasis. Rho guanine nucleotide exchange factors (GEFs) interact with RhoA, catalyze the exchange of GDP for GTP and thereby activate the GTPase. However, GEFs involved in the control of AQP2 in renal principal cells are unknown. The A-kinase anchoring protein, AKAP-Lbc, possesses GEF activity, specifically activates RhoA, and is expressed in primary renal inner medullary collecting duct principal (IMCD) cells. Through screening of 18,431 small molecules and synthesis of a focused library around one of the hits, we identified an inhibitor of the interaction of AKAP-Lbc and RhoA. This molecule, Scaff10-8, bound to RhoA, inhibited the AKAP-Lbc-mediated RhoA activation but did not interfere with RhoA activation through other GEFs or activities of other members of the Rho family of small GTPases, Rac1 and Cdc42. Scaff10-8 promoted the redistribution of AQP2 from intracellular vesicles to the periphery of IMCD cells. Thus, our data demonstrate an involvement of AKAP-Lbc-mediated RhoA activation in the control of AQP2 trafficking.\r\n\r\n"
+	],
+	"accessScheme": "public",
+	"additionalMaterial": [
+		{
+			"@id": "http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0191423#sec025",
+			"prefLabel": "http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0191423#sec025"
+		}
+	],
+	"bibliographicCitation": [
+		"13(1):e0191423 "
+	],
+	"catalogId": "ED6406546",
+	"collectionOne": [
+		{
+			"@id": "http://d-nb.info/gnd/10196210-1",
+			"abbreviatedNameForTheCorporateBody": "FMP",
+			"gndIdentifier": "10196210-1",
+			"oldAuthorityNumber": "(DE-588b)10196210-1",
+			"prefLabel": "Leibniz-Institut für Molekulare Pharmakologie",
+			"preferredNameForTheCorporateBody": "Leibniz-Institut für Molekulare Pharmakologie",
+			"variantNameForTheCorporateBody": "Wissenschaftsgemeinschaft Gottfried Wilhelm Leibniz. Leibniz-Institut für Molekulare Pharmakologie"
+		}
+	],
+	"containedIn": [
+		{
+			"@id": "http://lobid.org/resources/HT014978401#!",
+			"prefLabel": "PLOS ONE"
+		}
+	],
+	"contentType": "article",
+	"contributorOrder": [
+		"https://frl.publisso.de/adhoc/creator/U2NocmFkZSwgS2F0aGFyaW5h|https://frl.publisso.de/adhoc/creator/VHLDtmdlciwgSmVzc2ljYQ==|https://frl.publisso.de/adhoc/creator/RWxkYWhzaGFuLCBBZGVlYg==|https://frl.publisso.de/adhoc/creator/WsO8aGxrZSwgS2Vyc3Rpbg==|https://frl.publisso.de/adhoc/creator/QWJkdWwgQXplZXosIEthbWFsIFIu|https://frl.publisso.de/adhoc/creator/RWxraW5zLCBKb25hdGhhbiBNLg==|https://frl.publisso.de/adhoc/creator/TmV1ZW5zY2h3YW5kZXIsIE1hcnRpbg==|https://frl.publisso.de/adhoc/creator/T2RlciwgQW5kcmVhcw==|https://frl.publisso.de/adhoc/creator/RWxrZXdlZGksIE1vaGFtZWQ=|https://frl.publisso.de/adhoc/creator/SmFrc2NoLCBTYXJhaA==|https://frl.publisso.de/adhoc/creator/QW5kcmFlLCBLYXJzdGVu|https://frl.publisso.de/adhoc/creator/TGksIEppbmxpYW5n|https://frl.publisso.de/adhoc/creator/RmVybmFuZGVzLCBKb2Fv|https://frl.publisso.de/adhoc/creator/TcO8bGxlciwgUGF1bCBNYXJrdXM=|https://frl.publisso.de/adhoc/creator/R3J1bndhbGQsIFN0ZXBoYW4=|https://frl.publisso.de/adhoc/creator/TWFyaW5vLCBTdGVwaGVuIEYu|https://frl.publisso.de/adhoc/creator/VnVracSHZXZpxIcsIFRhbmph|https://frl.publisso.de/adhoc/creator/RWljaGhvcnN0LCBKZW5ueQ==|https://frl.publisso.de/adhoc/creator/V2llc25lciwgQnVya2hhcmQ=|https://frl.publisso.de/adhoc/creator/V2ViZXIsIE1hcmN1cw==|https://frl.publisso.de/adhoc/creator/S2FwaWxvZmYsIE1pY2hhZWw=|https://frl.publisso.de/adhoc/creator/Um9ja3MsIE9saXZlcg==|https://frl.publisso.de/adhoc/creator/RGF1bWtlLCBPbGl2ZXI=|https://frl.publisso.de/adhoc/creator/V2llbGFuZCwgVGhvbWFz|https://frl.publisso.de/adhoc/creator/S25hcHAsIFN0ZWZhbg==|https://frl.publisso.de/adhoc/creator/dm9uIEtyaWVzLCBKZW5zIFBldGVy|http://orcid.org/0000-0003-4004-5003"
+	],
+	"creator": [
+		{
+			"@id": "https://frl.publisso.de/adhoc/creator/U2NocmFkZSwgS2F0aGFyaW5h",
+			"prefLabel": "Schrade, Katharina"
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/creator/VHLDtmdlciwgSmVzc2ljYQ==",
+			"prefLabel": "Tröger, Jessica"
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/creator/RWxkYWhzaGFuLCBBZGVlYg==",
+			"prefLabel": "Eldahshan, Adeeb"
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/creator/WsO8aGxrZSwgS2Vyc3Rpbg==",
+			"prefLabel": "Zühlke, Kerstin"
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/creator/QWJkdWwgQXplZXosIEthbWFsIFIu",
+			"prefLabel": "Abdul Azeez, Kamal R."
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/creator/RWxraW5zLCBKb25hdGhhbiBNLg==",
+			"prefLabel": "Elkins, Jonathan M."
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/creator/TmV1ZW5zY2h3YW5kZXIsIE1hcnRpbg==",
+			"prefLabel": "Neuenschwander, Martin"
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/creator/T2RlciwgQW5kcmVhcw==",
+			"prefLabel": "Oder, Andreas"
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/creator/RWxrZXdlZGksIE1vaGFtZWQ=",
+			"prefLabel": "Elkewedi, Mohamed"
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/creator/SmFrc2NoLCBTYXJhaA==",
+			"prefLabel": "Jaksch, Sarah"
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/creator/QW5kcmFlLCBLYXJzdGVu",
+			"prefLabel": "Andrae, Karsten"
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/creator/TGksIEppbmxpYW5n",
+			"prefLabel": "Li, Jinliang"
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/creator/RmVybmFuZGVzLCBKb2Fv",
+			"prefLabel": "Fernandes, Joao"
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/creator/TcO8bGxlciwgUGF1bCBNYXJrdXM=",
+			"prefLabel": "Müller, Paul Markus"
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/creator/R3J1bndhbGQsIFN0ZXBoYW4=",
+			"prefLabel": "Grunwald, Stephan"
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/creator/TWFyaW5vLCBTdGVwaGVuIEYu",
+			"prefLabel": "Marino, Stephen F."
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/creator/VnVracSHZXZpxIcsIFRhbmph",
+			"prefLabel": "Vukićević, Tanja"
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/creator/RWljaGhvcnN0LCBKZW5ueQ==",
+			"prefLabel": "Eichhorst, Jenny"
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/creator/V2llc25lciwgQnVya2hhcmQ=",
+			"prefLabel": "Wiesner, Burkhard"
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/creator/V2ViZXIsIE1hcmN1cw==",
+			"prefLabel": "Weber, Marcus"
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/creator/S2FwaWxvZmYsIE1pY2hhZWw=",
+			"prefLabel": "Kapiloff, Michael"
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/creator/Um9ja3MsIE9saXZlcg==",
+			"prefLabel": "Rocks, Oliver"
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/creator/RGF1bWtlLCBPbGl2ZXI=",
+			"prefLabel": "Daumke, Oliver"
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/creator/V2llbGFuZCwgVGhvbWFz",
+			"prefLabel": "Wieland, Thomas"
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/creator/S25hcHAsIFN0ZWZhbg==",
+			"prefLabel": "Knapp, Stefan"
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/creator/dm9uIEtyaWVzLCBKZW5zIFBldGVy",
+			"prefLabel": "von Kries, Jens Peter"
+		},
+		{
+			"@id": "http://orcid.org/0000-0003-4004-5003",
+			"prefLabel": "Klussmann, Enno"
+		}
+	],
+	"ddc": [
+		{
+			"@id": "http://dewey.info/class/570/",
+			"prefLabel": "Biowissenschaften; Biologie"
+		}
+	],
+	"fundingId": [
+		{
+			"@id": "https://frl.publisso.de/adhoc/uri/RWxzZSBLcsO2bmVyLUZyZXNlbml1cy1TdGlmdHVuZyA=",
+			"prefLabel": "Else Kröner-Fresenius-Stiftung "
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/uri/R2VybWFuLUlzcmFlbGkgRm91bmRhdGlvbiA=",
+			"prefLabel": "German-Israeli Foundation "
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/uri/R2VybWFuIENlbnRyZSBmb3IgQ2FyZGlvLXZhc2N1bGFyIFJlc2VhcmNoIA==",
+			"prefLabel": "German Centre for Cardio-vascular Research "
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/uri/RGV1dHNjaGUgRm9yc2NodW5nc2dlbWVpbnNjaGFmdCAoREZHKQ==",
+			"prefLabel": "Deutsche Forschungsgemeinschaft (DFG)"
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/uri/QnVuZGVzbWluaXN0ZXJpdW0gZsO8ciBCaWxkdW5nIHVuZCBGb3JzY2h1bmcgKEJNQkYp",
+			"prefLabel": "Bundesministerium für Bildung und Forschung (BMBF)"
+		}
+	],
+	"fundingProgram": [
+		"-",
+		"-",
+		"-",
+		"-",
+		"-"
+	],
+	"hasPart": [
+		{
+			"prefLabel": "An AKAP-Lbc-RhoA interaction inhibitor promotes the translocation of aquaporin-2 to the plasma membrane of renal collecting duct principal cells",
+			"@id": "frl:6406550"
+		}
+	],
+	"institution": [
+		{
+			"@id": "http://d-nb.info/gnd/1150314389",
+			"abbreviatedNameForTheCorporateBody": "FMP",
+			"dateOfEstablishment": "2017",
+			"gndIdentifier": "1150314389",
+			"prefLabel": "Leibniz-Forschungsinstitut für Molekulare Pharmakologie",
+			"preferredNameForTheCorporateBody": "Leibniz-Forschungsinstitut für Molekulare Pharmakologie",
+			"variantNameForTheCorporateBody": "Wissenschaftsgemeinschaft Gottfried Wilhelm Leibniz. Leibniz-Forschungsinstitut für Molekulare Pharmakologie"
+		}
+	],
+	"isDescribedBy": {
+		"@id": "frl:6406546.rdf",
+		"created": "2018-01-30T10:18:15.317+0000",
+		"createdBy": "241",
+		"describes": "frl:6406546",
+		"lastModifiedBy": "218",
+		"modified": "2018-07-31T09:51:31.652+0000",
+		"objectTimestamp": "2018-07-31T09:51:31.000+0000"
+	},
+	"isMemberOf": [
+		{
+			"prefLabel": "info:fedora/oai:article",
+			"@id": "info:fedora/oai:article"
+		},
+		{
+			"prefLabel": "info:fedora/oai:open_access",
+			"@id": "info:fedora/oai:open_access"
+		}
+	],
+	"isPrimaryTopicOf": [
+		{
+			"@id": "https://repository.publisso.de/resource/frl:6406546/edit",
+			"prefLabel": "https://repository.publisso.de/resource/frl:6406546/edit",
+			"primaryTopic": "frl:6406546"
+		}
+	],
+	"itemID": [
+		{
+			"prefLabel": "oai:frl.publisso.de:frl:6406546",
+			"@id": "oai:frl.publisso.de:frl:6406546"
+		}
+	],
+	"joinedFunding": [
+		{
+			"fundingJoined": {
+				"@id": "https://frl.publisso.de/adhoc/uri/RWxzZSBLcsO2bmVyLUZyZXNlbml1cy1TdGlmdHVuZyA=",
+				"prefLabel": "Else Kröner-Fresenius-Stiftung "
+			},
+			"fundingProgramJoined": "-",
+			"projectIdJoined": "2013_A145"
+		},
+		{
+			"fundingJoined": {
+				"@id": "https://frl.publisso.de/adhoc/uri/R2VybWFuLUlzcmFlbGkgRm91bmRhdGlvbiA=",
+				"prefLabel": "German-Israeli Foundation "
+			},
+			"fundingProgramJoined": "-",
+			"projectIdJoined": "G.I.F. I-1210-286.13/2012"
+		},
+		{
+			"fundingJoined": {
+				"@id": "https://frl.publisso.de/adhoc/uri/R2VybWFuIENlbnRyZSBmb3IgQ2FyZGlvLXZhc2N1bGFyIFJlc2VhcmNoIA==",
+				"prefLabel": "German Centre for Cardio-vascular Research "
+			},
+			"fundingProgramJoined": "-",
+			"projectIdJoined": "DZHK 81X210012; B18-005 SE"
+		},
+		{
+			"fundingJoined": {
+				"@id": "https://frl.publisso.de/adhoc/uri/RGV1dHNjaGUgRm9yc2NodW5nc2dlbWVpbnNjaGFmdCAoREZHKQ==",
+				"prefLabel": "Deutsche Forschungsgemeinschaft (DFG)"
+			},
+			"fundingProgramJoined": "-",
+			"projectIdJoined": "KL1415/7-1"
+		},
+		{
+			"fundingJoined": {
+				"@id": "https://frl.publisso.de/adhoc/uri/QnVuZGVzbWluaXN0ZXJpdW0gZsO8ciBCaWxkdW5nIHVuZCBGb3JzY2h1bmcgKEJNQkYp",
+				"prefLabel": "Bundesministerium für Bildung und Forschung (BMBF)"
+			},
+			"fundingProgramJoined": "-",
+			"projectIdJoined": "16GW0179K"
+		}
+	],
+	"language": [
+		{
+			"@id": "http://id.loc.gov/vocabulary/iso639-2/eng",
+			"prefLabel": "Englisch"
+		}
+	],
+	"license": [
+		{
+			"@id": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"prefLabel": "CC0 1.0"
+		}
+	],
+	"medium": [
+		{
+			"@id": "http://purl.org/lobid/lv#fulltextOnline",
+			"prefLabel": "Online-Volltext"
+		}
+	],
+	"primaryTopic": "frl:6406546",
+	"professionalGroup": [
+		{
+			"@id": "http://skos.um.es/unescothes/COL270",
+			"prefLabel": "Biologie"
+		}
+	],
+	"projectId": [
+		"2013_A145",
+		"G.I.F. I-1210-286.13/2012",
+		"DZHK 81X210012; B18-005 SE",
+		"KL1415/7-1",
+		"16GW0179K"
+	],
+	"publicationStatus": [
+		{
+			"@id": "http://hbz-nrw.de/regal#original",
+			"prefLabel": "Veröffentlichungsversion"
+		}
+	],
+	"publicationYear": [
+		"2018-01-26"
+	],
+	"publishScheme": "public",
+	"publisherVersion": [
+		{
+			"@id": "https://doi.org/10.1371/journal.pone.0191423",
+			"prefLabel": "https://doi.org/10.1371/journal.pone.0191423"
+		}
+	],
+	"rdftype": [
+		{
+			"prefLabel": "Artikel",
+			"@id": "http://purl.org/ontology/bibo/Article"
+		}
+	],
+	"reviewStatus": [
+		{
+			"@id": "http://hbz-nrw.de/regal#peerReviewed",
+			"prefLabel": "begutachtet (Peer-reviewed)"
+		}
+	],
+	"title": [
+		"An AKAP-Lbc-RhoA interaction inhibitor promotes the translocation of aquaporin-2 to the plasma membrane of renal collecting duct principal cells"
+	],
+	"transformer": [
+		"mets",
+		"oaidc",
+		"rdf",
+		"wgl"
+	],
+	"yearOfCopyright": [
+		"2018"
+	]
+}

@@ -205,7 +205,6 @@ public class OpenAireRecord implements java.io.Serializable {
 			sb.append(jemList.get(i).get("prefLabel"));
 			if (i < jMapper.getElement("root.bibliographicCitation").size()){
 				sb.append(", ");
-				System.out.println("huhu");
 				sb.append(jMapper.getElement("root.bibliographicCitation").get(i).get("root.bibliographicCitation"));
 			}
 			source.appendChild(doc.createTextNode(sb.toString()));
@@ -213,6 +212,15 @@ public class OpenAireRecord implements java.io.Serializable {
 			resource.appendChild(source);				
 		}
 
+		// generate publisher
+		jemList = jMapper.getElement("root.containedIn");
+		for (int i = 0; i < jemList.size(); i++) {
+			Element publisher = doc.createElement("dc:publisher");
+			publisher.appendChild(doc.createTextNode(jemList.get(i).get("prefLabel")));
+			resource.appendChild(publisher);				
+		}
+
+		
 		// generate subjects
 		Element subjects = doc.createElement("datacite:subjects");
 		jemList =
@@ -244,6 +252,13 @@ public class OpenAireRecord implements java.io.Serializable {
 			resource.appendChild(subjects);
 		}
 		
+		// generate oaire:file
+		jemList = jMapper.getElement("root.hasPart");
+		for (int i = 0; i < jemList.size(); i++) {
+			Element oairefile = doc.createElement("file");
+			oairefile.appendChild(doc.createTextNode("https://repository.publisso.de/resource/" + jemList.get(i).get("@id") + "/data"));
+			resource.appendChild(oairefile);				
+		}
 
 		//root.appendChild(elem);
 		
