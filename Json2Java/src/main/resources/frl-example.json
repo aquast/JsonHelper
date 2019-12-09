@@ -1,6 +1,7 @@
 {
 	"@context": "https://frl.publisso.de/context.json",
 	"@id": "frl:6408444",
+	"embargoTime": "22-04-2025",
 	"bibo:doi": [
 		"10.4126/38m-002413440"
 	],
