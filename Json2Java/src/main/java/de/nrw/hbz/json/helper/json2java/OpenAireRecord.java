@@ -260,6 +260,15 @@ public class OpenAireRecord implements java.io.Serializable {
 			resource.appendChild(oairefile);				
 		}
 
+		// generate licenseCondition
+		jemList = jMapper.getElement("root.license");
+		for (int i = 0; i < jemList.size(); i++) {
+			Element license = doc.createElement("licenseCondition");
+			license.appendChild(doc.createTextNode(jemList.get(i).get("prefLabel")));
+			license.setAttribute("uri", jemList.get(i).get("@id"));
+			resource.appendChild(license);
+		}
+
 		//root.appendChild(elem);
 		
 //		elem.appendChild(doc.createTextNode("hallo"));
