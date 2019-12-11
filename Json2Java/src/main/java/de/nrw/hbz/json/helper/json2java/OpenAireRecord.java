@@ -173,11 +173,15 @@ public class OpenAireRecord implements java.io.Serializable {
 
 		// generate dateIssued
 		jemList = jMapper.getElement("root.publicationYear");
-		Element issued = doc.createElement("datacite:date");
-		issued.appendChild(doc.createTextNode(jemList.get(0).get("root.publicationYear")));
-		issued.setAttribute("dateType", "Issued");	
-		resource.appendChild(issued);
+		for (int i = 0; i < jemList.size(); i++) {
+			Element issued = doc.createElement("datacite:date");
+			issued.appendChild(
+					doc.createTextNode(jemList.get(i).get("root.publicationYear")));
+			issued.setAttribute("dateType", "Issued");
+			resource.appendChild(issued);
+		}
 
+		
 		// generate description
 		jemList = jMapper.getElement("root.abstractText");
 		for (int i=0; i < jemList.size(); i++) {
@@ -212,15 +216,6 @@ public class OpenAireRecord implements java.io.Serializable {
 			resource.appendChild(source);				
 		}
 
-		// generate publisher
-		jemList = jMapper.getElement("root.containedIn");
-		for (int i = 0; i < jemList.size(); i++) {
-			Element publisher = doc.createElement("dc:publisher");
-			publisher.appendChild(doc.createTextNode(jemList.get(i).get("prefLabel")));
-			resource.appendChild(publisher);				
-		}
-
-		
 		// generate subjects
 		Element subjects = doc.createElement("datacite:subjects");
 		jemList =
@@ -252,6 +247,14 @@ public class OpenAireRecord implements java.io.Serializable {
 			resource.appendChild(subjects);
 		}
 		
+		// generate publisher
+		jemList = jMapper.getElement("root.containedIn");
+		for (int i = 0; i < jemList.size(); i++) {
+			Element publisher = doc.createElement("dc:publisher");
+			publisher.appendChild(doc.createTextNode(jemList.get(i).get("prefLabel")));
+			resource.appendChild(publisher);				
+		}
+		
 		// generate oaire:file
 		jemList = jMapper.getElement("root.hasPart");
 		for (int i = 0; i < jemList.size(); i++) {
@@ -260,6 +263,14 @@ public class OpenAireRecord implements java.io.Serializable {
 			resource.appendChild(oairefile);				
 		}
 
+		// generate licenseCondition
+		jemList = jMapper.getElement("root.license");
+		for (int i = 0; i < jemList.size(); i++) {
+			Element license = doc.createElement("licenseCondition");
+			license.appendChild(doc.createTextNode(jemList.get(i).get("prefLabel")));
+			license.setAttribute("uri", jemList.get(i).get("@id"));
+			resource.appendChild(license);
+		}
 		//root.appendChild(elem);
 		
 //		elem.appendChild(doc.createTextNode("hallo"));

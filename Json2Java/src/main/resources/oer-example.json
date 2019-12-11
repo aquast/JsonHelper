@@ -1,0 +1,81 @@
+{
+  "contributor" : "urn:uuid:08bdbe49-fafd-4a20-8354-b699adaa5ebb",
+  "dateCreated" : "2019-12-07T07:03:22.335+01:00",
+  "feature" : {
+    "properties" : {
+      "@id" : "urn:uuid:750e4afd-4d06-42f7-8beb-b897ec1b28f3",
+      "@type" : "Action",
+      "name" : {
+        "en" : "First digital skills workshop for the construction of REAS among teachers"
+      },
+      "image" : "https://www.une.edu.mx/es/noticias/MIEMBROS-FELLOW-DE-LA-CATEDRA-UNESCO-IMPARTEN-TALL/",
+      "additionalType" : [ {
+        "@id" : "https://oerworldmap.org/assets/json/projects.json#project",
+        "@type" : "Concept",
+        "name" : {
+          "pt" : "Projeto",
+          "de" : "Projekt",
+          "en" : "Project"
+        }
+      } ],
+      "alternateName" : {
+        "en" : "workshop for the construction of REAS"
+      },
+      "location" : {
+        "address" : {
+          "addressCountry" : "MX",
+          "addressLocality" : "tampico",
+          "addressRegion" : "MX.TM",
+          "postalCode" : "89337",
+          "streetAddress" : "Av. Miguel Hidalgo"
+        }
+      }
+    },
+    "type" : "Feature",
+    "id" : "urn:uuid:750e4afd-4d06-42f7-8beb-b897ec1b28f3"
+  },
+  "@type" : "WebPage",
+  "author" : "urn:uuid:08bdbe49-fafd-4a20-8354-b699adaa5ebb",
+  "about" : {
+    "image" : "https://www.une.edu.mx/es/noticias/MIEMBROS-FELLOW-DE-LA-CATEDRA-UNESCO-IMPARTEN-TALL/",
+    "@type" : "Action",
+    "displayName" : {
+      "en" : "workshop for the construction of REAS among teachers"
+    },
+    "description" : {
+      "en" : "This course aimed to publicize the process of creation, licensing and dissemination of Open Educational Resources through a digital repository, and thereby achieve training in the use and management of various digital tools and platforms for the creation and licensing of teaching materials designed by teachers."
+    },
+    "alternateName" : {
+      "en" : "workshop for the construction of REAS"
+    },
+    "@context" : "https://oerworldmap.org/assets/json/context.json",
+    "url" : "https://www.une.edu.mx/es/noticias/MIEMBROS-FELLOW-DE-LA-CATEDRA-UNESCO-IMPARTEN-TALL/",
+    "additionalType" : [ {
+      "@id" : "https://oerworldmap.org/assets/json/projects.json#project",
+      "@type" : "Concept",
+      "name" : {
+        "pt" : "Projeto",
+        "de" : "Projekt",
+        "en" : "Project"
+      }
+    } ],
+    "name" : {
+      "en" : "First digital skills workshop for the construction of REAS among teachers"
+    },
+    "location" : [ {
+      "address" : {
+        "addressCountry" : "MX",
+        "addressLocality" : "tampico",
+        "addressRegion" : "MX.TM",
+        "postalCode" : "89337",
+        "streetAddress" : "Av. Miguel Hidalgo"
+      }
+    } ],
+    "startTime" : "2019-06-07",
+    "@id" : "urn:uuid:750e4afd-4d06-42f7-8beb-b897ec1b28f3",
+    "endTime" : "2019-06-07",
+    "email" : "esteban.vazquez@une.edu.mx"
+  },
+  "dateModified" : "2019-12-07T07:04:48.057+01:00",
+  "@id" : "urn:uuid:750e4afd-4d06-42f7-8beb-b897ec1b28f3.about"
+}

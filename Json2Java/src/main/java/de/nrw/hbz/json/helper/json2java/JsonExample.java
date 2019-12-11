@@ -37,6 +37,7 @@ public class JsonExample {
 		}
 		
 		node = JsonFileReader.getJsonNodeFromFile("src/main/resources/frl-example2.json");
+		//node = JsonFileReader.getJsonNodeFromFile("src/main/resources/oer-example.json");
 
 		
 		StructureFinder sf = new StructureFinder();
