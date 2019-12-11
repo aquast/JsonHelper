@@ -173,10 +173,12 @@ public class OpenAireRecord implements java.io.Serializable {
 
 		// generate dateIssued
 		jemList = jMapper.getElement("root.publicationYear");
-		Element issued = doc.createElement("datacite:date");
-		issued.appendChild(doc.createTextNode(jemList.get(0).get("root.publicationYear")));
-		issued.setAttribute("dateType", "Issued");	
-		resource.appendChild(issued);
+		for (int i=0; i < jemList.size(); i++) {
+			Element issued = doc.createElement("datacite:date");
+			issued.appendChild(doc.createTextNode(jemList.get(i).get("root.publicationYear")));
+			issued.setAttribute("dateType", "Issued");	
+			resource.appendChild(issued);			
+		}
 
 		// generate description
 		jemList = jMapper.getElement("root.abstractText");
@@ -267,6 +269,28 @@ public class OpenAireRecord implements java.io.Serializable {
 			license.appendChild(doc.createTextNode(jemList.get(i).get("prefLabel")));
 			license.setAttribute("uri", jemList.get(i).get("@id"));
 			resource.appendChild(license);
+		}
+
+		// generate accessRights
+		jemList = jMapper.getElement("root");
+		for(int i = 0; i < jemList.size(); i++) {
+			if(jemList.get(i).containsKey("accessScheme")) {
+				Element rights = doc.createElement("datacite:date");
+				rights.appendChild(doc.createTextNode(jemList.get(i).get("root.embargoTime")));
+				rights.setAttribute("dateType", "Available");	
+				resource.appendChild(rights);				
+			}
+		}
+
+		// generate dateAvailable
+		jemList = jMapper.getElement("root");
+		for(int i = 0; i < jemList.size(); i++) {
+			if(jemList.get(i).containsKey("embargoTime")) {
+				Element available = doc.createElement("datacite:date");
+				available.appendChild(doc.createTextNode(jemList.get(i).get("root.embargoTime")));
+				available.setAttribute("dateType", "Available");	
+				resource.appendChild(available);				
+			}
 		}
 
 		//root.appendChild(elem);
