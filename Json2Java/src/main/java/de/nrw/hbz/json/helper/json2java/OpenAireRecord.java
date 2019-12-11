@@ -17,6 +17,7 @@
 package de.nrw.hbz.json.helper.json2java;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.Iterator;
@@ -36,6 +37,9 @@ import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+
+import de.nrw.hbz.json.helper.json2java.model.CoarModel;
+import de.nrw.hbz.json.helper.json2java.model.EmbargoModel;
 
 /**
  * @author Andres Quast
@@ -274,13 +278,21 @@ public class OpenAireRecord implements java.io.Serializable {
 
 		// generate accessRights
 		jemList = jMapper.getElement("root");
+		String acScheme = "public";
 		for(int i = 0; i < jemList.size(); i++) {
-			if(jemList.get(i).containsKey("accessScheme")) {
-				Element rights = doc.createElement("datacite:date");
-				rights.appendChild(doc.createTextNode(jemList.get(i).get("root.embargoTime")));
-				rights.setAttribute("dateType", "Available");	
-				resource.appendChild(rights);				
+			if(jemList.get(i).containsKey("embargoTime")) {
+				EmbargoModel emb = new EmbargoModel();
+				acScheme = emb.getAccessScheme(jemList.get(i).get("embargoTime"));
 			}
+			if(jemList.get(i).containsKey("accessScheme")) {
+				acScheme = jemList.get(i).get("accessScheme");
+			}
+			
+			Element rights = doc.createElement("dc:rights");
+			rights.appendChild(doc.createTextNode(CoarModel.getElementValue(acScheme)));
+			rights.setAttribute("uri", CoarModel.getUriAttributeValue(acScheme));
+			resource.appendChild(rights);				
+
 		}
 
 		// generate dateAvailable
