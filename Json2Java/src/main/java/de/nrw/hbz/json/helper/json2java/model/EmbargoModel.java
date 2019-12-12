@@ -33,7 +33,7 @@ public class EmbargoModel {
 		Calendar cal = setEmbargoDate(embargoTime);
 		String schemeValue = "public";
 		if(cal.after(Calendar.getInstance())) {
-			schemeValue = "embargoed";
+			schemeValue = "embargo";
 		};
 		
 		return schemeValue;

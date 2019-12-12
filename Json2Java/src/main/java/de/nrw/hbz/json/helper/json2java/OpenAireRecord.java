@@ -276,33 +276,47 @@ public class OpenAireRecord implements java.io.Serializable {
 			resource.appendChild(license);
 		}
 
-		// generate accessRights
-		jemList = jMapper.getElement("root");
-		String acScheme = "public";
-		for(int i = 0; i < jemList.size(); i++) {
-			if(jemList.get(i).containsKey("embargoTime")) {
-				EmbargoModel emb = new EmbargoModel();
-				acScheme = emb.getAccessScheme(jemList.get(i).get("embargoTime"));
-			}
-			if(jemList.get(i).containsKey("accessScheme")) {
-				acScheme = jemList.get(i).get("accessScheme");
-			}
-			
-			Element rights = doc.createElement("dc:rights");
-			rights.appendChild(doc.createTextNode(CoarModel.getElementValue(acScheme)));
-			rights.setAttribute("uri", CoarModel.getUriAttributeValue(acScheme));
-			resource.appendChild(rights);				
-
-		}
-
 		// generate dateAvailable
+		Element dates = doc.createElement("datacite:dates");
 		jemList = jMapper.getElement("root");
 		for(int i = 0; i < jemList.size(); i++) {
 			if(jemList.get(i).containsKey("embargoTime")) {
 				Element available = doc.createElement("datacite:date");
 				available.appendChild(doc.createTextNode(jemList.get(i).get("root.embargoTime")));
 				available.setAttribute("dateType", "Available");	
-				resource.appendChild(available);				
+				dates.appendChild(available);
+				available.appendChild(doc.createTextNode(jMapper.getElement("root.isDescribedBy.created").toString()));
+				available.setAttribute("dateType", "Accepted");	
+				dates.appendChild(available);
+				resource.appendChild(dates);
+			}
+		}
+		
+
+		// generate accessRights
+		jemList = jMapper.getElement("root");
+		if(jMapper.elementExists("embargoTime")){
+			for(int i = 0; i < jemList.size(); i++) {
+				String acScheme = null;
+				if(jemList.get(i).containsKey("embargoTime")) {
+					EmbargoModel emb = new EmbargoModel();
+					acScheme = emb.getAccessScheme(jemList.get(i).get("embargoTime"));
+					Element rights = doc.createElement("dc:rights");
+					rights.appendChild(doc.createTextNode(CoarModel.getElementValue(acScheme)));
+					rights.setAttribute("uri", CoarModel.getUriAttributeValue(acScheme));
+					resource.appendChild(rights);				
+				}
+			}
+		} else {
+			
+			for(int i = 0; i < jemList.size(); i++) {
+				if(jemList.get(i).containsKey("accessScheme")) {
+					Element rights = doc.createElement("dc:rights");
+					rights.appendChild(doc.createTextNode(CoarModel.getElementValue(jemList.get(i).get("root.accessScheme"))));
+					rights.setAttribute("uri", CoarModel.getUriAttributeValue(jemList.get(i).get("root.accessScheme")));
+					resource.appendChild(rights);				
+					
+				}
 			}
 		}
 
@@ -313,7 +327,7 @@ public class OpenAireRecord implements java.io.Serializable {
 		doc.appendChild(resource);
 
 		
-	}
+	}	
 	
 	@Override
 	public String toString() {

@@ -190,5 +190,17 @@ public class JsonLDMapper {
 		return new ArrayList<JsonElementModel>();
 	}
 
-	
+	public boolean elementExists(String element) {
+		if (index.containsKey(element)){
+			return true;
+		}else if(!element.startsWith("root.")) {
+			ArrayList<Hashtable<String, String>> jemList = getElement("root");
+			for(int i = 0; i < jemList.size(); i++) {
+				if(jemList.get(i).containsKey(element)) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
 }
