@@ -36,7 +36,7 @@ public class JsonExample {
 			e.printStackTrace();
 		}
 		
-		node = JsonFileReader.getJsonNodeFromFile("src/main/resources/frl-example2.json");
+		node = JsonFileReader.getJsonNodeFromFile("src/main/resources/frl-example.json2.json");
 		//node = JsonFileReader.getJsonNodeFromFile("src/main/resources/oer-example.json");
 
 		

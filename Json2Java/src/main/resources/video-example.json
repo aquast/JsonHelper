@@ -1,0 +1,237 @@
+{
+  "type" : [ "BibliographicResource", "Miscellaneous" ],
+  "contribution" : [ {
+    "type" : [ "Contribution" ],
+    "agent" : {
+      "id" : "https://d-nb.info/gnd/1198897716",
+      "type" : [ "Person" ],
+      "label" : "Salmanton-García, Jon",
+      "altLabel" : "García, Jon Salmanton-",
+      "gndIdentifier" : "1198897716"
+    },
+    "role" : {
+      "id" : "http://id.loc.gov/vocabulary/relators/cre",
+      "label" : "Autor/in"
+    }
+  }, {
+    "type" : [ "Contribution" ],
+    "agent" : {
+      "id" : "https://d-nb.info/gnd/1202351549",
+      "type" : [ "Person" ],
+      "label" : "Thielebeule, Jan",
+      "gndIdentifier" : "1202351549"
+    },
+    "role" : {
+      "id" : "http://id.loc.gov/vocabulary/relators/fmd",
+      "label" : "Filmdirektor/in"
+    }
+  }, {
+    "type" : [ "Contribution" ],
+    "agent" : {
+      "id" : "https://d-nb.info/gnd/1202351646",
+      "type" : [ "Person" ],
+      "label" : "Sarfert, David",
+      "gndIdentifier" : "1202351646"
+    },
+    "role" : {
+      "id" : "http://id.loc.gov/vocabulary/relators/ctb",
+      "label" : "Mitwirkende"
+    }
+  }, {
+    "type" : [ "Contribution" ],
+    "agent" : {
+      "id" : "https://d-nb.info/gnd/10018507-1",
+      "type" : [ "CorporateBody" ],
+      "label" : "Universitätsklinikum Köln. Klinik I für Innere Medizin",
+      "altLabel" : [ "Klinik für Innere Medizin I. Universitätsklinikum Köln", "Universitätsklinikum Köln. Innere Medizin I - Onkologie, Hämatologie, Klinische Infektiologie, Klinische Immunologie, Hämostaseologie, Internistische Intensivmedizin", "Universität zu Köln. Klinik I für Innere Medizin", "Klinik I für Innere Medizin. Universitätsklinikum Köln", "Klinik für Innere Medizin. Universitätsklinikum Köln", "Universitätsklinikum Köln. Klinik und Poliklinik für Innere Medizin I Hämatologie und Onkologie", "Universität zu Köln. Klinik für Hämatologie und Onkologie", "Klinik und Poliklinik für Innere Medizin I Hämatologie und Onkologie. Köln", "Klinik für Hämatologie und Onkologie" ],
+      "gndIdentifier" : "10018507-1"
+    },
+    "role" : {
+      "id" : "http://id.loc.gov/vocabulary/relators/isb",
+      "label" : "Herausgeber/in"
+    }
+  } ],
+  "extent" : "1 Online-Ressource (1 Videodatei, Lauflänge: 00:03:04)",
+  "hasItem" : [ {
+    "id" : "http://lobid.org/items/HT020326674:DE-38M:Elektronische%20Publikation#!",
+    "type" : [ "Item" ],
+    "heldBy" : {
+      "id" : "http://lobid.org/organisations/DE-38M#!",
+      "label" : "lobid Organisation"
+    },
+    "note" : "00000099",
+    "callNumber" : "Elektronische Publikation",
+    "label" : "Elektronische Publikation"
+  } ],
+  "responsibilityStatement" : [ "Inhalt und Vortrag: Jon Salmanton-García MSc, MPH ; Bild und Schnitt: Jan Thielebeule ; Ton: David Sarfert - Goldklang Musikproduktion" ],
+  "abstract" : [ "Las infecciones invasivas por Paecilomyces y Purpureocillium spp. están incrementando, especialmente en pacientes inmunodeprimidos, que pueden desarrollar lesiones en diferentes órganos: sangre, pulmones, huesos, ojos ... Este análisis de casos reportados en la literatura y el registro FungiScope proporcionará conocimiento sobre los factores de riesgo y las mejores decisiones terapéuticas en infecciones debidas a Paecilomyces y Purpureocillium spp. / The emerging Paecilomyces and Purpureocillium spp. invasive infections, especially in immunosuppressed patients, can develop damage in different organs, e.g. blood, lungs, bones, eyes ... This analyses of cases from the literature and the FungiScope registry will provide knowledge on risk factors and therapeutic decisions in invasive Paecilomyces and Purpureocillium spp. infection." ],
+  "alternativeTitle" : [ "Recruitment of Paecilomyces and Purpureocillium cases" ],
+  "language" : [ {
+    "id" : "http://id.loc.gov/vocabulary/iso639-2/spa",
+    "label" : "Spanisch"
+  } ],
+  "medium" : [ {
+    "id" : "http://rdaregistry.info/termList/RDAMediaType/1008",
+    "label" : "Video"
+  }, {
+    "id" : "http://purl.org/ontology/bibo/AudioVisualDocument",
+    "label" : "Audio-Visuell"
+  }, {
+    "id" : "http://rdaregistry.info/termList/RDACarrierType/1018",
+    "label" : "Online-Ressource"
+  } ],
+  "subject" : [ {
+    "source" : {
+      "id" : "http://www.wikidata.org/entity/Q47524318",
+      "label" : "Freie Verschlagwortung"
+    },
+    "label" : "Paecilomyces"
+  }, {
+    "source" : {
+      "id" : "http://www.wikidata.org/entity/Q47524318",
+      "label" : "Freie Verschlagwortung"
+    },
+    "label" : "ID in Motion (IDIM)"
+  }, {
+    "source" : {
+      "id" : "http://www.wikidata.org/entity/Q47524318",
+      "label" : "Freie Verschlagwortung"
+    },
+    "label" : "ID en movimiento (IDIM)"
+  }, {
+    "source" : {
+      "id" : "http://www.wikidata.org/entity/Q47524318",
+      "label" : "Freie Verschlagwortung"
+    },
+    "label" : "FungiScope"
+  }, {
+    "source" : {
+      "id" : "http://www.wikidata.org/entity/Q47524318",
+      "label" : "Freie Verschlagwortung"
+    },
+    "label" : "registro"
+  }, {
+    "source" : {
+      "id" : "http://www.wikidata.org/entity/Q47524318",
+      "label" : "Freie Verschlagwortung"
+    },
+    "label" : "infecciones fúngicas invasivas"
+  }, {
+    "source" : {
+      "id" : "http://www.wikidata.org/entity/Q47524318",
+      "label" : "Freie Verschlagwortung"
+    },
+    "label" : "infectious diseases"
+  }, {
+    "source" : {
+      "id" : "http://www.wikidata.org/entity/Q47524318",
+      "label" : "Freie Verschlagwortung"
+    },
+    "label" : "invasive fungal infections"
+  }, {
+    "source" : {
+      "id" : "http://www.wikidata.org/entity/Q47524318",
+      "label" : "Freie Verschlagwortung"
+    },
+    "label" : "hongos filamentosos"
+  }, {
+    "source" : {
+      "id" : "http://www.wikidata.org/entity/Q47524318",
+      "label" : "Freie Verschlagwortung"
+    },
+    "label" : "enfermedades infecciosas"
+  }, {
+    "source" : {
+      "id" : "http://www.wikidata.org/entity/Q47524318",
+      "label" : "Freie Verschlagwortung"
+    },
+    "label" : "immunosuppression"
+  }, {
+    "source" : {
+      "id" : "http://www.wikidata.org/entity/Q47524318",
+      "label" : "Freie Verschlagwortung"
+    },
+    "label" : "filamentous fungi"
+  }, {
+    "source" : {
+      "id" : "http://www.wikidata.org/entity/Q47524318",
+      "label" : "Freie Verschlagwortung"
+    },
+    "label" : "registry"
+  }, {
+    "source" : {
+      "id" : "http://www.wikidata.org/entity/Q47524318",
+      "label" : "Freie Verschlagwortung"
+    },
+    "label" : "inmunosupresión"
+  }, {
+    "source" : {
+      "id" : "http://www.wikidata.org/entity/Q47524318",
+      "label" : "Freie Verschlagwortung"
+    },
+    "label" : "Purpureocillium"
+  }, {
+    "source" : {
+      "id" : "https://d-nb.info/gnd/4149423-4",
+      "label" : "Dewey-Dezimalklassifikation"
+    },
+    "label" : "Medizin und Gesundheit",
+    "notation" : "610"
+  } ],
+  "title" : "Factores de riesgo y mortalidad en la infección por Paecilomyces/Purpureocillium spp.",
+  "hbzId" : "HT020326674",
+  "inCollection" : [ {
+    "id" : "http://repository.publisso.de",
+    "type" : [ "Collection" ],
+    "label" : "Fachrepositorium Lebenswissenschaften"
+  } ],
+  "otherTitleInformation" : [ "análisis de casos del registro FungiScope y de la literatura" ],
+  "publication" : [ {
+    "type" : [ "PublicationEvent" ],
+    "location" : "Köln",
+    "publishedBy" : "[IDIM Infectious Diseases in Motion - Universitätsklinikum Köln, Klinik I für Innere Medizin]",
+    "startDate" : "2019"
+  } ],
+  "sameAs" : [ {
+    "id" : "http://hub.culturegraph.org/resource/HBZ-HT020326674",
+    "label" : "Culturegraph Ressource"
+  } ],
+  "describedBy" : {
+    "id" : "http://lobid.org/resources/HT020326674",
+    "type" : [ "BibliographicDescription" ],
+    "dateCreated" : "20200102",
+    "inDataset" : {
+      "id" : "http://lobid.org/resources/dataset#!",
+      "label" : "lobid-resources – Der hbz-Verbundkatalog als Linked Open Data"
+    },
+    "resultOf" : {
+      "type" : [ "CreateAction" ],
+      "endTime" : "2020-01-22T01:47:23",
+      "instrument" : {
+        "id" : "https://github.com/hbz/lobid-resources",
+        "type" : [ "SoftwareApplication" ],
+        "label" : "Software lobid-resources"
+      },
+      "object" : {
+        "id" : "http://lobid.org/hbz01/HT020326674",
+        "type" : [ "DataFeedItem" ],
+        "inDataset" : {
+          "id" : "https://datahub.io/dataset/hbz_unioncatalog",
+          "label" : "hbz_unioncatalog"
+        },
+        "label" : "hbz-Ressource HT020326674 im Exportformat MAB2-XML"
+      }
+    },
+    "license" : [ {
+      "id" : "http://creativecommons.org/publicdomain/zero/1.0",
+      "label" : "Creative Commons-Lizenz CC0 1.0 Universal"
+    } ],
+    "sourceOrganization" : {
+      "id" : "http://lobid.org/organisations/DE-38M#!",
+      "label" : "lobid Organisation"
+    },
+    "label" : "Webseite der hbz-Ressource HT020326674"
+  },
+  "@context" : "http://lobid.org/resources/context.jsonld",
+  "id" : "http://lobid.org/resources/HT020326674#!"
+}

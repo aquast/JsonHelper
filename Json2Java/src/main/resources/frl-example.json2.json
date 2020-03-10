@@ -1,0 +1,176 @@
+{
+	"@context": "https://api.ellinet-dev.hbz-nrw.de/context.json",
+	"@id": "frl:6402598",
+	"abstractText": [
+		"Introduction\r\nWithin the last decade, the concept of enhanced publications has become more and\r\nmore prominent. It promises the prospect of more comprehensive communication\r\namong scientists. By using electronic publication infrastructures, scientists can\r\nprovide their colleagues with online access to their published manuscripts - along\r\nwith various kinds of associated materials.\r\nAmong the latter we find research data, visualizations or instructive materials.\r\nIdeally, those enhanced publications provide more complete research results,\r\nthoroughly improve accessibility and facilitate the verification and re-use of\r\nscientific information.\r\nA website presenting the publication and all its associated materials as hyperlinks\r\nseems to be appropriate and adequate from a human's point of view.\r\nMere technology and machines cannot interpret information given in a web page the\r\nsame way human scientists do. For example, search engines cannot distinguish\r\nbetween raw data and an instructive video that is to be found at the end of a\r\nconventional hyperlink without additional semantic information. Hence, in order to\r\ngive scientists the most sufficient and easy access to the information provided by\r\nthese new forms of publications, the automated processing of enhanced publications\r\nbecomes an essential desideratum. New mechanisms are required allowing software\r\nsystems to interpret inherent relations."
+	],
+	"accessScheme": "public",
+	"catalogId": "ED6402598",
+	"collectionOne": [
+		{
+			"@id": "http://d-nb.info/gnd/1119361486",
+			"prefLabel": "http://d-nb.info/gnd/1119361486"
+		}
+	],
+	"containedIn": [
+		{
+			"@id": "http://lobid.org/resources/HT006994105#!",
+			"prefLabel": "Enchiridion Vaticanum"
+		}
+	],
+	"contentType": "article",
+	"contributorOrder": [
+		"https://d-nb.info/gnd/170197174|https://d-nb.info/gnd/12841054X|https://orcid.org/0000-0003-4626-328X|https://orcid.org/0000-0002-1389-7203"
+	],
+	"creator": [
+		{
+			"@id": "https://d-nb.info/gnd/170197174",
+			"prefLabel": "Schuart, Lothar"
+		},
+		{
+			"@id": "https://d-nb.info/gnd/12841054X",
+			"prefLabel": "Löthe, Mathis"
+		},
+		{
+			"@id": "https://orcid.org/0000-0003-4626-328X",
+			"prefLabel": "Weiglein, Alice"
+		},
+		{
+			"@id": "https://orcid.org/0000-0002-1389-7203",
+			"prefLabel": "Bayraktarov, Elisa"
+		}
+	],
+	"ddc": [
+		{
+			"@id": "http://dewey.info/class/020/",
+			"prefLabel": "Bibliotheks- und Informationswissenschaften"
+		}
+	],
+	"embargoTime": [
+		"2021-12-31"
+	],
+	"fulltextVersion": [
+		{
+			"@id": "https://pub.uni-bielefeld.de/download/2516071/2558195/eco4r_report_compoundobjects_draft.pdf",
+			"prefLabel": "https://pub.uni-bielefeld.de/download/2516071/2558195/eco4r_report_compoundobjects_draft.pdf"
+		}
+	],
+	"fundingId": [
+		{
+			"@id": "http://dx.doi.org/10.13039/501100001659",
+			"prefLabel": "Deutsche Forschungsgemeinschaft"
+		}
+	],
+	"fundingProgram": [
+		"-"
+	],
+	"hasPart": [
+		{
+			"prefLabel": "eco4r Report",
+			"@id": "frl:6402599"
+		}
+	],
+	"institution": [
+		{
+			"@id": "https://d-nb.info/gnd/1132341280",
+			"prefLabel": "Heinz Maier-Leibnitz Zentrum"
+		}
+	],
+	"isDescribedBy": {
+		"@id": "frl:6402598.rdf",
+		"created": "2020-02-17T10:29:34.059+0100",
+		"createdBy": "1",
+		"describes": "frl:6402598",
+		"lastModifiedBy": "8",
+		"modified": "2020-03-04T16:13:40.902+0000",
+		"objectTimestamp": "2020-03-04T16:13:40.000+0000"
+	},
+	"isMemberOf": [
+		{
+			"prefLabel": "info:fedora/oai:article",
+			"@id": "info:fedora/oai:article"
+		},
+		{
+			"prefLabel": "info:fedora/oai:epicur",
+			"@id": "info:fedora/oai:epicur"
+		},
+		{
+			"prefLabel": "info:fedora/oai:open_access",
+			"@id": "info:fedora/oai:open_access"
+		}
+	],
+	"isPrimaryTopicOf": [
+		{
+			"@id": "https://ellinet-dev.hbz-nrw.de/resource/frl:6402598/edit",
+			"prefLabel": "https://ellinet-dev.hbz-nrw.de/resource/frl:6402598/edit",
+			"primaryTopic": "frl:6402598"
+		}
+	],
+	"issued": "2010",
+	"itemID": [
+		{
+			"prefLabel": "oai:api.ellinet-dev.hbz-nrw.de:frl:6402598",
+			"@id": "oai:api.ellinet-dev.hbz-nrw.de:frl:6402598"
+		}
+	],
+	"joinedFunding": [
+		{
+			"fundingJoined": {
+				"@id": "http://dx.doi.org/10.13039/501100001659",
+				"prefLabel": "Deutsche Forschungsgemeinschaft"
+			},
+			"fundingProgramJoined": "-",
+			"projectIdJoined": "-"
+		}
+	],
+	"language": [
+		{
+			"@id": "http://id.loc.gov/vocabulary/iso639-2/eng",
+			"prefLabel": "Englisch"
+		}
+	],
+	"prefLabel": [
+		"frl:6402598"
+	],
+	"primaryTopic": "frl:6402598",
+	"projectId": [
+		"-"
+	],
+	"publicationStatus": [
+		{
+			"@id": "http://hbz-nrw.de/regal#postprint",
+			"prefLabel": "Postprint Autorenversion"
+		}
+	],
+	"publicationYear": [
+		"2010-09-02"
+	],
+	"publishScheme": "public",
+	"publisherVersion": [
+		{
+			"@id": "https://pub.uni-bielefeld.de/download/2516071/2558195/eco4r_report_compoundobjects_draft.pdf",
+			"prefLabel": "https://pub.uni-bielefeld.de/download/2516071/2558195/eco4r_report_compoundobjects_draft.pdf"
+		}
+	],
+	"rdftype": [
+		{
+			"prefLabel": "Artikel",
+			"@id": "http://purl.org/ontology/bibo/Article"
+		}
+	],
+	"title": [
+		"Report on Enhancing\r\nInteroperability\r\nbetween existing Open\r\nAccess Publication\r\nInfrastructures"
+	],
+	"transformer": [
+		"epicur",
+		"mets",
+		"oaidc",
+		"openaire",
+		"rdf",
+		"wgl"
+	],
+	"urn": "urn:nbn:de:-frl:64025989",
+	"yearOfCopyright": [
+		"2010"
+	]
+}
