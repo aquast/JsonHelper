@@ -8,7 +8,14 @@ import java.util.Hashtable;
 
 /**
  * @author aquast
- *
+ * A Class representing an json-DOM within different Types of ArrayList
+ * Model aims to unify methods to access the json-DOM Elements
+ * All object elements will be broken down into key:value pairs where key is 
+ * the canonical Path of each object-element. literal elements will be treated similar
+ * Both kind of key value pairs will be stored in an ArrayList of Hashtable<String, String>
+ * 
+ * In contrast Arrays will be stored in an ArrayList of Values 
+ *  
  */
 public class JsonElementModel {
 
@@ -40,7 +47,6 @@ public class JsonElementModel {
 	}
 
 	/**
-	 * @param path
 	 * @param valueList
 	 */
 	public void setArrayElement(ArrayList<String> valueList) {
@@ -49,7 +55,6 @@ public class JsonElementModel {
 	}
 
 	/**
-	 * @param path
 	 * @param valueList
 	 */
 	public void addArrayElement(String value) {
@@ -81,8 +86,8 @@ public class JsonElementModel {
 	 * @param jEM
 	 * @return
 	 */
-	public boolean isObject() {
-		if (elementList != null) {
+	public boolean isEmpty() {
+		if (elementList == null) {
 			return true;
 		}
 		return false;

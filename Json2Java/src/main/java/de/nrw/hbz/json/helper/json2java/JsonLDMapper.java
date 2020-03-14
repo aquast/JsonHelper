@@ -11,8 +11,13 @@ import java.util.Iterator;
 import com.fasterxml.jackson.databind.JsonNode;
 
 /**
+ * Maps a JsonNode into the regal-api JsonElementModel. 
+ * Concept of JsonElementModel is to flatten any complex Json 
+ * Representation into a List of key-value pairs. Keys within the 
+ * ElementLists of the JsonElementModel are representing object 
+ * structures as point separated paths. 
  * @author aquast
- *
+ * 
  */
 public class JsonLDMapper {
 
@@ -35,6 +40,7 @@ public class JsonLDMapper {
 	}
 	
 	/**
+	 * 
 	 * @param node
 	 * @param pBuffer
 	 * @return
@@ -48,14 +54,18 @@ public class JsonLDMapper {
 
 			String key = it.next();
 			if (node.get(key).isValueNode()) {
+
 				Hashtable<String, String> iE = new Hashtable<>();
 				complexElement.add(iE);
 
-				if (jEM != null && jEM.isObject()) {
+				if (jEM != null && !jEM.isEmpty()) {
+					// if we have an jEM already, we will use the ElementList form this 
 					Hashtable<String, String> ha = jEM.getComplexElementList();
 					ha.put(key, node.get(key).asText());
 					jEM.setComplexElement(ha);
 				} else {
+					// This block is used for the first method call only,
+					// as there is no jEM to provide 
 					iE.put(pBuffer + "." + key, node.get(key).asText());
 					iE.put(key, node.get(key).asText());
 					jEM = new JsonElementModel(pBuffer.toString());
@@ -64,16 +74,18 @@ public class JsonLDMapper {
 				}
 			}
 
+			// check if current field is of type array, if so, we have to make 
+			// a recursive call to mapToJsonModel
 			if (node.get(key).isObject()) {
 				pBuffer.append("." + key);
 				JsonNode complexNode = node.get(key);
-
 				jEM = new JsonElementModel(pBuffer.toString());
 				jEM.setComplexElement(new Hashtable<String, String>());
 				mapToJsonElementModel(complexNode, pBuffer);
 				jemElement.add(jEM);
 			}
 
+			// check if current field is of type array 
 			if (node.get(key).isArray()) {
 				pBuffer.append("." + key);
 
@@ -83,13 +95,17 @@ public class JsonLDMapper {
 				Iterator<JsonNode> nIt = complexNode.elements();
 				while (nIt.hasNext()) {
 					JsonNode arrayNode = nIt.next();
+					
 					if (arrayNode.isObject()) {
+						// If the field of array is an object, make recursive call to mapToJsonModel
+						// to find all Fields with Literals 
 						jEM = new JsonElementModel(pBuffer.toString());
 						jEM.setComplexElement(new Hashtable<String, String>());
 						mapToJsonElementModel(arrayNode, pBuffer);
 						jemElement.add(jEM);
 
 					} else {
+						// We have a Literal as Field of Array, so put this into Hashtable 
 						Hashtable<String, String> iE = new Hashtable<>();
 						iE.put(pBuffer.toString(), arrayNode.asText());
 						jEM.addArrayElement(arrayNode.asText());
@@ -100,6 +116,10 @@ public class JsonLDMapper {
 				}
 			}
 			pBuffer.setLength(l);
+			if (pBuffer.toString().equals("root")){
+				jEM = new JsonElementModel(pBuffer.toString());
+			}
+
 
 		}
 		return jemElement;
@@ -118,7 +138,7 @@ public class JsonLDMapper {
 				while (jit.hasNext()) {
 					System.out.print(jit.next().toString() + "\t");
 				}
-			} else if (jemElement.get(i).isObject()) {
+			} else if (!jemElement.get(i).isEmpty()) {
 				System.out.println(jemElement.get(i).getPath());
 				Enumeration<String> jEnum = jemElement.get(i).getComplexElementList().keys();
 				while (jEnum.hasMoreElements()) {
@@ -160,7 +180,7 @@ public class JsonLDMapper {
 			ArrayList<Integer> fieldIndex = index.get(path);
 			for (int i = 0; i < fieldIndex.size(); i++) {
 				JsonElementModel sJem = jemElement.get(fieldIndex.get(i));
-				if(sJem.isObject()) {
+				if(!sJem.isEmpty()) {
 					Hashtable<String,String> element = sJem.getComplexElementList();
 					result.add(element);
 				}else{
