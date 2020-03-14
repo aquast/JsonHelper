@@ -205,6 +205,16 @@ public class OpenAireRecord implements java.io.Serializable {
 			}
 		}
 		
+		// generate identifier
+		jemList = jMapper.getElement("root");
+		for (int i = 0; i < jemList.size(); i++) {
+			if (jemList.get(i).containsKey("contentType")) {
+				Element contentType = doc.createElement("datacite:TEST");
+				contentType.appendChild(doc.createTextNode(jemList.get(i).get("contentType")));
+				resource.appendChild(contentType);				
+			}
+		}
+
 		// generate source
 		jemList = jMapper.getElement("root.containedIn");
 		for (int i = 0; i < jemList.size(); i++) {
