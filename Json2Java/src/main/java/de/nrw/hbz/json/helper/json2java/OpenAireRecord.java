@@ -205,16 +205,18 @@ public class OpenAireRecord implements java.io.Serializable {
 			}
 		}
 		
-		// generate identifier
+		// generate oaire:resourceType
 		jemList = jMapper.getElement("root");
 		for (int i = 0; i < jemList.size(); i++) {
 			if (jemList.get(i).containsKey("contentType")) {
-				Element contentType = doc.createElement("datacite:TEST");
-				contentType.appendChild(doc.createTextNode(jemList.get(i).get("contentType")));
-				resource.appendChild(contentType);				
+				Element resourceType = doc.createElement("oaire:resourceType");
+				resourceType.appendChild(doc.createTextNode(CoarModel.getElementValue(jemList.get(i).get("contentType"))));
+				resourceType.setAttribute("uri", CoarModel.getUriAttributeValue(jemList.get(i).get("contentType")));
+				resource.appendChild(resourceType);				
 			}
 		}
 
+		
 		// generate source
 		jemList = jMapper.getElement("root.containedIn");
 		for (int i = 0; i < jemList.size(); i++) {
@@ -245,8 +247,7 @@ public class OpenAireRecord implements java.io.Serializable {
 			resource.appendChild(subjects);
 		}
 
-		jemList =
-				jMapper.getElement("root.subject");
+		jemList = jMapper.getElement("root.subject");
 		for (int i=0; i < jemList.size(); i++) {
 			Element sE = doc.createElement("datacite:subject");
 			sE.appendChild(doc.createTextNode(jemList.get(i).get("prefLabel")));
@@ -261,7 +262,7 @@ public class OpenAireRecord implements java.io.Serializable {
 			resource.appendChild(subjects);
 		}
 		
-		// generate publisher
+		// generate publisher	
 		jemList = jMapper.getElement("root.containedIn");
 		for (int i = 0; i < jemList.size(); i++) {
 			Element publisher = doc.createElement("dc:publisher");
@@ -276,7 +277,7 @@ public class OpenAireRecord implements java.io.Serializable {
 			oairefile.appendChild(doc.createTextNode("https://repository.publisso.de/resource/" + jemList.get(i).get("@id") + "/data"));
 			resource.appendChild(oairefile);				
 		}
-
+		
 		// generate licenseCondition
 		jemList = jMapper.getElement("root.license");
 		for (int i = 0; i < jemList.size(); i++) {
