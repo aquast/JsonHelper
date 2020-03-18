@@ -45,6 +45,7 @@ public class JsonExample {
 		
 		JsonLDMapper jMapper = new JsonLDMapper(node);
 		OpenAireRecord oar = new OpenAireRecord(jMapper);
+		System.out.println("\n#####  XML Ausgabe #####\n");
 		System.out.println(oar.toString());
 		//System.out.println(jMapper.getElement("root.creator").get(0).get("prefLabel"));
 		

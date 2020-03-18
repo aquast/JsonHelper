@@ -20,7 +20,15 @@ public abstract class CoarModel {
 	public static final String RESTRICTED_ACCESS_URI = new String("http://purl.org/coar/access_right/c_16ec");
 	public static final String METADATA_ONLY_ACCESS = new String("metadata only access");
 	public static final String METADATA_ONLY_ACCESS_URI = new String("http://purl.org/coar/access_right/c_14cb");
-
+	// https://openaire-guidelines-for-literature-repository-managers.readthedocs.io/en/v4.0.0/field_publicationtype.html
+	public static final String JOURNAL_ARTICLE = new String("journal article");
+	public static final String JOURNAL_ARTICLE_URI = new String("http://purl.org/coar/resource_type/c_6501");
+	public static final String BOOK_PART = new String("book part");
+	public static final String BOOK_PART_URI = new String("http://purl.org/coar/resource_type/c_3248");
+	public static final String CONFERENCE_OBJECT = new String("conference object");
+	public static final String CONFERENCE_OBJECT_URI = new String("http://purl.org/coar/resource_type/c_c94f");
+	
+	
 	public static Hashtable<String, String> elementContent = new Hashtable<>();
 	public static Hashtable<String, String> uriAttributeContent = new Hashtable<>();
 	
@@ -29,6 +37,9 @@ public abstract class CoarModel {
 		elementContent.put("embargo", CoarModel.EMBARGOED_ACCESS);
 		elementContent.put("restricted", CoarModel.RESTRICTED_ACCESS);
 		elementContent.put("metadata", CoarModel.METADATA_ONLY_ACCESS);
+		elementContent.put("article", CoarModel.JOURNAL_ARTICLE);
+		elementContent.put("Buchkapitel", CoarModel.BOOK_PART);
+		elementContent.put("Kongressbeitrag", CoarModel.CONFERENCE_OBJECT);
 	}
 
 	private static void setUriHashtable() {
@@ -36,6 +47,9 @@ public abstract class CoarModel {
 		uriAttributeContent.put("embargo", CoarModel.EMBARGOED_ACCESS_URI);
 		uriAttributeContent.put("restricted", CoarModel.RESTRICTED_ACCESS_URI);
 		uriAttributeContent.put("metadata", CoarModel.METADATA_ONLY_ACCESS_URI);
+		uriAttributeContent.put("article", CoarModel.JOURNAL_ARTICLE_URI);
+		uriAttributeContent.put("Buchkapitel", CoarModel.BOOK_PART_URI);
+		uriAttributeContent.put("Kongressbeitrag", CoarModel.CONFERENCE_OBJECT_URI);
 	}
 	
 	/**
