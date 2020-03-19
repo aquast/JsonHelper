@@ -126,8 +126,7 @@ public class OpenAireRecord implements java.io.Serializable {
 		
 		// generate fundingreference
 		Element funding = doc.createElement("fundingReferences");
-		jemList =
-				jMapper.getElement("root.joinedFunding.fundingJoined");
+		jemList = jMapper.getElement("root.joinedFunding.fundingJoined");
 		for (int i=0; i < jemList.size(); i++) {
 			Element sE = doc.createElement("fundingReference");
 			funding.appendChild(sE);
@@ -212,6 +211,7 @@ public class OpenAireRecord implements java.io.Serializable {
 				Element resourceType = doc.createElement("oaire:resourceType");
 				resourceType.appendChild(doc.createTextNode(CoarModel.getElementValue(jemList.get(i).get("contentType"))));
 				resourceType.setAttribute("uri", CoarModel.getUriAttributeValue(jemList.get(i).get("contentType")));
+				resourceType.setAttribute("resourceTypeGeneral", CoarModel.getResourceTypeGeneralAttribute(jemList.get(i).get("contentType")));
 				resource.appendChild(resourceType);				
 			}
 		}
@@ -234,8 +234,7 @@ public class OpenAireRecord implements java.io.Serializable {
 
 		// generate subjects
 		Element subjects = doc.createElement("datacite:subjects");
-		jemList =
-				jMapper.getElement("root.ddc");
+		jemList = jMapper.getElement("root.ddc");
 		for (int i=0; i < jemList.size(); i++) {
 			Element sE = doc.createElement("datacite:subject");
 			sE.appendChild(doc.createTextNode(jemList.get(i).get("prefLabel")));
@@ -303,7 +302,6 @@ public class OpenAireRecord implements java.io.Serializable {
 			}
 		}
 		
-
 		// generate accessRights
 		jemList = jMapper.getElement("root");
 		if(jMapper.elementExists("embargoTime")){
@@ -333,7 +331,7 @@ public class OpenAireRecord implements java.io.Serializable {
 
 		//root.appendChild(elem);
 		
-//		elem.appendChild(doc.createTextNode("hallo"));
+        //elem.appendChild(doc.createTextNode("hallo"));
 
 		doc.appendChild(resource);
 
