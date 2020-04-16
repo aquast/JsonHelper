@@ -26,7 +26,7 @@ public abstract class CoarModel {
 	
 	private static void setElementHashtable() {
 		elementContent.put("public", CoarModel.OPEN_ACCESS);
-		elementContent.put("embargo", CoarModel.EMBARGOED_ACCESS);
+		elementContent.put("embargoed", CoarModel.EMBARGOED_ACCESS);
 		elementContent.put("restricted", CoarModel.RESTRICTED_ACCESS);
 		elementContent.put("metadata", CoarModel.METADATA_ONLY_ACCESS);
 	}
