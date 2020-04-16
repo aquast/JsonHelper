@@ -36,7 +36,7 @@ public class JsonExample {
 			e.printStackTrace();
 		}
 		
-		node = JsonFileReader.getJsonNodeFromFile("src/main/resources/frl-example2.json");
+		node = JsonFileReader.getJsonNodeFromFile("src/main/resources/frl-example.json2.json");
 		//node = JsonFileReader.getJsonNodeFromFile("src/main/resources/oer-example.json");
 
 		
@@ -45,11 +45,8 @@ public class JsonExample {
 		
 		JsonLDMapper jMapper = new JsonLDMapper(node);
 		OpenAireRecord oar = new OpenAireRecord(jMapper);
-		
-		System.out.println(oar.getRecordClassName());
-		System.out.println(oar.getMyClassName());
-		
-		//System.out.println(oar.toString());
+		System.out.println("\n#####  XML Ausgabe #####\n");
+		System.out.println(oar.toString());
 		//System.out.println(jMapper.getElement("root.creator").get(0).get("prefLabel"));
 		
 		//System.out.println(jMapper.getElement("root.title").get(0).get("title"));

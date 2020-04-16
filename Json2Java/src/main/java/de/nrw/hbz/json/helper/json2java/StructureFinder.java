@@ -19,7 +19,6 @@ import com.fasterxml.jackson.databind.JsonNode;
 public class StructureFinder {
 
 	Hashtable<String,String> simpleElements = new Hashtable<>();
-	// Hashtable<String, Hashtable<String,String>> complexElement = new Hashtable<>(); 
 	ArrayList<Hashtable<String,String>> complexElement = new ArrayList<>();
 	ArrayList<Hashtable<String,String>> simpleElement = new ArrayList<>();
 	ArrayList<Hashtable<String,ArrayList<String>>> arrayElement = new ArrayList<>();
@@ -30,10 +29,10 @@ public class StructureFinder {
 	StringBuffer pathBuffer = new StringBuffer("");
 
 	public void mapStructure(JsonNode node) {
+
 		mapStructure(node, new StringBuffer("root"));
 		createIndex();
 		printElements(jemElement);
-		printElements(getElement("root"));
 		boolean testeMich = true;
 		
 	}
@@ -47,24 +46,30 @@ public class StructureFinder {
 			String key = it.next();
 			if (node.get(key).isValueNode()){
 				Hashtable<String, String> iE = new Hashtable<>();
-				//iE.put(pBuffer + "." + key, node.get(key).asText());
-				//iE.put(key, node.get(key).asText());
-				//complexElement.add(iE);
+				//System.out.println("HIER 1, ValueNode: " + key);
+
 				
-				if(jEM != null && jEM.isObject()) {
+				if(jEM != null && !jEM.isEmpty()) {
 					Hashtable<String,String> ha = jEM.getComplexElementList();
 					ha.put(key, node.get(key).asText());
 					jEM.setComplexElement(ha);
+					//System.out.println("HIER 2, Zufügen von Inhalt zu bestehender Elementliste: " + key);
+					//System.out.println("HIER 2, pBuffer: " + pBuffer.toString());
+
 				} else {
 					iE.put(key, node.get(key).asText());
 					jEM = new JsonElementModel(pBuffer.toString());
 					jEM.setComplexElement(iE);
 					jemElement.add(jEM);
+					//System.out.println("HIER 3, Erstellen von neuer Elementliste und Zufügen von Inhalt : " + key);
+					//System.out.println("HIER 3, pBuffer: " + pBuffer.toString());
 				}
 			}
 			
 			if(node.get(key).isObject()){
-				//System.out.println(key + " : " + node.get(key).size() );
+				//System.out.println("HIER 4, Inhalt ist Objekt, Methode wird rekursiv aufgerufen: " + key);
+				//System.out.println("HIER 4, pBuffer: " + pBuffer.toString());
+
 				pBuffer.append("." + key);
 				JsonNode complexNode = node.get(key);
 				jEM = new JsonElementModel(pBuffer.toString());
@@ -75,33 +80,40 @@ public class StructureFinder {
 			}
 			
 			if(node.get(key).isArray()){
+				//System.out.println("HIER 5, Inhalt ist Array, Array-Verarbeitung: " + key);
 				pBuffer.append("." + key);
+				//System.out.println("HIER 5, pBuffer: " + pBuffer.toString());
 				JsonNode complexNode = node.get(key);
 				Iterator<JsonNode> nIt = complexNode.elements();
 				jEM = new JsonElementModel(pBuffer.toString());
+				
 				while(nIt.hasNext()) {
 					JsonNode arrayNode = nIt.next();
+					//System.out.println("HIER 6, pBuffer: " + pBuffer.toString());
 					if(arrayNode.isObject()) {
+						//System.out.println("HIER 6, Array-Feld enthält Objekt, rekursives Aufrufen der Methode: " + key);
 						jEM = new JsonElementModel(pBuffer.toString());
 						jEM.setComplexElement(new Hashtable<String,String>());
-						//System.out.println(arrayNode.toString());					
 						mapStructure(arrayNode, pBuffer);
 						jemElement.add(jEM);
 
 					}else {
+						//System.out.println("HIER 7, Array-Feld enthält Literal, Schreiben des Literals in Elementliste: " + key);
 						Hashtable<String, String> iE = new Hashtable<>();
-						//System.out.println("nur Text " + arrayNode.toString());
 						iE.put(pBuffer.toString(), arrayNode.asText());
 						complexElement.add(iE);
 						jEM.addArrayElement(arrayNode.asText());
 					}
 				}
 				if(jEM.isArray()){
-					jemElement.add(jEM);				
+					//System.out.println("HIER 8");
+					jemElement.add(jEM);
 				}
 			}
 			pBuffer.setLength(l);
-
+			if (pBuffer.toString().equals("root")){
+				jEM = new JsonElementModel(pBuffer.toString());
+			}
 		}
 	}
 	
@@ -116,12 +128,13 @@ public class StructureFinder {
 						System.out.print(jit.next().toString() + "\t");
 					}
 					System.out.println("\n");
-				}else if (jemElement.get(i).isObject()) {
+				}else if (!jemElement.get(i).isEmpty()) {
 					System.out.println(jemElement.get(i).getPath());
 					Enumeration jEnum = jemElement.get(i).getComplexElementList().keys();
 					while (jEnum.hasMoreElements()) {
 						String key = jEnum.nextElement().toString();
 						System.out.print( "\t" + "\t" + key + "\t");
+						//System.out.print(jemElement.get(i).getPath() + "." + key + ": " + jemElement.get(i).getComplexElementList().get(key) + "\n");
 						System.out.print(jemElement.get(i).getComplexElementList().get(key) + "\n");
 					}
 					
