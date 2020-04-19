@@ -1,0 +1,55 @@
+{
+	"@context": "https://api.ellinet-dev.hbz-nrw.de/context.json",
+	"@id": "frl:6402506",
+	"accessScheme": "public",
+	"catalogId": "ED6402506",
+	"contentType": "file",
+	"hasData": {
+		"@id": "frl:6402506/data",
+		"checksum": {
+			"checksumValue": "fbd95081d7b7e00fc515996c4f27e126",
+			"generator": "http://en.wikipedia.org/wiki/MD5",
+			"rdftype": "http://downlode.org/Code/RDF/File_Properties/schema#Checksum"
+		},
+		"fileLabel": "Optimization of ultrasonic assisted extraction of phenolic compounds from fenugreek Trigonella foenum graecum L seed.pdf",
+		"format": "application/pdf",
+		"size": 1200634
+	},
+	"isDescribedBy": {
+		"@id": "frl:6402506.rdf",
+		"created": "2018-10-17T08:00:20.687+0200",
+		"createdBy": "5",
+		"describes": "frl:6402506",
+		"lastModifiedBy": "5",
+		"modified": "2018-10-17T06:00:39.552+0000",
+		"name": "frl:6402506",
+		"objectTimestamp": "2018-10-17T06:00:39.000+0000"
+	},
+	"isMemberOf": [
+		{
+			"prefLabel": "info:fedora/oai:file",
+			"@id": "info:fedora/oai:file"
+		},
+		{
+			"prefLabel": "info:fedora/oai:open_access",
+			"@id": "info:fedora/oai:open_access"
+		}
+	],
+	"itemID": [
+		{
+			"prefLabel": "oai:api.ellinet-dev.hbz-nrw.de:frl:6402506",
+			"@id": "oai:api.ellinet-dev.hbz-nrw.de:frl:6402506"
+		}
+	],
+	"parentPid": "frl:6402488",
+	"primaryTopic": "frl:6402506",
+	"publishScheme": "public",
+	"rdftype": [
+		{
+			
+		}
+	],
+	"title": [
+		"Optimization of ultrasonic-assisted extraction of phenolic compounds from fenugreek (Trigonella foenum-graecum L.) seed"
+	]
+}
