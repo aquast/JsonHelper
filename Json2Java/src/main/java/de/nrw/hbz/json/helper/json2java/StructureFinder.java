@@ -44,7 +44,7 @@ public class StructureFinder {
 			int l = pBuffer.length(); 
 			
 			String key = it.next();
-			if (node.get(key).isValueNode()){
+			if (node.get(key).isValueNode() || node.get(key).isNumber()){
 				Hashtable<String, String> iE = new Hashtable<>();
 				//System.out.println("HIER 1, ValueNode: " + key);
 

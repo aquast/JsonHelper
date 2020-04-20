@@ -124,7 +124,7 @@ public class OpenAireRecord extends Record implements java.io.Serializable {
 
 		}
 		
-		// generate fundingreference
+		// generate fundingReference
 		Element funding = doc.createElement("fundingReferences");
 		jemList = jMapper.getElement("root.joinedFunding.fundingJoined");
 		for (int i=0; i < jemList.size(); i++) {
@@ -179,7 +179,7 @@ public class OpenAireRecord extends Record implements java.io.Serializable {
 		for (int i=0; i < jemList.size(); i++) {
 			Element description = doc.createElement("datacite:description");
 			description.appendChild(doc.createTextNode(jemList.get(i).get("root.abstractText")));
-			resource.appendChild(description);
+			// resource.appendChild(description);
 		}
 
 		// generate identifier
@@ -197,7 +197,7 @@ public class OpenAireRecord extends Record implements java.io.Serializable {
 		jemList = jMapper.getElement("root");
 		for (int i = 0; i < jemList.size(); i++) {
 			if (jemList.get(i).containsKey("contentType")) {
-				Element resourceType = doc.createElement("oaire:resourceType");
+				Element resourceType = doc.createElement("resourceType");
 				resourceType.appendChild(doc.createTextNode(CoarModel.getElementValue(jemList.get(i).get("contentType"))));
 				resourceType.setAttribute("uri", CoarModel.getUriAttributeValue(jemList.get(i).get("contentType")));
 				resourceType.setAttribute("resourceTypeGeneral", CoarModel.getResourceTypeGeneralAttribute(jemList.get(i).get("contentType")));
@@ -263,6 +263,7 @@ public class OpenAireRecord extends Record implements java.io.Serializable {
 		for (int i = 0; i < jemList.size(); i++) {
 			Element oairefile = doc.createElement("file");
 			oairefile.appendChild(doc.createTextNode("https://repository.publisso.de/resource/" + jemList.get(i).get("@id") + "/data"));
+			oairefile.setAttribute("name", jemList.get(i).get("prefLabel"));
 			resource.appendChild(oairefile);				
 		}
 		
@@ -307,7 +308,6 @@ public class OpenAireRecord extends Record implements java.io.Serializable {
 			String acScheme = null;
 			EmbargoModel emb = new EmbargoModel();
 			acScheme = emb.getAccessScheme(jemList.get(i).get("root.embargoTime"));
-			System.out.println(acScheme);
 			Element rights = doc.createElement("dc:rights");
 			rights
 					.appendChild(doc.createTextNode(CoarModel.getElementValue(acScheme)));
@@ -334,6 +334,11 @@ public class OpenAireRecord extends Record implements java.io.Serializable {
 		System.out.println(XmlUtils.docToString(doc));
 
 	}	
+	
+	private JsonLDMapper getFileElements() {
+		
+		return null;
+	}
 	
 	@Override
 	public String toString() {
