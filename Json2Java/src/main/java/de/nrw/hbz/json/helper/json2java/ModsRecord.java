@@ -129,48 +129,72 @@ public class ModsRecord extends Record implements java.io.Serializable {
 		mods.appendChild(typeOfResource);
 		
 		// generate genre
+		// TODO: lookup of proper frl-to-mods mapping
 		Element genre = doc.createElement("genre"); 
-		genre.appendChild(doc.createTextNode("academic journal"));
+		//genre.appendChild(doc.createTextNode("academic journal"));
+		//genre.appendChild(doc.createTextNode("conference publication"));
+		genre.appendChild(doc.createTextNode("book"));
 		mods.appendChild(genre);
 
-		/*
-		for (int i = 0; i < jemList.size(); i++) {
-			if (jemList.get(i).containsKey("contentType")) {
-				Element resourceType = doc.createElement("oaire:resourceType");
-				resourceType.appendChild(doc.createTextNode(CoarModel.getElementValue(jemList.get(i).get("contentType"))));
-				resourceType.setAttribute("uri", CoarModel.getUriAttributeValue(jemList.get(i).get("contentType")));
-				resourceType.setAttribute("resourceTypeGeneral", CoarModel.getResourceTypeGeneralAttribute(jemList.get(i).get("contentType")));
-				modsCollection.appendChild(resourceType);				
-			}
-		}
-		*/
 		
 		// generate language
 		jemList = jMapper.getElement("root.language");
 		for (int i = 0; i < jemList.size(); i++) {
-			Element language = doc.createElement("dc:language");
+			Element language = doc.createElement("language");
 			language.appendChild(doc.createTextNode(jemList.get(i).get("@id").substring(38)));
-			modsCollection.appendChild(language);
+			mods.appendChild(language);
 		}
 		
+		// generate subjects
+		// TODO: use numerical value instead of label
+		jemList = jMapper.getElement("root.ddc");
+		for (int i=0; i < jemList.size(); i++) {
+			Element classification = doc.createElement("classification");
+			classification.appendChild(doc.createTextNode(jemList.get(i).get("prefLabel")));
+			classification.setAttribute("authority", "ddc");
+			mods.appendChild(classification);
+		}
+		
+		jemList = jMapper.getElement("root.subject");
+		Element subject = doc.createElement("subject");
+		for (int i=0; i < jemList.size(); i++) {
+			Element topic = doc.createElement("topic");
+			topic.appendChild(doc.createTextNode(jemList.get(i).get("prefLabel")));
+			subject.appendChild(topic);
+		}
+		mods.appendChild(subject);
 
 		// generate identifier
 		jemList = jMapper.getElement("root");
 		for (int i = 0; i < jemList.size(); i++) {
 			if (jemList.get(i).containsKey("@id")) {
-				Element identifier = doc.createElement("identifier");
-				identifier.appendChild(doc.createTextNode("https://frl.publisso.de/" + jemList.get(i).get("@id")));
-				identifier.setAttribute("type", "purl");	
-				mods.appendChild(identifier);
+				Element purl = doc.createElement("identifier");
+				purl.appendChild(doc.createTextNode("https://frl.publisso.de/" + jemList.get(i).get("@id")));
+				purl.setAttribute("type", "purl");	
+				mods.appendChild(purl);
 				// citekey
 				//Element identifier_citekey = doc.createElement("identifier");
 				//identifier_citekey.appendChild(doc.createTextNode(jemList.get(i).get("@id")));
 				//identifier_citekey.setAttribute("type", "citekey");	
 				//mods.appendChild(identifier_citekey);
 				mods.setAttribute("ID", jemList.get(i).get("@id"));
-				
+			}
+			if (jemList.get(i).containsKey("urn")) {
+				Element urn = doc.createElement("identifier");
+				urn.appendChild(doc.createTextNode(jemList.get(i).get("urn")));
+				urn.setAttribute("type", "urn");	
+				mods.appendChild(urn);
 			}
 		}
+		// generate DOI
+		jemList = jMapper.getElement("root.bibo:doi");
+		for (int i=0; i < jemList.size(); i++) {
+			Element doi = doc.createElement("identifier");
+			doi.appendChild(doc.createTextNode(jemList.get(i).get("root.bibo:doi")));
+			doi.setAttribute("type", "doi");
+			mods.appendChild(doi);
+		}
+					
 		
 		doc.appendChild(modsCollection);
 
