@@ -85,7 +85,7 @@ public class ModsRecord extends Record implements java.io.Serializable {
 		// generate titleInfo
 		ArrayList<Hashtable<String, String>> jemList = jMapper.getElement("root.title");
 		for (int i=0; i < jemList.size(); i++) {
-			Element titleInfo = doc.createElement("titelInfo");
+			Element titleInfo = doc.createElement("titleInfo");
 			Element title = doc.createElement("title");
 			title.appendChild(doc.createTextNode(jemList.get(i).get("root.title")));
 			titleInfo.appendChild(title);
@@ -114,10 +114,14 @@ public class ModsRecord extends Record implements java.io.Serializable {
 			mods.appendChild(abstracttext);
 		}
 		// generate typeOfResource
-		jemList = jMapper.getElement("root");
 		Element typeOfResource = doc.createElement("typeOfResource"); 
 		typeOfResource.appendChild(doc.createTextNode("text"));
 		mods.appendChild(typeOfResource);
+		
+		// generate genre
+		Element genre = doc.createElement("genre"); 
+		genre.appendChild(doc.createTextNode("academic journal"));
+		mods.appendChild(genre);
 
 		/*
 		for (int i = 0; i < jemList.size(); i++) {
@@ -147,7 +151,14 @@ public class ModsRecord extends Record implements java.io.Serializable {
 				Element identifier = doc.createElement("identifier");
 				identifier.appendChild(doc.createTextNode("https://frl.publisso.de/" + jemList.get(i).get("@id")));
 				identifier.setAttribute("type", "purl");	
-				mods.appendChild(identifier);				
+				mods.appendChild(identifier);
+				// citekey
+				//Element identifier_citekey = doc.createElement("identifier");
+				//identifier_citekey.appendChild(doc.createTextNode(jemList.get(i).get("@id")));
+				//identifier_citekey.setAttribute("type", "citekey");	
+				//mods.appendChild(identifier_citekey);
+				mods.setAttribute("ID", jemList.get(i).get("@id"));
+				
 			}
 		}
 		
