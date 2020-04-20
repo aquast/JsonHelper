@@ -42,7 +42,7 @@ import de.nrw.hbz.json.helper.json2java.model.CoarModel;
 import de.nrw.hbz.json.helper.json2java.model.EmbargoModel;
 
 /**
- * @author Andres Quast
+ * @author reimer@hbz-nrw.de
  *
  */
 public class ModsRecord extends Record implements java.io.Serializable {
@@ -54,6 +54,16 @@ public class ModsRecord extends Record implements java.io.Serializable {
 		createRecord(jMapper);
 	}
 	
+	/**
+	 * remove \r\n (return, newline), probably originating from copy&paste
+	 * @param value to be scrubbed
+	 *
+	 */
+
+	public static String scrub(String value) {
+		return value.replaceAll("\r\n", " ");
+	}
+
 	public void createRecord(JsonLDMapper jMapper) {
 	
 		DocumentBuilderFactory.newInstance();
@@ -87,7 +97,7 @@ public class ModsRecord extends Record implements java.io.Serializable {
 		for (int i=0; i < jemList.size(); i++) {
 			Element titleInfo = doc.createElement("titleInfo");
 			Element title = doc.createElement("title");
-			title.appendChild(doc.createTextNode(jemList.get(i).get("root.title")));
+			title.appendChild(doc.createTextNode(scrub(jemList.get(i).get("root.title"))));
 			titleInfo.appendChild(title);
 			if(i>0) {
 				titleInfo.setAttribute("type", "alternative");
@@ -110,7 +120,7 @@ public class ModsRecord extends Record implements java.io.Serializable {
 		jemList = jMapper.getElement("root.abstractText");
 		for (int i=0; i < jemList.size(); i++) {
 			Element abstracttext = doc.createElement("abstract"); // 'abstract' seems to be a reserved word in java
-			abstracttext.appendChild(doc.createTextNode(jemList.get(i).get("root.abstractText")));
+			abstracttext.appendChild(doc.createTextNode(scrub(jemList.get(i).get("root.abstractText"))));
 			mods.appendChild(abstracttext);
 		}
 		// generate typeOfResource

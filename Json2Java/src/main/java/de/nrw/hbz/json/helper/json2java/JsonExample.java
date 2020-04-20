@@ -49,10 +49,11 @@ public class JsonExample {
 
 		System.out.println("\n#####  XML Ausgabe #####\n");
 
-		//JsonLDMapper jMapper = new JsonLDMapper(node);
+		JsonLDMapper jMapper = new JsonLDMapper(node);
 		//OpenAireRecord oar = new OpenAireRecord(jMapper);
+		ModsRecord mods = new ModsRecord(jMapper);
 
-		//System.out.println(oar.toString());
+		System.out.println(mods.toString());
 		//System.out.println(jMapper.getElement("root.creator").get(0).get("prefLabel"));
 		
 		//System.out.println(jMapper.getElement("root.title").get(0).get("title"));
