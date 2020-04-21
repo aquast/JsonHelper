@@ -36,30 +36,24 @@ public class JsonExample {
 			e.printStackTrace();
 		}
 		
-		node = JsonFileReader.getJsonNodeFromFile("src/main/resources/frl-example.json2.json");
+		node = JsonFileReader.getJsonNodeFromFile("src/main/resources/frl-example.json");
 		JsonNode fileNode = JsonFileReader.getJsonNodeFromFile("src/main/resources/frl:6402506.json2.json");
 		//node = JsonFileReader.getJsonNodeFromFile("src/main/resources/oer-example.json");
 
 		
-		//StructureFinder sf = new StructureFinder();
+		StructureFinder sf = new StructureFinder();
 		//sf.mapStructure(node);
 		//sf.mapStructure(fileNode);
-		JsonLDMapper jFileMapper = new JsonLDMapper(fileNode);
-		jFileMapper.printElements();
+		//JsonLDMapper jFileMapper = new JsonLDMapper(fileNode);
+		//jFileMapper.printElements();
 
+		JsonLDMapper jMapper = new JsonLDMapper(node);
+        jMapper.printElements();
+		
 		System.out.println("\n#####  XML Ausgabe #####\n");
 
-		//JsonLDMapper jMapper = new JsonLDMapper(node);
-		//OpenAireRecord oar = new OpenAireRecord(jMapper);
+		OpenAireRecord oar = new OpenAireRecord(jMapper);
 
-		//System.out.println(oar.toString());
-		//System.out.println(jMapper.getElement("root.creator").get(0).get("prefLabel"));
-		
-		//System.out.println(jMapper.getElement("root.title").get(0).get("title"));
-		
-		//System.out.println(new MapperTest().getData(node));
-		
-		//sf.printElements(jMapper.getElementModel("root.creator"));
 	}
 
 }

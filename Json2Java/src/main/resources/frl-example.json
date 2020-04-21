@@ -134,6 +134,21 @@
 			"@id": "oai:frl.publisso.de:frl:6408444"
 		}
 	],
+	"hasData": {
+		"@id": "frl:6402506/data",
+		"checksum": {
+			"checksumValue": "fbd95081d7b7e00fc515996c4f27e126",
+			"generator": "http://en.wikipedia.org/wiki/MD5",
+			"rdftype": "http://downlode.org/Code/RDF/File_Properties/schema#Checksum",
+			"AndresTest" : {
+			"@Andres" : "Ha",
+			"@Björn" : "Hu"
+			}
+		},
+		"fileLabel": "Optimization of ultrasonic assisted extraction of phenolic compounds from fenugreek Trigonella foenum graecum L seed.pdf",
+		"format": "application/pdf",
+		"size": 1200634
+	},
 	"joinedFunding": [
 		{
 			"fundingJoined": {

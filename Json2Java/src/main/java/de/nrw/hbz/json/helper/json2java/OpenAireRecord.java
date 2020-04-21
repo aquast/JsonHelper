@@ -126,7 +126,7 @@ public class OpenAireRecord extends Record implements java.io.Serializable {
 		
 		// generate fundingReference
 		Element funding = doc.createElement("fundingReferences");
-		jemList = jMapper.getElement("root.joinedFunding.fundingJoined");
+		jemList = jMapper.getElement("root.joinedFunding");
 		for (int i=0; i < jemList.size(); i++) {
 			Element sE = doc.createElement("fundingReference");
 			funding.appendChild(sE);
@@ -221,6 +221,15 @@ public class OpenAireRecord extends Record implements java.io.Serializable {
 			resource.appendChild(source);				
 		}
 
+		// generate version aka green road OA version
+		jemList = jMapper.getElement("root.publicationStatus");
+		for (int i = 0; i < jemList.size(); i++) {
+			Element version = doc.createElement("version");
+			version.appendChild(doc.createTextNode(CoarModel.getElementValue(jemList.get(i).get("prefLabel"))));
+			version.setAttribute("uri", CoarModel.getUriAttributeValue(jemList.get(i).get("prefLabel")));
+			resource.appendChild(version);
+		}
+
 		// generate subjects
 		Element subjects = doc.createElement("datacite:subjects");
 		jemList = jMapper.getElement("root.ddc");
@@ -249,7 +258,7 @@ public class OpenAireRecord extends Record implements java.io.Serializable {
 			subjects.appendChild(sE);
 			resource.appendChild(subjects);
 		}
-		
+				
 		// generate publisher	
 		jemList = jMapper.getElement("root.containedIn");
 		for (int i = 0; i < jemList.size(); i++) {

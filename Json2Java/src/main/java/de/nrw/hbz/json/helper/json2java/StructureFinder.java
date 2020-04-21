@@ -67,9 +67,10 @@ public class StructureFinder {
 			}
 			
 			if(node.get(key).isObject()){
+				pBuffer.append("." + key);
 				//System.out.println("HIER 4, Inhalt ist Objekt, Methode wird rekursiv aufgerufen: " + key);
 				//System.out.println("HIER 4, pBuffer: " + pBuffer.toString());
-
+				/*
 				pBuffer.append("." + key);
 				JsonNode complexNode = node.get(key);
 				jEM = new JsonElementModel(pBuffer.toString());
@@ -77,6 +78,44 @@ public class StructureFinder {
 				Hashtable<String,String> ha = jEM.getComplexElementList();
 				mapStructure(complexNode, pBuffer);
 				jemElement.add(jEM);
+				*/
+				JsonNode complexNode = node.get(key);
+				Iterator<String> nIt = complexNode.fieldNames();
+				ArrayList<String> objKeyList = new ArrayList<>();
+				while (nIt.hasNext()) {
+					String objKey = nIt.next();
+					
+					if(complexNode.get(objKey).isValueNode() || complexNode.get(objKey).isNumber()) {
+
+						Hashtable<String, String> iE = new Hashtable<>();
+						if (jEM != null && !jEM.isEmpty()) {
+							Hashtable<String, String> ha = jEM.getComplexElementList();
+							ha.put(objKey, complexNode.get(objKey).asText());
+							jEM.setComplexElement(ha);
+						} else {
+							iE.put(objKey, complexNode.get(objKey).asText());
+							jEM = new JsonElementModel(pBuffer.toString());
+							jEM.setComplexElement(iE);
+							jemElement.add(jEM);
+						}
+						
+					} else {
+						objKeyList.add(objKey);
+					}
+				}
+
+				Iterator<String> objKeyIt = objKeyList.iterator();
+				while (objKeyIt.hasNext()) {
+				    String objectItemKey = objKeyIt.next();
+					JsonNode realObjNode = complexNode.get(objectItemKey);
+				    pBuffer.append("." + objectItemKey);
+				    
+				    jEM = new JsonElementModel(pBuffer.toString());
+					jEM.setComplexElement(new Hashtable<String,String>());
+					mapStructure(realObjNode, pBuffer);
+					jemElement.add(jEM);			
+				}
+
 			}
 			
 			if(node.get(key).isArray()){
@@ -101,7 +140,7 @@ public class StructureFinder {
 						//System.out.println("HIER 7, Array-Feld enthält Literal, Schreiben des Literals in Elementliste: " + key);
 						Hashtable<String, String> iE = new Hashtable<>();
 						iE.put(pBuffer.toString(), arrayNode.asText());
-						complexElement.add(iE);
+						//complexElement.add(iE);
 						jEM.addArrayElement(arrayNode.asText());
 					}
 				}
@@ -109,7 +148,7 @@ public class StructureFinder {
 					//System.out.println("HIER 8");
 					jemElement.add(jEM);
 				}
-			}
+			} 
 			pBuffer.setLength(l);
 			if (pBuffer.toString().equals("root")){
 				jEM = new JsonElementModel(pBuffer.toString());

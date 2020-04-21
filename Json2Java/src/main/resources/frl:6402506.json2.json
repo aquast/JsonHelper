@@ -4,6 +4,7 @@
 	"accessScheme": "public",
 	"catalogId": "ED6402506",
 	"contentType": "file",
+	"notification": "Dieses Objekt wurde gelöscht",
 	"hasData": {
 		"@id": "frl:6402506/data",
 		"checksum": {

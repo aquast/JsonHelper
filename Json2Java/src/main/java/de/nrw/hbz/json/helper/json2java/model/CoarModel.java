@@ -35,6 +35,14 @@ public abstract class CoarModel {
 	public static final String SOFTWARE = new String("software");
 	public static final String OTHER_RESEARCH_PRODUCT = new String("other research product");
 	
+	// Green Road Open Access Version
+	public static final String AUTHORS_ORIGINAL = "AO";
+	public static final String AUTHORS_ORIGINAL_URI = "http://purl.org/coar/version/c_b1a7d7d4d402bcce";
+	public static final String SUBMITTED_VERSION_UNDER_REVIEW = "SMUR";
+	public static final String SUBMITTED_VERSION_UNDER_REVIEW_URI = "http://purl.org/coar/version/c_71e4c1898caa6e32";
+	public static final String ACCEPTED_MANUSCRIPT = "AM";
+	public static final String ACCEPTED_MANUSCRIPT_URI = "http://purl.org/coar/version/c_ab4af688f83e57aa";
+	
 	
 	public static Hashtable<String, String> elementContent = new Hashtable<>();
 	public static Hashtable<String, String> uriAttributeContent = new Hashtable<>();
@@ -48,6 +56,11 @@ public abstract class CoarModel {
 		elementContent.put("article", CoarModel.JOURNAL_ARTICLE);
 		elementContent.put("Buchkapitel", CoarModel.BOOK_PART);
 		elementContent.put("Kongressbeitrag", CoarModel.CONFERENCE_OBJECT);
+		elementContent.put("Kongressbeitrag", CoarModel.CONFERENCE_OBJECT);
+		elementContent.put("Preprint", CoarModel.AUTHORS_ORIGINAL);
+		elementContent.put("Postprint Autorenversion", CoarModel.SUBMITTED_VERSION_UNDER_REVIEW);
+		elementContent.put("Postprint Verlagsversion", CoarModel.ACCEPTED_MANUSCRIPT);
+
 	}
 
 	private static void setUriHashtable() {
@@ -58,6 +71,10 @@ public abstract class CoarModel {
 		uriAttributeContent.put("article", CoarModel.JOURNAL_ARTICLE_URI);
 		uriAttributeContent.put("Buchkapitel", CoarModel.BOOK_PART_URI);
 		uriAttributeContent.put("Kongressbeitrag", CoarModel.CONFERENCE_OBJECT_URI);
+		uriAttributeContent.put("Preprint", CoarModel.AUTHORS_ORIGINAL_URI);
+		uriAttributeContent.put("Postprint Autorenversion", CoarModel.SUBMITTED_VERSION_UNDER_REVIEW_URI);
+		uriAttributeContent.put("Postprint Verlagsversion",	CoarModel.ACCEPTED_MANUSCRIPT_URI);
+
 	}
 	
 	private static void setResourceHashtable() {

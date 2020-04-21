@@ -1,0 +1,437 @@
+{
+	"@context": "https://frl.publisso.de/context.json",
+	"@id": "frl:6419575",
+	"P60489": [
+		"Universität zu Köln, Dissertation, 2020"
+	],
+	"accessScheme": "public",
+	"bibo:doi": [
+		"10.4126/FRL01-006419575"
+	],
+	"catalogId": "ED6419575",
+	"catalogLink": [
+		{
+			"prefLabel": "HT020408372",
+			"@id": "https://lobid.org/resources/HT020408372"
+		}
+	],
+	"contentType": "monograph",
+	"contribution": [
+		{
+			"agent": [
+				{
+					"@id": "https://d-nb.info/gnd/1207276731",
+					"gndIdentifier": "1207276731",
+					"label": "Bacher, Robin Patrick",
+					"prefLabel": "Bacher, Robin Patrick",
+					"rdftype": [
+						{
+							"@id": "https://d-nb.info/standards/elementset/gnd#Person",
+							"prefLabel": "https://d-nb.info/standards/elementset/gnd#Person"
+						}
+					]
+				}
+			],
+			"rdftype": [
+				{
+					"@id": "http://id.loc.gov/ontologies/bibframe/Contribution",
+					"prefLabel": "Beteiligung"
+				}
+			],
+			"role": [
+				{
+					"@id": "http://id.loc.gov/vocabulary/relators/cre",
+					"label": "Autor/in",
+					"prefLabel": "Autor/in"
+				}
+			]
+		},
+		{
+			"agent": [
+				{
+					"@id": "https://d-nb.info/gnd/1132279216",
+					"gndIdentifier": "1132279216",
+					"label": "Schmidt, Matthias",
+					"prefLabel": "Schmidt, Matthias",
+					"rdftype": [
+						{
+							"@id": "https://d-nb.info/standards/elementset/gnd#Person",
+							"prefLabel": "https://d-nb.info/standards/elementset/gnd#Person"
+						}
+					]
+				}
+			],
+			"rdftype": [
+				{
+					"@id": "http://id.loc.gov/ontologies/bibframe/Contribution",
+					"prefLabel": "Beteiligung"
+				}
+			],
+			"role": [
+				{
+					"@id": "http://id.loc.gov/vocabulary/relators/dgs",
+					"label": "Akademische Prüfungsperson",
+					"prefLabel": "Degree supervisor"
+				}
+			]
+		},
+		{
+			"agent": [
+				{
+					"@id": "https://d-nb.info/gnd/124076408",
+					"altLabel": "Elter, T.",
+					"dateOfBirth": "1971",
+					"gndIdentifier": "124076408",
+					"label": "Elter, Thomas",
+					"prefLabel": "Elter, Thomas",
+					"rdftype": [
+						{
+							"@id": "https://d-nb.info/standards/elementset/gnd#Person",
+							"prefLabel": "https://d-nb.info/standards/elementset/gnd#Person"
+						}
+					]
+				}
+			],
+			"rdftype": [
+				{
+					"@id": "http://id.loc.gov/ontologies/bibframe/Contribution",
+					"prefLabel": "Beteiligung"
+				}
+			],
+			"role": [
+				{
+					"@id": "http://id.loc.gov/vocabulary/relators/dgs",
+					"label": "Akademische Prüfungsperson",
+					"prefLabel": "Degree supervisor"
+				}
+			]
+		},
+		{
+			"agent": [
+				{
+					"@id": "https://d-nb.info/gnd/1175459968",
+					"altLabel": "Klinik und Poliklinik für Nuklearmedizin. Köln",
+					"gndIdentifier": "1175459968",
+					"label": "Universitätsklinikum Köln. Klinik und Poliklinik für Nuklearmedizin",
+					"prefLabel": "Universitätsklinikum Köln. Klinik und Poliklinik für Nuklearmedizin",
+					"rdftype": [
+						{
+							"@id": "https://d-nb.info/standards/elementset/gnd#CorporateBody",
+							"prefLabel": "https://d-nb.info/standards/elementset/gnd#CorporateBody"
+						}
+					]
+				}
+			],
+			"rdftype": [
+				{
+					"@id": "http://id.loc.gov/ontologies/bibframe/Contribution",
+					"prefLabel": "Beteiligung"
+				}
+			],
+			"role": [
+				{
+					"@id": "http://id.loc.gov/vocabulary/relators/ctb",
+					"label": "Mitwirkende",
+					"prefLabel": "Mitwirkende/r"
+				}
+			]
+		}
+	],
+	"creator": [
+		{
+			"prefLabel": "Bacher, Robin Patrick",
+			"@id": "https://d-nb.info/gnd/1207276731"
+		},
+		{
+			"prefLabel": "Schmidt, Matthias",
+			"@id": "https://d-nb.info/gnd/1132279216"
+		},
+		{
+			"prefLabel": "Elter, Thomas",
+			"@id": "https://d-nb.info/gnd/124076408"
+		},
+		{
+			"prefLabel": "Universitätsklinikum Köln. Klinik und Poliklinik für Nuklearmedizin",
+			"@id": "https://d-nb.info/gnd/1175459968"
+		}
+	],
+	"describedby": [
+		{
+			"@id": "http://lobid.org/resources/HT020408372",
+			"created": "20200330",
+			"inDataset": [
+				{
+					"@id": "http://lobid.org/resources/dataset#!",
+					"label": "lobid-resources – Der hbz-Verbundkatalog als Linked Open Data",
+					"prefLabel": "http://lobid.org/resources/dataset#!"
+				}
+			],
+			"label": "Webseite der hbz-Ressource HT020408372",
+			"license": [
+				{
+					"@id": "http://creativecommons.org/publicdomain/zero/1.0",
+					"label": "Creative Commons-Lizenz CC0 1.0 Universal",
+					"prefLabel": "http://creativecommons.org/publicdomain/zero/1.0"
+				}
+			],
+			"modified": "20200401",
+			"prefLabel": "Schilddrüsen Uptake und effektive Halbwertszeit von Radioiod in Schilddrüsenkarzinom-Patienten bei Radioiodtherapie und Kontroll-Ganzkörperszintigraphie in Hypothyreose oder unter rhTSH-Stimulation",
+			"rdftype": [
+				{
+					"@id": "http://purl.org/lobid/lv#BibliographicDescription",
+					"prefLabel": "http://purl.org/lobid/lv#BibliographicDescription"
+				}
+			],
+			"resultOf": [
+				{
+					"endTime": "2020-04-02T04:17:43",
+					"instrument": [
+						{
+							"@id": "https://github.com/hbz/lobid-resources",
+							"label": "Software lobid-resources",
+							"prefLabel": "https://github.com/hbz/lobid-resources",
+							"rdftype": [
+								{
+									"@id": "http://schema.org/SoftwareApplication",
+									"prefLabel": "http://schema.org/SoftwareApplication"
+								}
+							]
+						}
+					],
+					"object": [
+						{
+							"@id": "http://lobid.org/hbz01/HT020408372",
+							"inDataset": [
+								{
+									"@id": "https://datahub.io/dataset/hbz_unioncatalog",
+									"label": "hbz_unioncatalog",
+									"prefLabel": "https://datahub.io/dataset/hbz_unioncatalog"
+								}
+							],
+							"label": "hbz-Ressource HT020408372 im Exportformat MAB2-XML",
+							"prefLabel": "http://lobid.org/hbz01/HT020408372",
+							"rdftype": [
+								{
+									"@id": "http://schema.org/DataFeedItem",
+									"prefLabel": "http://schema.org/DataFeedItem"
+								}
+							]
+						}
+					],
+					"rdftype": [
+						{
+							"@id": "http://schema.org/CreateAction",
+							"prefLabel": "http://schema.org/CreateAction"
+						}
+					]
+				}
+			],
+			"sourceOrganization": [
+				{
+					"@id": "http://lobid.org/organisations/DE-38M#!",
+					"label": "lobid Organisation",
+					"prefLabel": "http://lobid.org/organisations/DE-38M#!"
+				}
+			]
+		}
+	],
+	"doi": "10.4126/FRL01-006419575",
+	"hasItem": [
+		{
+			"@id": "http://lobid.org/items/HT020408372:DE-38M:Elektronische%20Publikation#!",
+			"callNumber": "Elektronische Publikation",
+			"heldBy": [
+				{
+					"@id": "http://lobid.org/organisations/DE-38M#!",
+					"label": "lobid Organisation",
+					"prefLabel": "http://lobid.org/organisations/DE-38M#!"
+				}
+			],
+			"label": "Elektronische Publikation",
+			"note": "00000099",
+			"prefLabel": "http://lobid.org/items/HT020408372:DE-38M:Elektronische Publikation#!",
+			"rdftype": [
+				{
+					"@id": "http://id.loc.gov/ontologies/bibframe/Item",
+					"prefLabel": "http://id.loc.gov/ontologies/bibframe/Item"
+				}
+			]
+		}
+	],
+	"hasPart": [
+		{
+			"prefLabel": "Schilddrüsen Uptake und effektive Halbwertszeit von Radioiod in Schilddrüsenkarzinom-Patienten bei Radioiodtherapie und Kontroll-Ganzkörperszintigraphie in Hypothyreose oder unter rhTSH-Stimulation",
+			"@id": "frl:6419576"
+		}
+	],
+	"hasVersion": [
+		{
+			"@id": "https://repository.publisso.de/resource/frl:6419575",
+			"label": "frl:6419575",
+			"prefLabel": "https://repository.publisso.de/resource/frl:6419575"
+		}
+	],
+	"hbzId": [
+		"HT020408372"
+	],
+	"inCollection": [
+		{
+			"@id": "http://repository.publisso.de",
+			"label": "Fachrepositorium Lebenswissenschaften",
+			"prefLabel": "http://repository.publisso.de",
+			"rdftype": [
+				{
+					"@id": "http://id.loc.gov/ontologies/bibframe/Collection",
+					"prefLabel": "http://id.loc.gov/ontologies/bibframe/Collection"
+				}
+			]
+		}
+	],
+	"institution": [
+		{
+			"@id": "http://d-nb.info/gnd/1053580-9",
+			"prefLabel": "Universität zu Köln. Medizinische Fakultät"
+		}
+	],
+	"isDescribedBy": {
+		"@id": "frl:6419575.rdf",
+		"created": "2020-03-31T07:06:04.310+0200",
+		"createdBy": "21",
+		"describes": "frl:6419575",
+		"lastModifiedBy": "21",
+		"modified": "2020-04-02T03:16:16.155+0000",
+		"objectTimestamp": "2020-03-31T05:07:14.000+0000"
+	},
+	"isLike": [
+		{
+			"@id": "http://dx.doi.org/10.4126/FRL01-006419575",
+			"label": "FRL01-006419575",
+			"prefLabel": "http://dx.doi.org/10.4126/FRL01-006419575"
+		},
+		{
+			"@id": "http://nbn-resolving.de/urn:nbn:de:hbz:38m-frl:64195755",
+			"label": "urn:nbn:de:hbz:38m-frl:64195755",
+			"prefLabel": "http://nbn-resolving.de/urn:nbn:de:hbz:38m-frl:64195755"
+		}
+	],
+	"isMemberOf": [
+		{
+			"prefLabel": "info:fedora/oai:aleph",
+			"@id": "info:fedora/oai:aleph"
+		},
+		{
+			"prefLabel": "info:fedora/oai:epicur",
+			"@id": "info:fedora/oai:epicur"
+		},
+		{
+			"prefLabel": "info:fedora/oai:frl01",
+			"@id": "info:fedora/oai:frl01"
+		},
+		{
+			"prefLabel": "info:fedora/oai:monograph",
+			"@id": "info:fedora/oai:monograph"
+		},
+		{
+			"prefLabel": "info:fedora/oai:open_access",
+			"@id": "info:fedora/oai:open_access"
+		}
+	],
+	"issued": "2020",
+	"itemID": [
+		{
+			"prefLabel": "oai:frl.publisso.de:frl:6419575",
+			"@id": "oai:frl.publisso.de:frl:6419575"
+		}
+	],
+	"language": [
+		{
+			"@id": "http://id.loc.gov/vocabulary/iso639-2/eng",
+			"label": "Englisch",
+			"prefLabel": "Englisch"
+		},
+		{
+			"@id": "http://id.loc.gov/vocabulary/iso639-2/deu",
+			"label": "Deutsch",
+			"prefLabel": "Deutsch"
+		}
+	],
+	"medium": [
+		{
+			"@id": "http://rdaregistry.info/termList/RDACarrierType/1018",
+			"label": "Online-Ressource",
+			"prefLabel": "Online-Ressource"
+		}
+	],
+	"natureOfContent": [
+		{
+			"@id": "https://d-nb.info/gnd/4113937-9",
+			"label": "Hochschulschrift",
+			"prefLabel": "Hochschulschrift"
+		}
+	],
+	"parallelEdition": [
+		{
+			"@id": "http://lobid.org/resources/HT020408372#!",
+			"prefLabel": "Schilddrüsen Uptake und effektive Halbwertszeit von Radioiod in Schilddrüsenkarzinom-Patienten bei Radioiodtherapie und Kontroll-Ganzkörperszintigraphie in Hypothyreose oder unter rhTSH-Stimulation"
+		}
+	],
+	"primaryTopic": "frl:6419575",
+	"publication": [
+		{
+			"location": "Köln",
+			"rdftype": [
+				{
+					"@id": "http://schema.org/PublicationEvent",
+					"prefLabel": "http://schema.org/PublicationEvent"
+				}
+			],
+			"startDate": "2020"
+		}
+	],
+	"publishScheme": "public",
+	"rdftype": [
+		{
+			"prefLabel": "Monografie",
+			"@id": "http://purl.org/ontology/bibo/Book"
+		},
+		{
+			"prefLabel": "Abschlussarbeit",
+			"@id": "http://purl.org/ontology/bibo/Thesis"
+		}
+	],
+	"responsibilityStatement": [
+		"vorgelegt von Robin Patrick Bacher ; 1. Gutachter: Professor Dr. med. M. C. Schmidt, 2. Gutachter: Privatdozent Dr. med. Th. Elter ; aus der Klinik und Poliklinik für Nuklearmedizin der Universität zu Köln"
+	],
+	"sameAs": [
+		{
+			"@id": "http://hub.culturegraph.org/resource/HBZ-HT020408372",
+			"label": "Culturegraph Ressource",
+			"prefLabel": "http://hub.culturegraph.org/resource/HBZ-HT020408372"
+		}
+	],
+	"subject": [
+		{
+			"label": "Medizin und Gesundheit",
+			"notation": "610",
+			"prefLabel": "Medizin und Gesundheit",
+			"source": [
+				{
+					"@id": "https://d-nb.info/gnd/4149423-4",
+					"label": "Dewey-Dezimalklassifikation",
+					"prefLabel": "Dewey-Dezimalklassifikation"
+				}
+			]
+		}
+	],
+	"title": [
+		"Schilddrüsen Uptake und effektive Halbwertszeit von Radioiod in Schilddrüsenkarzinom-Patienten bei Radioiodtherapie und Kontroll-Ganzkörperszintigraphie in Hypothyreose oder unter rhTSH-Stimulation"
+	],
+	"transformer": [
+		"aleph",
+		"epicur",
+		"mets",
+		"oaidc",
+		"rdf"
+	],
+	"urn": "urn:nbn:de:hbz:38m-frl:64195755"
+}

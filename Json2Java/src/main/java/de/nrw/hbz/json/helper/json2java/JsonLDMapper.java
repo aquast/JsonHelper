@@ -53,12 +53,12 @@ public class JsonLDMapper {
 
 			String key = it.next();
 			if (node.get(key).isValueNode() || node.get(key).isNumber()) {
-				//System.out.println("Dies ist ein ValueNode: " + pBuffer.toString() + "." + key);
+				System.out.println("Dies ist ein ValueNode: " + pBuffer.toString() + "." + key);
 				Hashtable<String, String> iE = new Hashtable<>();
 
 				if (jEM != null && !jEM.isEmpty()) {
 					// if we have an jEM already, we will use the ElementList from this 
-					System.out.println("Der ValueNode: " + pBuffer.toString() + "." + key + " kommt zu bestehender Liste");
+					//System.out.println("Der ValueNode: " + pBuffer.toString() + "." + key + " kommt zu bestehender Liste");
 					Hashtable<String, String> ha = jEM.getComplexElementList();
 					ha.put(key, node.get(key).asText());
 					jEM.setComplexElement(ha);
@@ -66,7 +66,7 @@ public class JsonLDMapper {
 					// This block is used for the first method call only,
 					// as there is no jEM to provide 
 					//iE.put(pBuffer + "." + key, node.get(key).asText());
-					System.out.println("Der ValueNode: " + pBuffer.toString() + "." + key + " eröffnet neue Liste");
+					//System.out.println("Der ValueNode: " + pBuffer.toString() + "." + key + " eröffnet neue Liste");
 					iE.put(key, node.get(key).asText());
 					jEM = new JsonElementModel(pBuffer.toString());
 					jEM.setComplexElement(iE);
@@ -77,9 +77,8 @@ public class JsonLDMapper {
 			// check if current field is of type object, if so, we have to make 
 			// a recursive call to mapToJsonModel
 			if (node.get(key).isObject()) {
-				System.out.println("Dies ist ein ObjectNode: " + pBuffer.toString() + "." + key);
 				pBuffer.append("." + key);
-				
+				System.out.println("Dies ist ein ObjectNode: " + pBuffer.toString());
 				// find all child nodes and search for literals etc. 
 				JsonNode complexNode = node.get(key);
 				Iterator<String> nIt = complexNode.fieldNames();
@@ -88,7 +87,7 @@ public class JsonLDMapper {
 					String objKey = nIt.next();
 					
 					if(complexNode.get(objKey).isValueNode() || complexNode.get(objKey).isNumber()) {
-
+						System.out.println("Dies ist ein LiteralNode: " + objKey);
 						Hashtable<String, String> iE = new Hashtable<>();
 						if (jEM != null && !jEM.isEmpty()) {
 							Hashtable<String, String> ha = jEM.getComplexElementList();
@@ -119,6 +118,7 @@ public class JsonLDMapper {
 				}
 			}
 
+			
 			// check if current field is of type array 
 			if (node.get(key).isArray()) {
 				pBuffer.append("." + key);
@@ -126,6 +126,9 @@ public class JsonLDMapper {
 				JsonNode complexNode = node.get(key);
 				jEM = new JsonElementModel(pBuffer.toString());
 
+				Iterator<String> namesIt = complexNode.fieldNames();
+				System.out.println("Anzahl der Felder: " + complexNode.size());
+				
 				Iterator<JsonNode> nIt = complexNode.elements();
 				while (nIt.hasNext()) {
 					JsonNode arrayNode = nIt.next();
@@ -165,25 +168,30 @@ public class JsonLDMapper {
 	 */
 	// TODO: move into separate testing Class
 	public void printElements() {
-		//Iterator<Hashtable<String, String>> it = complexElement.iterator();
-		for (int i = 0; i < jemElement.size(); i++) {
-			if (jemElement.get(i).isArray()) {
-				System.out.print(jemElement.get(i).getPath() + ":\t");
-				Iterator<String> jit = jemElement.get(i).getArrayList().iterator();
-				while (jit.hasNext()) {
-					System.out.print(jit.next().toString() + "\t");
-				}
-			} else if (!jemElement.get(i).isEmpty()) {
-				System.out.println(jemElement.get(i).getPath());
-				Enumeration<String> jEnum = jemElement.get(i).getComplexElementList().keys();
-				while (jEnum.hasMoreElements()) {
-					String key = jEnum.nextElement().toString();
-					System.out.print("\t" + "\t" + key + "\t");
-					System.out.print(jemElement.get(i).getComplexElementList().get(key) + "\n");
-				}
 
-			}
-			//System.out.println("" + jemElement.size());
+		if(jemElement != null && !jemElement.isEmpty()) {
+			for (int i=0; i<jemElement.size(); i++) {
+				if(jemElement.get(i).isArray()) {
+					System.out.print(jemElement.get(i).getPath() + ":\t");
+					Iterator jit = jemElement.get(i).getArrayList().iterator();
+					while (jit.hasNext()) {
+						System.out.print(jit.next().toString() + "\t");
+					}
+					System.out.println("\n");
+				}else if (!jemElement.get(i).isEmpty()) {
+					System.out.println(jemElement.get(i).getPath());
+					Enumeration jEnum = jemElement.get(i).getComplexElementList().keys();
+					while (jEnum.hasMoreElements()) {
+						String key = jEnum.nextElement().toString();
+						System.out.print( "\t" + "\t" + key + "\t");
+						//System.out.print(jemElement.get(i).getPath() + "." + key + ": " + jemElement.get(i).getComplexElementList().get(key) + "\n");
+						System.out.print(jemElement.get(i).getComplexElementList().get(key) + "\n");
+					}
+					
+				}  
+				//System.out.println("" + jemElement.size());
+			} 
+			
 		}
 	}
 
