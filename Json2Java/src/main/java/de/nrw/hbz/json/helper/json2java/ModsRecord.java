@@ -124,18 +124,28 @@ public class ModsRecord extends Record implements java.io.Serializable {
 			mods.appendChild(abstracttext);
 		}
 		// generate typeOfResource
+		// TODO: zur Zeit wird alles als "text" behandelt, es gibt aber auch video etc.
 		Element typeOfResource = doc.createElement("typeOfResource"); 
 		typeOfResource.appendChild(doc.createTextNode("text"));
 		mods.appendChild(typeOfResource);
 		
 		// generate genre
-		// TODO: lookup of proper frl-to-mods mapping
-		Element genre = doc.createElement("genre"); 
-		//genre.appendChild(doc.createTextNode("academic journal"));
-		//genre.appendChild(doc.createTextNode("conference publication"));
-		genre.appendChild(doc.createTextNode("book"));
-		mods.appendChild(genre);
+		Hashtable<String, String> genres = new Hashtable<String, String>();
+	    genres.put("Buchkapitel", "book");
+	    genres.put("article", "academic journal");
+	    genres.put("Kongressbeitrag", "conference publication");
 
+		jemList = jMapper.getElement("root");
+		for (int i = 0; i < jemList.size(); i++) {
+			if (jemList.get(i).containsKey("contentType")) {
+				String contentType = jemList.get(i).get("contentType");
+				if (genres.containsKey(contentType)) {
+					Element genre = doc.createElement("genre");
+					genre.appendChild(doc.createTextNode(genres.get(contentType)));
+					mods.appendChild(genre);
+				}
+			}
+		}
 		
 		// generate language
 		jemList = jMapper.getElement("root.language");
