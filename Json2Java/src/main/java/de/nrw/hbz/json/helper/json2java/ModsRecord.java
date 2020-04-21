@@ -38,8 +38,6 @@ import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-import de.nrw.hbz.json.helper.json2java.model.CoarModel;
-import de.nrw.hbz.json.helper.json2java.model.EmbargoModel;
 
 /**
  * @author reimer@hbz-nrw.de
