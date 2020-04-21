@@ -36,9 +36,12 @@ public class JsonExample {
 			e.printStackTrace();
 		}
 		
-		node = JsonFileReader.getJsonNodeFromFile("src/main/resources/frl-example.json2.json");
 		JsonNode fileNode = JsonFileReader.getJsonNodeFromFile("src/main/resources/frl:6402506.json2.json");
+		//node = JsonFileReader.getJsonNodeFromFile("src/main/resources/frl-example.json2.json");
+		node = JsonFileReader.getJsonNodeFromFile("src/main/resources/frl-example.json");
+		//node = JsonFileReader.getJsonNodeFromFile("src/main/resources/video-example.json");
 		//node = JsonFileReader.getJsonNodeFromFile("src/main/resources/oer-example.json");
+		//node = JsonFileReader.getJsonNodeFromFile("src/main/resources/frl:6402506.json2.json");
 
 		
 		//StructureFinder sf = new StructureFinder();
@@ -53,7 +56,8 @@ public class JsonExample {
 		//OpenAireRecord oar = new OpenAireRecord(jMapper);
 		ModsRecord mods = new ModsRecord(jMapper);
 
-		System.out.println(mods.toString());
+		System.out.println(mods.xml2any("bib"));
+		//System.out.println(mods.toString());
 		//System.out.println(jMapper.getElement("root.creator").get(0).get("prefLabel"));
 		
 		//System.out.println(jMapper.getElement("root.title").get(0).get("title"));

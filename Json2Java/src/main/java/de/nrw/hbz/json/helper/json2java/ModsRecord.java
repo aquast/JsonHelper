@@ -17,12 +17,19 @@
 package de.nrw.hbz.json.helper.json2java;
 
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
+
+import java.lang.Process;
+import java.lang.ProcessBuilder;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.InputStreamReader;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -38,7 +45,6 @@ import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-
 /**
  * @author reimer@hbz-nrw.de
  *
@@ -46,7 +52,6 @@ import org.w3c.dom.Element;
 public class ModsRecord extends Record implements java.io.Serializable {
 
 	Document doc = null;
-
 	
 	public ModsRecord(JsonLDMapper jMapper) {
 		createRecord(jMapper);
@@ -234,6 +239,40 @@ public class ModsRecord extends Record implements java.io.Serializable {
 		
 		return "Test beendet";
 
+	}
+	
+	/**
+	 * return bibtex format of metadata
+	 * 
+	 */
+
+	public String xml2any(String format) {
+		
+		// bibutil commands
+		Hashtable<String, String> bibutils = new Hashtable<String, String>();
+	    bibutils.put("bib", "/usr/bin/xml2bib");
+	    bibutils.put("end", "/usr/bin/xml2end");
+	    bibutils.put("ris", "/usr/bin/xml2ris");
+
+		String mods_xml = XmlUtils.docToString(doc);
+		String command = "echo '" + mods_xml + "' | " + bibutils.get(format);
+		String output = "";
+		try {
+			ProcessBuilder pb = new
+	            ProcessBuilder("/bin/sh", "-c", command);
+	        final Process p=pb.start();
+	        BufferedReader br=new BufferedReader(
+	            new InputStreamReader(
+	               p.getInputStream()));
+	               String line;
+	               while((line=br.readLine())!=null){
+	                  output = output + "\n" +line;
+	               }
+	      } catch (Exception ex) {
+	         System.out.println(ex);
+	      }
+		
+		return output;
 	}
 
 	@Override
