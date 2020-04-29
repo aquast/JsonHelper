@@ -255,6 +255,7 @@ public class ModsRecord extends Record implements java.io.Serializable {
 	    bibutils.put("ris", "/usr/bin/xml2ris");
 
 		String mods_xml = XmlUtils.docToString(doc);
+		//String mods_xml = "<mods><titleInfo><title>Distribution extension for Anolis pseudokemptoni of western Panama</title></titleInfo><genre>book</genre></mods>";
 		String command = "echo '" + mods_xml + "' | " + bibutils.get(format);
 		String output = "";
 		try {
