@@ -65,25 +65,6 @@
 			"prefLabel": "Biowissenschaften; Biologie"
 		}
 	],
-	"fundingId": [
-		{
-			"@id": "https://frl.publisso.de/adhoc/uri/RkFaSVQtU3RpZnR1bmc=",
-			"prefLabel": "FAZIT-Stiftung"
-		},
-		{
-			"@id": "https://frl.publisso.de/adhoc/uri/U3R1ZGllbnN0aWZ0dW5nIGRlcyBkZXV0c2NoZW4gVm9sa2Vz",
-			"prefLabel": "Studienstiftung des deutschen Volkes"
-		},
-		{
-			"@id": "https://frl.publisso.de/adhoc/uri/VmVyZWluaWd1bmcgdm9uIEZyZXVuZGVuIHVuZCBGw7ZyZGVyZXJuIGRlciBHb2V0aGUtVW5pdmVyc2l0w6R0",
-			"prefLabel": "Vereinigung von Freunden und Förderern der Goethe-Universität"
-		}
-	],
-	"fundingProgram": [
-		"-",
-		"-",
-		"-"
-	],
 	"hasPart": [
 		{
 			"prefLabel": "Distribution extension for Anolis pseudokemptoni Köhler, Ponce, Sunyer & Batista, 2007 (Reptilia: Squamata: Dactyloidae), a microendemic species in the Serranía de Tabasará of the Comarca Ngöbe-Buglé of western Panama",
@@ -134,21 +115,6 @@
 			"@id": "oai:frl.publisso.de:frl:6408444"
 		}
 	],
-	"hasData": {
-		"@id": "frl:6402506/data",
-		"checksum": {
-			"checksumValue": "fbd95081d7b7e00fc515996c4f27e126",
-			"generator": "http://en.wikipedia.org/wiki/MD5",
-			"rdftype": "http://downlode.org/Code/RDF/File_Properties/schema#Checksum",
-			"AndresTest" : {
-			"@Andres" : "Ha",
-			"@Björn" : "Hu"
-			}
-		},
-		"fileLabel": "Optimization of ultrasonic assisted extraction of phenolic compounds from fenugreek Trigonella foenum graecum L seed.pdf",
-		"format": "application/pdf",
-		"size": 1200634
-	},
 	"joinedFunding": [
 		{
 			"fundingJoined": {

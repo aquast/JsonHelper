@@ -1,0 +1,211 @@
+{
+	"@context": "https://frl.publisso.de/context.json",
+	"@id": "frl:6410292",
+	"abstractText": [
+		"Cortisol is a steroid hormone with important roles in regulating immune and metabolic functions and organismal responses to external stimuli are mediated by the glucocorticoid system. Dysregulation of the afferent and efferent axis of glucocorticoid signaling have adverse effects on growth, health status, and well-being. Glucocorticoid secretion and signaling show large interindividual variation that has a considerable genetic component; however, little is known about the underlying genetic variants. Here, we used trait-correlated expression analysis, screening for expression quantitative trait loci (eQTL), genome-wide association (GWA) studies, and causality modeling to identify candidate genes in porcine liver and muscle that affect or respond to plasma cortisol levels. Through trait-correlated expression, we characterized transcript activities in many biological functions in liver and muscle. Candidates from the list of trait-correlated expressed genes were narrowed using only those genes with an eQTL, and these were further prioritized by determining whether their expression was predicted to be related to variation in plasma cortisol levels. Using network edge orienting (NEO), a causality modeling algorithm, 26 of 990 candidates in liver were predicted to affect and 70 to respond to plasma cortisol levels. Of 593 candidates in muscle that were correlated with cortisol levels and were regulated by eQTL, 2 and 25 were predicted as effective and responsive, respectively, to plasma cortisol levels. Comprehensive data integration has helped to elucidate the complex molecular networks contributing to cortisol levels and thus its subsequent metabolic effects. The discrimination of up- and downstream effects of transcripts affecting or responding to plasma cortisol concentrations improves the understanding of the biology of complex traits related to growth, health, and well-being."
+	],
+	"accessScheme": "public",
+	"additionalMaterial": [
+		{
+			"@id": "http://www.genetics.org/content/192/3/1109.supplemental",
+			"prefLabel": "http://www.genetics.org/content/192/3/1109.supplemental"
+		}
+	],
+	"bibliographicCitation": [
+		"192(3): 1109-1122"
+	],
+	"catalogId": "ED6410292",
+	"collectionOne": [
+		{
+			"@id": "http://d-nb.info/gnd/16072459-4",
+			"prefLabel": "Leibniz-Institut für Nutztierbiologie"
+		}
+	],
+	"containedIn": [
+		{
+			"@id": "http://lobid.org/resources/HT010726627#!",
+			"prefLabel": "Genetics"
+		}
+	],
+	"contentType": "article",
+	"contributorOrder": [
+		"https://frl.publisso.de/adhoc/creator/UG9uc3Vrc2lsaSwgU2lyaWx1Y2s=|http://orcid.org/0000-0002-5707-513X|https://frl.publisso.de/adhoc/creator/TXVyw6FuaSwgRWR1YXJk|https://frl.publisso.de/adhoc/creator/U2Nod2VyaW4sIE1hbmZyZWQ=|http://orcid.org/0000-0002-9523-6790"
+	],
+	"creator": [
+		{
+			"@id": "https://frl.publisso.de/adhoc/creator/UG9uc3Vrc2lsaSwgU2lyaWx1Y2s=",
+			"prefLabel": "Ponsuksili, Siriluck"
+		},
+		{
+			"@id": "http://orcid.org/0000-0002-5707-513X",
+			"prefLabel": "Du, Yang"
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/creator/TXVyw6FuaSwgRWR1YXJk",
+			"prefLabel": "Muráni, Eduard"
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/creator/U2Nod2VyaW4sIE1hbmZyZWQ=",
+			"prefLabel": "Schwerin, Manfred"
+		},
+		{
+			"@id": "http://orcid.org/0000-0002-9523-6790",
+			"prefLabel": "Wimmers, Klaus"
+		}
+	],
+	"ddc": [
+		{
+			"@id": "http://dewey.info/class/570/",
+			"prefLabel": "Biowissenschaften; Biologie"
+		}
+	],
+	"fundingId": [
+		{
+			"@id": "http://dx.doi.org/10.13039/501100001659",
+			"prefLabel": "Deutsche Forschungsgemeinschaft"
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/uri/TGVpYm5pei1JbnN0aXR1dCBmw7xyIE51dHp0aWVyYmlvbG9naWUgKEZCTik=",
+			"prefLabel": "Leibniz-Institut für Nutztierbiologie (FBN)"
+		}
+	],
+	"fundingProgram": [
+		"-",
+		"-"
+	],
+	"institution": [
+		{
+			"@id": "http://d-nb.info/gnd/16072459-4",
+			"prefLabel": "Leibniz-Institut für Nutztierbiologie"
+		}
+	],
+	"isDescribedBy": {
+		"@id": "frl:6410292.rdf",
+		"created": "2018-09-20T14:05:33.040+0200",
+		"createdBy": "122",
+		"describes": "frl:6410292",
+		"lastModifiedBy": "16",
+		"modified": "2020-04-22T06:40:59.306+0000",
+		"objectTimestamp": "2020-04-22T06:40:58.000+0000"
+	},
+	"isMemberOf": [
+		{
+			"prefLabel": "info:fedora/oai:article",
+			"@id": "info:fedora/oai:article"
+		},
+		{
+			"prefLabel": "info:fedora/oai:open_access",
+			"@id": "info:fedora/oai:open_access"
+		}
+	],
+	"isPrimaryTopicOf": [
+		{
+			"@id": "https://repository.publisso.de/resource/frl:6410292/edit",
+			"prefLabel": "https://repository.publisso.de/resource/frl:6410292/edit",
+			"primaryTopic": "frl:6410292"
+		}
+	],
+	"issued": "2012",
+	"itemID": [
+		{
+			"prefLabel": "oai:frl.publisso.de:frl:6410292",
+			"@id": "oai:frl.publisso.de:frl:6410292"
+		}
+	],
+	"joinedFunding": [
+		{
+			"fundingJoined": {
+				"@id": "http://dx.doi.org/10.13039/501100001659",
+				"prefLabel": "Deutsche Forschungsgemeinschaft"
+			},
+			"fundingProgramJoined": "-",
+			"projectIdJoined": "FOR 753; PO 753/7-1; WI 1754/10-14"
+		},
+		{
+			"fundingJoined": {
+				"@id": "https://frl.publisso.de/adhoc/uri/TGVpYm5pei1JbnN0aXR1dCBmw7xyIE51dHp0aWVyYmlvbG9naWUgKEZCTik=",
+				"prefLabel": "Leibniz-Institut für Nutztierbiologie (FBN)"
+			},
+			"fundingProgramJoined": "-",
+			"projectIdJoined": "-"
+		}
+	],
+	"language": [
+		{
+			"@id": "http://id.loc.gov/vocabulary/iso639-2/eng",
+			"prefLabel": "Englisch"
+		}
+	],
+	"prefLabel": [
+		"frl:6410292"
+	],
+	"primaryTopic": "frl:6410292",
+	"projectId": [
+		"FOR 753; PO 753/7-1; WI 1754/10-14",
+		"-"
+	],
+	"publicationStatus": [
+		{
+			"@id": "http://hbz-nrw.de/regal#original",
+			"prefLabel": "Postprint Verlagsversion"
+		}
+	],
+	"publicationYear": [
+		"2012-11-07"
+	],
+	"publishScheme": "public",
+	"publisherVersion": [
+		{
+			"@id": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3522154/",
+			"prefLabel": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3522154/"
+		},
+		{
+			"@id": "https://dx.doi.org/10.1534%2Fgenetics.112.143081",
+			"prefLabel": "https://dx.doi.org/10.1534%2Fgenetics.112.143081"
+		}
+	],
+	"rdftype": [
+		{
+			"prefLabel": "Artikel",
+			"@id": "http://purl.org/ontology/bibo/Article"
+		}
+	],
+	"reviewStatus": [
+		{
+			"@id": "http://hbz-nrw.de/regal#peerReviewed",
+			"prefLabel": "begutachtet (Peer-reviewed)"
+		}
+	],
+	"subject": [
+		{
+			"@id": "https://frl.publisso.de/adhoc/uri/cXVhbnRpdGF0aXZlIHRyYWl0IG5ldHdvcmtz",
+			"prefLabel": "quantitative trait networks"
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/uri/Z2Vub21lLXdpZGUgYXNzb2NpYXRpb24gKEdXQSk=",
+			"prefLabel": "genome-wide association (GWA)"
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/uri/bmV0d29yayBlZGdlIG9yaWVudGluZyAoTkVPKQ==",
+			"prefLabel": "network edge orienting (NEO)"
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/uri/ZXhwcmVzc2lvbiBxdWFudGl0YXRpdmUgdHJhaXRzIGxvY2kgKGVRVEwp",
+			"prefLabel": "expression quantitative traits loci (eQTL)"
+		},
+		{
+			"@id": "https://frl.publisso.de/adhoc/uri/Y29ydGlzb2wgY29uY2VudHJhdGlvbg==",
+			"prefLabel": "cortisol concentration"
+		}
+	],
+	"title": [
+		"Elucidating Molecular Networks That Either Affect or Respond to Plasma Cortisol Concentration in Target Tissues of Liver and Muscle"
+	],
+	"transformer": [
+		"mets",
+		"oaidc",
+		"openaire",
+		"rdf",
+		"wgl"
+	]
+}

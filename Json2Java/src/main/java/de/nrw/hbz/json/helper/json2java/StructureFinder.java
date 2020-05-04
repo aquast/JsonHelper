@@ -18,10 +18,10 @@ import com.fasterxml.jackson.databind.JsonNode;
  */
 public class StructureFinder {
 
-	Hashtable<String,String> simpleElements = new Hashtable<>();
-	ArrayList<Hashtable<String,String>> complexElement = new ArrayList<>();
-	ArrayList<Hashtable<String,String>> simpleElement = new ArrayList<>();
-	ArrayList<Hashtable<String,ArrayList<String>>> arrayElement = new ArrayList<>();
+	//Hashtable<String,String> simpleElements = new Hashtable<>();
+	//ArrayList<Hashtable<String,String>> complexElement = new ArrayList<>();
+	//ArrayList<Hashtable<String,String>> simpleElement = new ArrayList<>();
+	//ArrayList<Hashtable<String,ArrayList<String>>> arrayElement = new ArrayList<>();
 	ArrayList<JsonElementModel> jemElement = new ArrayList<>();
 	JsonElementModel jEM = null;
 	Hashtable<String, ArrayList<Integer>> index = new Hashtable<>();

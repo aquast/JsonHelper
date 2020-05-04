@@ -1,0 +1,445 @@
+{
+	"@context": "https://frl.publisso.de/context.json",
+	"@id": "frl:6420313",
+	"accessScheme": "public",
+	"alternative": [
+		"2018 EQUAL qūméi bìng píngfēn: ECMM xuéhuì píngfēn gǎibiān zì mùqián zhǐnán, yòng yú línchuáng qīnxí xìng fèi qūméi bìng zhěnzhì de zhìliàng pínggū"
+	],
+	"catalogId": "ED6420313",
+	"catalogLink": [
+		{
+			"prefLabel": "HT020432866",
+			"@id": "https://lobid.org/resources/HT020432866"
+		}
+	],
+	"contentType": "monograph",
+	"contribution": [
+		{
+			"agent": [
+				{
+					"@id": "https://d-nb.info/gnd/121712915",
+					"altLabel": [
+						"Cornely, Oliver A.",
+						"Cornely, Oliver",
+						"Cornely, O. A."
+					],
+					"dateOfBirth": "1967",
+					"gndIdentifier": "121712915",
+					"label": "Cornely, Oliver Andreas",
+					"prefLabel": "Cornely, Oliver Andreas",
+					"rdftype": [
+						{
+							"@id": "https://d-nb.info/standards/elementset/gnd#Person",
+							"prefLabel": "https://d-nb.info/standards/elementset/gnd#Person"
+						}
+					]
+				}
+			],
+			"rdftype": [
+				{
+					"@id": "http://id.loc.gov/ontologies/bibframe/Contribution",
+					"prefLabel": "Beteiligung"
+				}
+			],
+			"role": [
+				{
+					"@id": "http://id.loc.gov/vocabulary/relators/cre",
+					"label": "Autor/in",
+					"prefLabel": "Autor/in"
+				}
+			]
+		},
+		{
+			"agent": [
+				{
+					"@id": "https://d-nb.info/gnd/1033465666",
+					"dateOfBirth": "1988",
+					"gndIdentifier": "1033465666",
+					"label": "Köhler, Philipp",
+					"prefLabel": "Köhler, Philipp",
+					"rdftype": [
+						{
+							"@id": "https://d-nb.info/standards/elementset/gnd#Person",
+							"prefLabel": "https://d-nb.info/standards/elementset/gnd#Person"
+						}
+					]
+				}
+			],
+			"rdftype": [
+				{
+					"@id": "http://id.loc.gov/ontologies/bibframe/Contribution",
+					"prefLabel": "Beteiligung"
+				}
+			],
+			"role": [
+				{
+					"@id": "http://id.loc.gov/vocabulary/relators/cre",
+					"label": "Autor/in",
+					"prefLabel": "Autor/in"
+				}
+			]
+		},
+		{
+			"agent": [
+				{
+					"@id": "https://d-nb.info/gnd/112248822X",
+					"dateOfBirth": "1990",
+					"gndIdentifier": "112248822X",
+					"label": "Mellinghoff, Sibylle Christiane",
+					"prefLabel": "Mellinghoff, Sibylle Christiane",
+					"rdftype": [
+						{
+							"@id": "https://d-nb.info/standards/elementset/gnd#Person",
+							"prefLabel": "https://d-nb.info/standards/elementset/gnd#Person"
+						}
+					]
+				}
+			],
+			"rdftype": [
+				{
+					"@id": "http://id.loc.gov/ontologies/bibframe/Contribution",
+					"prefLabel": "Beteiligung"
+				}
+			],
+			"role": [
+				{
+					"@id": "http://id.loc.gov/vocabulary/relators/cre",
+					"label": "Autor/in",
+					"prefLabel": "Autor/in"
+				}
+			]
+		},
+		{
+			"agent": [
+				{
+					"label": "Yao, Zhang",
+					"prefLabel": "Yao, Zhang",
+					"rdftype": [
+						{
+							"@id": "https://d-nb.info/standards/elementset/gnd#Person",
+							"prefLabel": "https://d-nb.info/standards/elementset/gnd#Person"
+						}
+					]
+				}
+			],
+			"rdftype": [
+				{
+					"@id": "http://id.loc.gov/ontologies/bibframe/Contribution",
+					"prefLabel": "Beteiligung"
+				}
+			],
+			"role": [
+				{
+					"@id": "http://id.loc.gov/vocabulary/relators/cre",
+					"label": "Autor/in",
+					"prefLabel": "Autor/in"
+				}
+			]
+		},
+		{
+			"agent": [
+				{
+					"@id": "https://d-nb.info/gnd/10018507-1",
+					"altLabel": [
+						"Klinik für Innere Medizin I. Universitätsklinikum Köln",
+						"Klinik für Hämatologie und Onkologie",
+						"Klinik I für Innere Medizin. Universitätsklinikum Köln",
+						"Klinik für Innere Medizin. Universitätsklinikum Köln",
+						"Universität zu Köln. Klinik für Hämatologie und Onkologie",
+						"Universität zu Köln. Klinik I für Innere Medizin",
+						"Universitätsklinikum Köln. Klinik und Poliklinik für Innere Medizin I Hämatologie und Onkologie",
+						"Klinik und Poliklinik für Innere Medizin I Hämatologie und Onkologie. Köln",
+						"Universitätsklinikum Köln. Innere Medizin I - Onkologie, Hämatologie, Klinische Infektiologie, Klinische Immunologie, Hämostaseologie, Internistische Intensivmedizin"
+					],
+					"gndIdentifier": "10018507-1",
+					"label": "Universitätsklinikum Köln. Klinik I für Innere Medizin",
+					"prefLabel": "Universitätsklinikum Köln. Klinik I für Innere Medizin",
+					"rdftype": [
+						{
+							"@id": "https://d-nb.info/standards/elementset/gnd#CorporateBody",
+							"prefLabel": "https://d-nb.info/standards/elementset/gnd#CorporateBody"
+						}
+					]
+				}
+			],
+			"rdftype": [
+				{
+					"@id": "http://id.loc.gov/ontologies/bibframe/Contribution",
+					"prefLabel": "Beteiligung"
+				}
+			],
+			"role": [
+				{
+					"@id": "http://id.loc.gov/vocabulary/relators/isb",
+					"label": "Herausgeber/in",
+					"prefLabel": "Herausgeber/in"
+				}
+			]
+		}
+	],
+	"creator": [
+		{
+			"prefLabel": "Cornely, Oliver Andreas",
+			"@id": "https://d-nb.info/gnd/121712915"
+		},
+		{
+			"prefLabel": "Köhler, Philipp",
+			"@id": "https://d-nb.info/gnd/1033465666"
+		},
+		{
+			"prefLabel": "Mellinghoff, Sibylle Christiane",
+			"@id": "https://d-nb.info/gnd/112248822X"
+		},
+		{
+			"prefLabel": "Yao, Zhang",
+			"@id": "https://frl.publisso.de/adhoc/author/Yao, Zhang"
+		},
+		{
+			"prefLabel": "Universitätsklinikum Köln. Klinik I für Innere Medizin",
+			"@id": "https://d-nb.info/gnd/10018507-1"
+		}
+	],
+	"describedby": [
+		{
+			"@id": "http://lobid.org/resources/HT020432866",
+			"created": "20200421",
+			"inDataset": [
+				{
+					"@id": "http://lobid.org/resources/dataset#!",
+					"label": "lobid-resources – Der hbz-Verbundkatalog als Linked Open Data",
+					"prefLabel": "http://lobid.org/resources/dataset#!"
+				}
+			],
+			"label": "Webseite der hbz-Ressource HT020432866",
+			"license": [
+				{
+					"@id": "http://creativecommons.org/publicdomain/zero/1.0",
+					"label": "Creative Commons-Lizenz CC0 1.0 Universal",
+					"prefLabel": "http://creativecommons.org/publicdomain/zero/1.0"
+				}
+			],
+			"prefLabel": "EQUAL Aspergillosis Score 2018",
+			"rdftype": [
+				{
+					"@id": "http://purl.org/lobid/lv#BibliographicDescription",
+					"prefLabel": "http://purl.org/lobid/lv#BibliographicDescription"
+				}
+			],
+			"resultOf": [
+				{
+					"endTime": "2020-04-22T04:24:00",
+					"instrument": [
+						{
+							"@id": "https://github.com/hbz/lobid-resources",
+							"label": "Software lobid-resources",
+							"prefLabel": "https://github.com/hbz/lobid-resources",
+							"rdftype": [
+								{
+									"@id": "http://schema.org/SoftwareApplication",
+									"prefLabel": "http://schema.org/SoftwareApplication"
+								}
+							]
+						}
+					],
+					"object": [
+						{
+							"@id": "http://lobid.org/hbz01/HT020432866",
+							"inDataset": [
+								{
+									"@id": "https://datahub.io/dataset/hbz_unioncatalog",
+									"label": "hbz_unioncatalog",
+									"prefLabel": "https://datahub.io/dataset/hbz_unioncatalog"
+								}
+							],
+							"label": "hbz-Ressource HT020432866 im Exportformat MAB2-XML",
+							"prefLabel": "http://lobid.org/hbz01/HT020432866",
+							"rdftype": [
+								{
+									"@id": "http://schema.org/DataFeedItem",
+									"prefLabel": "http://schema.org/DataFeedItem"
+								}
+							]
+						}
+					],
+					"rdftype": [
+						{
+							"@id": "http://schema.org/CreateAction",
+							"prefLabel": "http://schema.org/CreateAction"
+						}
+					]
+				}
+			],
+			"sourceOrganization": [
+				{
+					"@id": "http://lobid.org/organisations/DE-38M#!",
+					"label": "lobid Organisation",
+					"prefLabel": "http://lobid.org/organisations/DE-38M#!"
+				}
+			]
+		}
+	],
+	"doi": "10.4126/FRL01-006420313",
+	"edition": [
+		"2020 Nián 04 yuè"
+	],
+	"extent": [
+		"1 Online-Ressource (2 Blätter)"
+	],
+	"hasItem": [
+		{
+			"@id": "http://lobid.org/items/HT020432866:DE-38M:Elektronische%20Publikation#!",
+			"callNumber": "Elektronische Publikation",
+			"heldBy": [
+				{
+					"@id": "http://lobid.org/organisations/DE-38M#!",
+					"label": "lobid Organisation",
+					"prefLabel": "http://lobid.org/organisations/DE-38M#!"
+				}
+			],
+			"label": "Elektronische Publikation",
+			"note": "00000099",
+			"prefLabel": "http://lobid.org/items/HT020432866:DE-38M:Elektronische Publikation#!",
+			"rdftype": [
+				{
+					"@id": "http://id.loc.gov/ontologies/bibframe/Item",
+					"prefLabel": "http://id.loc.gov/ontologies/bibframe/Item"
+				}
+			]
+		}
+	],
+	"hbzId": [
+		"HT020432866"
+	],
+	"inCollection": [
+		{
+			"@id": "http://repository.publisso.de",
+			"label": "Fachrepositorium Lebenswissenschaften",
+			"prefLabel": "http://repository.publisso.de",
+			"rdftype": [
+				{
+					"@id": "http://id.loc.gov/ontologies/bibframe/Collection",
+					"prefLabel": "http://id.loc.gov/ontologies/bibframe/Collection"
+				}
+			]
+		}
+	],
+	"institution": [
+		{
+			"@id": "http://d-nb.info/gnd/10018507-1",
+			"prefLabel": "Universitätsklinikum Köln. Klinik I für Innere Medizin"
+		}
+	],
+	"isDescribedBy": {
+		"@id": "frl:6420313.rdf",
+		"created": "2020-04-22T07:54:01.916+0200",
+		"createdBy": "21",
+		"describes": "frl:6420313",
+		"lastModifiedBy": "21",
+		"modified": "2020-04-22T10:46:57.975+0000",
+		"objectTimestamp": "2020-04-22T10:46:57.000+0000"
+	},
+	"isMemberOf": [
+		{
+			"prefLabel": "info:fedora/oai:aleph",
+			"@id": "info:fedora/oai:aleph"
+		},
+		{
+			"prefLabel": "info:fedora/oai:frl01",
+			"@id": "info:fedora/oai:frl01"
+		},
+		{
+			"prefLabel": "info:fedora/oai:monograph",
+			"@id": "info:fedora/oai:monograph"
+		},
+		{
+			"prefLabel": "info:fedora/oai:open_access",
+			"@id": "info:fedora/oai:open_access"
+		}
+	],
+	"issued": "2020",
+	"itemID": [
+		{
+			"prefLabel": "oai:frl.publisso.de:frl:6420313",
+			"@id": "oai:frl.publisso.de:frl:6420313"
+		}
+	],
+	"medium": [
+		{
+			"@id": "http://rdaregistry.info/termList/RDACarrierType/1018",
+			"label": "Online-Ressource",
+			"prefLabel": "Online-Ressource"
+		}
+	],
+	"note": [
+		"Text übersetzt in englische Sprache",
+		"Übersetzung der Ausgabebezeichnung: April 2020"
+	],
+	"otherTitleInformation": [
+		"an ECMM score derived from current guidelines to measure QUALity of clinical invasive pulmonary Aspergillosis management"
+	],
+	"parallelEdition": [
+		{
+			"@id": "http://lobid.org/resources/HT020432866#!",
+			"prefLabel": "EQUAL Aspergillosis Score 2018"
+		}
+	],
+	"primaryTopic": "frl:6420313",
+	"publication": [
+		{
+			"location": "Köln",
+			"publishedBy": "Uniklinik Köln",
+			"rdftype": [
+				{
+					"@id": "http://schema.org/PublicationEvent",
+					"prefLabel": "http://schema.org/PublicationEvent"
+				}
+			],
+			"startDate": "2020"
+		}
+	],
+	"publishScheme": "public",
+	"rdftype": [
+		{
+			"prefLabel": "Leitlinien / Normschriften",
+			"@id": "http://purl.org/ontology/bibo/Standard"
+		},
+		{
+			"prefLabel": "Monografie",
+			"@id": "http://purl.org/ontology/bibo/Book"
+		}
+	],
+	"responsibilityStatement": [
+		"Cornely, O.A., Köhler, P., Mellinghoff, S.C., Yao, Zhang ; Uniklinik Köln"
+	],
+	"sameAs": [
+		{
+			"@id": "http://hub.culturegraph.org/resource/HBZ-HT020432866",
+			"label": "Culturegraph Ressource",
+			"prefLabel": "http://hub.culturegraph.org/resource/HBZ-HT020432866"
+		}
+	],
+	"subject": [
+		{
+			"label": "Medizin und Gesundheit",
+			"notation": "610",
+			"prefLabel": "Medizin und Gesundheit",
+			"source": [
+				{
+					"@id": "https://d-nb.info/gnd/4149423-4",
+					"label": "Dewey-Dezimalklassifikation",
+					"prefLabel": "Dewey-Dezimalklassifikation"
+				}
+			]
+		}
+	],
+	"title": [
+		"EQUAL Aspergillosis Score 2018"
+	],
+	"transformer": [
+		"aleph",
+		"mets",
+		"oaidc",
+		"openaire",
+		"rdf"
+	]
+}

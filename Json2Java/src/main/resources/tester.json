@@ -1,0 +1,41 @@
+{
+	"Array1": [
+		{
+			"literal1": "1",
+			"literal2": "2",
+			"literal3": "3",
+			"literal4": "4"
+		},
+		{
+			"literal1": "1",
+			"literal2": "2",
+			"literal3": "3",
+			"literal4": "4"
+		},
+		{
+			"object1": {
+				"literal1": "1",
+				"literal2": "2",
+				"literal3": "3",
+				"literal4": "4",
+				"ObjectName": "Testobject"
+			}
+		}
+	],
+	"Object1": {
+		"literal1": "1",
+		"literal2": "2",
+		"literal3": "3",
+		"literal4": "4",
+		"object1": {
+			"literal1": "1",
+			"literal2": "2",
+			"literal3": "3",
+			"literal4": "4",
+			"ObjectName": "Testobject",
+			"array2" : ["Dies ist mal ein Text", "und noch einer"]
+		}
+	},
+	"Literal1": "Finde ich!",
+	"Number1": 12345.34
+}

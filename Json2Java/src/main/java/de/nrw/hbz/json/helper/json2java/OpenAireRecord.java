@@ -124,6 +124,7 @@ public class OpenAireRecord extends Record implements java.io.Serializable {
 
 		}
 		
+		
 		// generate fundingReference
 		Element funding = doc.createElement("fundingReferences");
 		jemList = jMapper.getElement("root.joinedFunding");
@@ -152,6 +153,16 @@ public class OpenAireRecord extends Record implements java.io.Serializable {
 			resource.appendChild(funding);
 
 		}
+		
+		// generate description
+		jemList = jMapper.getElement("root.abstractText");
+		for (int i = 0; i < jemList.size(); i++) {
+			Element description = doc.createElement("datacite:description");
+			description.appendChild(
+					doc.createTextNode(jemList.get(i).get("root.abstractText")));
+			resource.appendChild(description);
+		}
+
 
 		// generate alternateIdentifiers
 		Element alternate = doc.createElement("alternateIdentifiers");
@@ -193,6 +204,46 @@ public class OpenAireRecord extends Record implements java.io.Serializable {
 			}
 		}
 		
+		// generate citation Fields
+		jemList = jMapper.getElement("root.bibliographicCitation");
+		for (int i = 0; i < jemList.size(); i++) {
+			String fullCitation = jemList.get(i).get("root.bibliographicCitation");
+			String[] splitCitation = fullCitation.split("[()\\-\\:]");
+			if(splitCitation.length > 4) {
+				Element volCitation = doc.createElement("citationVolume");
+				volCitation.appendChild(doc.createTextNode(splitCitation[0]));
+				Element issueCitation = doc.createElement("citationIssue");
+				issueCitation.appendChild(doc.createTextNode(splitCitation[1]));
+				Element startPageCitation = doc.createElement("citationStartPage");
+				startPageCitation.appendChild(doc.createTextNode(splitCitation[3]));
+				Element endPageCitation = doc.createElement("citationEndPage");
+				endPageCitation.appendChild(doc.createTextNode(splitCitation[4]));
+				resource.appendChild(volCitation);				
+				resource.appendChild(issueCitation);				
+				resource.appendChild(startPageCitation);				
+				resource.appendChild(endPageCitation);				
+			}
+		}
+
+		// generate relatedIdentifier
+		jemList = jMapper.getElement("root.hasPart");
+		if (jemList.size() > 0) {
+			Element relIdentifiers = doc.createElement("datacite:relatedIdentifiers");
+			for (int i = 0; i < jemList.size(); i++) {
+				if (jemList.get(i).containsKey("@id")) {
+					Element rIdentifier = doc.createElement("datacite:relatedIdentifier");
+					rIdentifier.appendChild(
+							doc.createTextNode("https://repository.publisso.de/resource/"
+									+ jemList.get(i).get("@id")));
+					rIdentifier.setAttribute("relatedIdentifierType", "PURL");
+					rIdentifier.setAttribute("relationType", "PURL");
+					relIdentifiers.appendChild(rIdentifier);
+				}
+			}
+			resource.appendChild(relIdentifiers);
+		}
+
+		
 		// generate oaire:resourceType
 		jemList = jMapper.getElement("root");
 		for (int i = 0; i < jemList.size(); i++) {
@@ -204,6 +255,62 @@ public class OpenAireRecord extends Record implements java.io.Serializable {
 				resource.appendChild(resourceType);				
 			}
 		}
+
+
+		// generate subjects from articles
+		Element subjects = doc.createElement("datacite:subjects");
+
+		jemList = jMapper.getElement("root.ddc");
+		for (int i = 0; i < jemList.size(); i++) {
+			Element sE = doc.createElement("datacite:subject");
+			sE.appendChild(doc.createTextNode(jemList.get(i).get("prefLabel")));
+			sE.setAttribute("subjectScheme", "DDC");
+			sE.setAttribute("schemeURI", "http://dewey.info");
+			sE.setAttribute("valueURI", jemList.get(i).get("@id"));
+
+			subjects.appendChild(sE);
+		}
+
+		jemList = jMapper.getElement("root.subject");
+		for (int i = 0; i < jemList.size(); i++) {
+			if (jemList.get(i).containsKey("prefLabel")) {
+				Element sE = doc.createElement("datacite:subject");
+				sE.appendChild(doc.createTextNode(jemList.get(i).get("prefLabel")));
+
+				// prevent record from displaying local id's
+				if (jemList.get(i).containsKey("@id")
+						&& !jemList.get(i).get("@id").startsWith("https://frl")
+						&& !jemList.get(i).get("@id").startsWith("https://api.ellinet")) {
+					sE.setAttribute("valueURI", jemList.get(i).get("@id"));
+				}
+
+				subjects.appendChild(sE);
+			}
+		}
+
+		// generate subjects from monographs
+		jemList = jMapper.getElement("root.subject.source");
+		for (int i = 0; i < jemList.size(); i++) {
+			if (jemList.get(i).containsKey("prefLabel")) {
+				Element sE = doc.createElement("datacite:subject");
+				sE.appendChild(doc.createTextNode(jemList.get(i).get("prefLabel")));
+
+				if (jemList.get(i).containsKey("label") && jemList.get(i).get("label")
+						.equals("Dewey-Dezimalklassifikation")) {
+					sE.setAttribute("subjectScheme", "DDC");
+					sE.setAttribute("schemeURI", "http://dewey.info");
+					sE.setAttribute("valueURI", jemList.get(i).get("@id"));
+				} else {
+					if (jemList.get(i).containsKey("@id")
+							&& !jemList.get(i).get("@id").startsWith("https://frl")
+							&& !jemList.get(i).get("@id").startsWith("https://api.ellinet")) {
+						sE.setAttribute("valueURI", jemList.get(i).get("@id"));
+					}
+				}
+				subjects.appendChild(sE);
+			}
+		}
+		resource.appendChild(subjects);
 
 		
 		// generate source
@@ -230,34 +337,6 @@ public class OpenAireRecord extends Record implements java.io.Serializable {
 			resource.appendChild(version);
 		}
 
-		// generate subjects
-		Element subjects = doc.createElement("datacite:subjects");
-		jemList = jMapper.getElement("root.ddc");
-		for (int i=0; i < jemList.size(); i++) {
-			Element sE = doc.createElement("datacite:subject");
-			sE.appendChild(doc.createTextNode(jemList.get(i).get("prefLabel")));
-			sE.setAttribute("subjectScheme", "DDC");
-			sE.setAttribute("schemeURI", "http://dewey.info");
-			sE.setAttribute("valueURI", jemList.get(i).get("@id"));
-			
-			subjects.appendChild(sE);
-			resource.appendChild(subjects);
-		}
-
-		jemList = jMapper.getElement("root.subject");
-		for (int i=0; i < jemList.size(); i++) {
-			Element sE = doc.createElement("datacite:subject");
-			sE.appendChild(doc.createTextNode(jemList.get(i).get("prefLabel")));
-			
-			// prevent record from displaying local id's
-			if(!jemList.get(i).get("@id").startsWith("https://frl")
-					&& !jemList.get(i).get("@id").startsWith("https://api.ellinet")) {
-				sE.setAttribute("valueURI", jemList.get(i).get("@id"));
-			}
-			
-			subjects.appendChild(sE);
-			resource.appendChild(subjects);
-		}
 				
 		// generate publisher	
 		jemList = jMapper.getElement("root.containedIn");

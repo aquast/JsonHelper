@@ -122,6 +122,7 @@ public class JsonLDMapper {
 			// check if current field is of type array 
 			if (node.get(key).isArray()) {
 				pBuffer.append("." + key);
+				System.out.println("Dies ist ein ArrayNode: " + pBuffer.toString());
 
 				JsonNode complexNode = node.get(key);
 				jEM = new JsonElementModel(pBuffer.toString());
@@ -136,6 +137,7 @@ public class JsonLDMapper {
 					if (arrayNode.isObject()) {
 						// If the field of array is an object, make recursive call to mapToJsonModel
 						// to find all Fields with Literals 
+						System.out.println(arrayNode.toString());
 						jEM = new JsonElementModel(pBuffer.toString());
 						jEM.setComplexElement(new Hashtable<String, String>());
 						mapToJsonElementModel(arrayNode, pBuffer);
