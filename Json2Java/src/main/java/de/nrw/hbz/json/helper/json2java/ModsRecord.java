@@ -127,17 +127,32 @@ public class ModsRecord extends Record implements java.io.Serializable {
 			mods.appendChild(abstracttext);
 		}
 		// generate typeOfResource
-		// TODO: zur Zeit wird alles als "text" behandelt, es gibt aber auch video etc.
-		Element typeOfResource = doc.createElement("typeOfResource"); 
-		typeOfResource.appendChild(doc.createTextNode("text"));
+		// https://www.loc.gov/standards/mods/userguide/typeofresource.html
+		// for some reason videos have the contentType 'monograph', so to determine
+		// the correct typeOfResource we have to look into the rdftype
+		
+		jemList = jMapper.getElement("root.rdftype");
+		Element typeOfResource = doc.createElement("typeOfResource");
+		String rdftype = "text";
+		for (int i=0; i < jemList.size(); i++) {
+			String label = jemList.get(i).get("prefLabel");
+			if (label.equals("Video")) {
+				rdftype = "moving image";
+				break;
+			}
+			System.out.println(rdftype);
+		}
+		typeOfResource.appendChild(doc.createTextNode(rdftype));
 		mods.appendChild(typeOfResource);
 		
 		// generate genre
+		// https://www.loc.gov/standards/mods/userguide/genre.html
 		Hashtable<String, String> genres = new Hashtable<String, String>();
 	    genres.put("Buchkapitel", "book");
 	    genres.put("article", "academic journal");
 	    genres.put("Kongressbeitrag", "conference publication");
-
+	    genres.put("Abschlussarbeit", "Ph.D. thesis");
+	    
 		jemList = jMapper.getElement("root");
 		for (int i = 0; i < jemList.size(); i++) {
 			if (jemList.get(i).containsKey("contentType")) {
@@ -151,12 +166,14 @@ public class ModsRecord extends Record implements java.io.Serializable {
 		}
 		
 		// generate language
+		
 		jemList = jMapper.getElement("root.language");
 		for (int i = 0; i < jemList.size(); i++) {
-			Element language = doc.createElement("language");
+    	    Element language = doc.createElement("language");
 			language.appendChild(doc.createTextNode(jemList.get(i).get("@id").substring(38)));
 			mods.appendChild(language);
 		}
+		
 		
 		// generate subjects
 		// TODO: use numerical value instead of label
@@ -211,7 +228,7 @@ public class ModsRecord extends Record implements java.io.Serializable {
 		
 		doc.appendChild(modsCollection);
 
-		System.out.println(XmlUtils.docToString(doc));
+		//System.out.println(XmlUtils.docToString(doc));
 
 	}	
 	
