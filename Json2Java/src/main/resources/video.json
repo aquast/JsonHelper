@@ -1,0 +1,67 @@
+{
+	"hasPart": [
+		{
+			"prefLabel": "Mund-Nasen-Bedeckung richtig handhaben",
+			"@id": "frl:6420706"
+		}
+	],
+	"publishScheme": "public",
+	"accessScheme": "public",
+	"transformer": [
+		"aleph",
+		"mets",
+		"mods",
+		"oaidc",
+		"openaire",
+		"rdf"
+	],
+	"@context": "https://frl.publisso.de/context.json",
+	"rdftype": [
+		{
+			"prefLabel": "Video",
+			"@id": "http://rdaregistry.info/termList/RDAMediaType/1008"
+		},
+		{
+			"prefLabel": "Sonstige",
+			"@id": "http://purl.org/lobid/lv#Miscellaneous"
+		}
+	],
+	"itemID": [
+		{
+			"prefLabel": "oai:frl.publisso.de:frl:6420705",
+			"@id": "oai:frl.publisso.de:frl:6420705"
+		}
+	],
+	"catalogId": "ED6420705",
+	"primaryTopic": "frl:6420705",
+	"isMemberOf": [
+		{
+			"prefLabel": "info:fedora/oai:aleph",
+			"@id": "info:fedora/oai:aleph"
+		},
+		{
+			"prefLabel": "info:fedora/oai:frl01",
+			"@id": "info:fedora/oai:frl01"
+		},
+		{
+			"prefLabel": "info:fedora/oai:monograph",
+			"@id": "info:fedora/oai:monograph"
+		},
+		{
+			"prefLabel": "info:fedora/oai:open_access",
+			"@id": "info:fedora/oai:open_access"
+		}
+	],
+	"@id": "frl:6420705",
+	"isDescribedBy": {
+		"@id": "frl:6420705.rdf",
+		"created": "2020-05-11T06:20:13.041+0000",
+		"createdBy": "25",
+		"describes": "frl:6420705",
+		"lastModifiedBy": "25",
+		"modified": "2020-05-13T03:20:31.994+0000",
+		"objectTimestamp": "2020-05-11T06:21:42.000+0000"
+	},
+	"contentType": "monograph",
+	"doi": "10.4126/FRL01-006420705"
+}
