@@ -10,6 +10,7 @@ import java.util.Iterator;
 
 import com.fasterxml.jackson.databind.JsonNode;
 
+
 /**
  * Maps a JsonNode into the regal-api JsonElementModel. 
  * Concept of JsonElementModel is to flatten any complex Json 
@@ -58,7 +59,8 @@ public class JsonLDMapperRefactored {
 		
 		} */
 		
-		// fetch all Nodes. We need to know the fieldNames in order to create pathes as node identifiers    
+		
+		// fetch all Nodes. We need to know the fieldNames in order to create paths as node identifiers    
 		Iterator<String> it = node.fieldNames();
 		while (it.hasNext()) {
 			String fieldName = it.next();

@@ -119,8 +119,16 @@
 				"@id": "http://dx.doi.org/10.13039/501100001659",
 				"prefLabel": "Deutsche Forschungsgemeinschaft"
 			},
-			"fundingProgramJoined": "-",
-			"projectIdJoined": "-"
+			"fundingProgramJoined": "Earth-Life-Systems",
+			"projectIdJoined": "DFG SSB 1"
+		},
+		{
+			"fundingJoined": {
+				"@id": "http://dx.doi.org/10.13039/501100001659",
+				"prefLabel": "BMBF"
+			},
+			"fundingProgramJoined": "Earth-Life-Systems",
+			"projectIdJoined": "BMBF SSB 1"
 		}
 	],
 	"language": [

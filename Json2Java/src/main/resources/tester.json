@@ -1,33 +1,33 @@
 {
 	"Array1": [
 		{
-			"literal1": "1",
-			"literal2": "2",
-			"literal3": "3",
-			"literal4": "4"
+			"arrayLiteral1": "arrayObject1:1",
+			"arrayLiteral2": "arrayObject1:2",
+			"arrayLiteral3": "arrayObject1:3",
+			"arrayLiteral4": "arrayObject1:4"
 		},
 		{
-			"literal1": "1",
-			"literal2": "2",
-			"literal3": "3",
-			"literal4": "4"
+			"arrayLiteral1": "arrayObject2:1",
+			"arrayLiteral2": "arrayObject2:2",
+			"arrayLiteral3": "arrayObject2:3",
+			"arrayLiteral4": "arrayObject2:4"
 		},
 		{
 			"object1": {
-				"literal1": "1",
-				"literal2": "2",
-				"literal3": "3",
-				"literal4": "4",
+				"literal1": "arrayObjectObject1",
+				"literal2": "arrayObjectObject2",
+				"literal3": "arrayObjectObject3",
+				"literal4": "arrayObjectObject4",
 				"ObjectName": "Testobject"
 			}
 		}
 	],
 	"Object1": {
-		"literal1": "1",
-		"literal2": "2",
-		"literal3": "3",
-		"literal4": "4",
-		"object1": {
+		"literal1": "object1-1",
+		"literal2": "object1-2",
+		"literal3": "object1-3",
+		"literal4": "object1-4",
+		"object-object": {
 			"literal1": "1",
 			"literal2": "2",
 			"literal3": "3",

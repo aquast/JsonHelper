@@ -36,10 +36,10 @@ public class JsonExample {
 			e.printStackTrace();
 		}
 		
-		JsonNode fileNode = JsonFileReader.getJsonNodeFromFile("src/main/resources/tester.json");
+		//JsonNode fileNode = JsonFileReader.getJsonNodeFromFile("src/main/resources/tester.json");
 		//node = JsonFileReader.getJsonNodeFromFile("src/main/resources/frl-example.json2.json");
-		node = JsonFileReader.getJsonNodeFromFile("src/main/resources/frl:6420313.json2.json");
-		//node = JsonFileReader.getJsonNodeFromFile("src/main/resources/video-example.json");
+		//node = JsonFileReader.getJsonNodeFromFile("src/main/resources/frl:6420313.json2.json");
+		node = JsonFileReader.getJsonNodeFromFile("src/main/resources/monograph_example.json");
 		//node = JsonFileReader.getJsonNodeFromFile("src/main/resources/oer-example.json");
 		//node = JsonFileReader.getJsonNodeFromFile("src/main/resources/frl:6402506.json2.json");
 
@@ -50,17 +50,15 @@ public class JsonExample {
 		//JsonLDMapper jFileMapper = new JsonLDMapper(fileNode);
 		//jFileMapper.printElements();
 
-		JsonLDMapperRefactored jMapper = new JsonLDMapperRefactored(fileNode);
-		jMapper.mapToElementModel();
+		JsonLDMapper jMapper = new JsonLDMapper(node);
+		//jMapper.mapToElementModel();
 		
 		
-		//jMapper.printElements();
+		jMapper.printElements();
 		
 		System.out.println("\n#####  XML Ausgabe #####\n");
 
-		//OpenAireRecord oar = new OpenAireRecord(jMapper);
-
-		//OpenAireRecord oar = new OpenAireRecord(jMapper);
+		OpenAireRecord oar = new OpenAireRecord(jMapper);
 		//ModsRecord mods = new ModsRecord(jMapper);
 
 		//System.out.println(mods.xml2any("bib"));
