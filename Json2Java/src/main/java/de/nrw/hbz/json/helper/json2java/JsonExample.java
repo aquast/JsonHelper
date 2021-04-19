@@ -37,9 +37,9 @@ public class JsonExample {
 		}
 		
 		//JsonNode fileNode = JsonFileReader.getJsonNodeFromFile("src/main/resources/tester.json");
-		//node = JsonFileReader.getJsonNodeFromFile("src/main/resources/frl-example.json2.json");
+		node = JsonFileReader.getJsonNodeFromFile("src/main/resources/frl-example.json2.json");
 		//node = JsonFileReader.getJsonNodeFromFile("src/main/resources/frl:6420313.json2.json");
-		node = JsonFileReader.getJsonNodeFromFile("src/main/resources/monograph_example.json");
+		//node = JsonFileReader.getJsonNodeFromFile("src/main/resources/monograph_example.json");
 		//node = JsonFileReader.getJsonNodeFromFile("src/main/resources/oer-example.json");
 		//node = JsonFileReader.getJsonNodeFromFile("src/main/resources/frl:6402506.json2.json");
 

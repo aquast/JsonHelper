@@ -18,6 +18,7 @@ package de.nrw.hbz.json.helper.json2java;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.Iterator;
@@ -128,17 +129,24 @@ public class OpenAireRecord extends Record implements java.io.Serializable {
 		// generate fundingReference
 		Element funding = doc.createElement("fundingReferences");
 		jemList = jMapper.getElement("root.joinedFunding");
+		System.out.println("FUNDINGLIST: " + jemList.toString());
 		for (int i=0; i < jemList.size(); i++) {
+			Enumeration enumer = jemList.get(i).keys();
+			while(enumer.hasMoreElements()) {
+				Object theKey = enumer.nextElement();
+				System.out.println("FUNDINGLIST: " + jemList.get(i).get(theKey));
+				
+			}
 			Element sE = doc.createElement("fundingReference");
 			funding.appendChild(sE);
 			Element cn= doc.createElement("funderName");
-			cn.appendChild(doc.createTextNode(jemList.get(i).get("prefLabel")));
-			sE.appendChild(cn);
+			//cn.appendChild(doc.createTextNode(jemList.get(i).get("prefLabel")));
+			//sE.appendChild(cn);
 			
-			if(!jemList.get(i).get("@id").startsWith("https://frl")) {
+			if(!jemList.get(i).toString().startsWith("https://frl")) {
 				Element ci= doc.createElement("funderIdentifier");
-				ci.appendChild(doc.createTextNode(jemList.get(i).get("@id")));
-				sE.appendChild(ci);
+				//ci.appendChild(doc.createTextNode(jemList.get(i).get("@id")));
+				//sE.appendChild(ci);
 			}
 			
 			Element cp= doc.createElement("fundingStream");

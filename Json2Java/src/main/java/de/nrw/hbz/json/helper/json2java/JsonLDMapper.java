@@ -26,7 +26,7 @@ public class JsonLDMapper {
 	private ArrayList<JsonElementModel> jemElement = new ArrayList<>();
 	private JsonElementModel jEM = null;
 	private Hashtable<String, ArrayList<Integer>> index = new Hashtable<>();
-
+	
 	StringBuffer pathBuffer = new StringBuffer("");
 
 	/**
@@ -57,42 +57,69 @@ public class JsonLDMapper {
 				if (!processObjectNode(node, pBuffer, key)) {
 					
 				}
-			};
+			}
 
 
 			// check if current field is of type array
 			if (node.get(key).isArray()) {
 				pBuffer.append("." + key);
-				System.out.println(pBuffer.toString());
-
+				//System.out.println("Found Array: " + pBuffer.toString());
 				JsonNode complexNode = node.get(key);
 				jEM = new JsonElementModel(pBuffer.toString());
-
-				Iterator<String> namesIt = complexNode.fieldNames();
 
 				Iterator<JsonNode> nIt = complexNode.elements();
 				while (nIt.hasNext()) {
 					JsonNode arrayNode = nIt.next();
 
-					if (! arrayNode.isObject()) {
+					if (! arrayNode.isContainerNode()) {
 						// We have a Literal as Field of Array, so put this into Hashtable
-						System.out.println(arrayNode.toString());
+						//System.out.println(arrayNode.toString());						
 						Hashtable<String, String> iE = new Hashtable<>();
 						iE.put(pBuffer.toString(), arrayNode.asText());
+						System.out.println("Array-Hashtable 1, Literale: \t\t" + pBuffer.toString() + " : " + arrayNode.asText());
 						jEM.addArrayElement(arrayNode.asText());
 
 					} else {
-						// If the field of array is an object, make recursive call to mapToJsonModel
-						// to find all Fields with Literals
-						//System.out.println("Object found: " + arrayNode.toString());
-						jEM = new JsonElementModel(pBuffer.toString());
-						jEM.setComplexElement(new Hashtable<String, String>());
-						mapToJsonElementModel(arrayNode, pBuffer);
-						jemElement.add(jEM);
+						// We have a ContainerNode. This means we have an object consisting of:
+						// either key-value pairs
+						// more complex objects, that have keys too.
+						// we have to resolve which kind of ContainerNode we have by iterate through the keys 
+							
+						Iterator ait = arrayNode.fieldNames();
+						int j = pBuffer.length();
+						int n = 0;
+						while (ait.hasNext()) {
+							//System.out.println("Buffer : " + pBuffer.toString());
+							Hashtable<String, String> iE = new Hashtable<>();
 
+							//JsonNode value = (JsonNode) ait.next();
+							String aKey = (String) ait.next();
+							pBuffer.append("." + aKey);
+
+							System.out.println("Welchen NodeType habe wir? : " + arrayNode.get(aKey).getNodeType());
+							if(arrayNode.get(aKey).getNodeType().toString().equals("STRING")) {
+								System.out.println("Array-Hashtable 2, Key-Values:  \t" + pBuffer.toString() + " | " +arrayNode.get(aKey));
+								iE.put(aKey, arrayNode.get(aKey).asText());
+								jEM.setComplexElement(iE);
+								pBuffer.setLength(j);
+							} 
+							else {
+								/*
+								Iterator<String> aoit = arrayNode.get(aKey).fieldNames();
+								ArrayList<String> keys = new ArrayList<String>(); 
+								while(aoit.hasNext()) {
+									keys.add(aoit.next());
+								}
+								n++;
+								*/
+								System.out.println(arrayNode.get(aKey).getNodeType());
+								System.out.println(arrayNode.get(aKey).size());
+								//System.out.println(n);
+								mapToJsonElementModel(arrayNode.get(aKey), pBuffer.append("." + arrayNode.get(aKey)));										
+								pBuffer.setLength(j);
+							}
+						}
 					}
-				}
-				if (jEM.isArray()) {
 					jemElement.add(jEM);
 				}
 			}
@@ -113,9 +140,11 @@ public class JsonLDMapper {
 			Hashtable<String, String> iE = new Hashtable<>();
 
 			if (jEM != null && !jEM.isEmpty()) {
+				System.out.println("KEY: " + key);
 
 				// if we have an jEM already, we will use the ElementList from this
 				Hashtable<String, String> ha = jEM.getComplexElementList();
+				System.out.println("Literal Node:  " + pBuffer.toString() + " = " + node.get(key).asText());
 				ha.put(key, node.get(key).asText());
 				jEM.setComplexElement(ha);
 			} else {
@@ -126,6 +155,7 @@ public class JsonLDMapper {
 				jEM = new JsonElementModel(pBuffer.toString());
 				jEM.setComplexElement(iE);
 				jemElement.add(jEM);
+				
 			}
 
 		}
@@ -139,7 +169,7 @@ public class JsonLDMapper {
 		// a recursive call to mapToJsonModel
 		if (node.get(key).isObject()) {
 			pBuffer.append("." + key);
-			System.out.println("Dies ist ein ObjectNode: " + pBuffer.toString());
+			System.out.println("Object-Node: " + pBuffer.toString());
 			// find all child nodes and search for literals etc.
 			JsonNode complexNode = node.get(key);
 			Iterator<String> nIt = complexNode.fieldNames();

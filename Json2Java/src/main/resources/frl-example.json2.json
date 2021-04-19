@@ -115,20 +115,20 @@
 	],
 	"joinedFunding": [
 		{
+			"fundingProgramJoined": "Love for Evermore",
+			"projectIdJoined": "CD 1",
 			"fundingJoined": {
 				"@id": "http://dx.doi.org/10.13039/501100001659",
-				"prefLabel": "Deutsche Forschungsgemeinschaft"
-			},
-			"fundingProgramJoined": "Earth-Life-Systems",
-			"projectIdJoined": "DFG SSB 1"
+				"prefLabel": "Hillbilly Moon Explosion"
+			}
 		},
 		{
+			"fundingProgramJoined": "In Hell, I'll be in good Company",
+			"projectIdJoined": "Youtube",
 			"fundingJoined": {
-				"@id": "http://dx.doi.org/10.13039/501100001659",
-				"prefLabel": "BMBF"
-			},
-			"fundingProgramJoined": "Earth-Life-Systems",
-			"projectIdJoined": "BMBF SSB 1"
+				"@id": "http://youtube.com/10.13039/501100001659",
+				"prefLabel": "Dead South"
+			}
 		}
 	],
 	"language": [
@@ -151,7 +151,8 @@
 		}
 	],
 	"publicationYear": [
-		"2010-09-02"
+		"2010-09-02",
+		"2021-07-01"
 	],
 	"publishScheme": "public",
 	"publisherVersion": [
